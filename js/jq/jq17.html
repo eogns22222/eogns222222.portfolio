@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>애니메이션(stop)</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <style>
+       .outer{
+           position:relative;
+           border:1px solid red;
+           width:1600px;
+           height:800px;
+       }
+       .moveBox{
+           position:absolute;
+           left:0;
+           top:0;
+           width:80px;
+           height:80px;
+           background:red;
+       }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $(".moveBox").click(function(){
+                var _fx, _this = $(this);
+
+
+                
+                //전체 애니메이션은 실행개수만큼 쌓이게 된다.
+                // 쌓이는 애니메이션은 먼저 실행한 애니메이션이 끝나야
+                // 다음 애니메이션을 실행한다.
+                // 이렇게 실행되는 애니메이션이 쌓이는 것을 fx라고 한다.
+                // 하나씩 애니메이션이 배열처럼 줄서 있는것을 queue(큐)라고한다.
+                
+                
+                //animate({속성:값....},{duration:시간, queue:boolean});
+                //속성 queue는 현재  fx에 순서대로 진행되는 queue에서 빠져나올지 결정
+            _this.animate({left:1500},{
+                                        duration:5000,
+                                        queue:true},function(){
+
+                     //jQuery객체가 애니 애니메이션이 걸려있는 상황에서 jQuery객체.queue("fx"); --> 애니메이션 관리하는 fx객체를 return                       
+                    _fx = _this.queue("fx");
+                     $("h1>span").text(_fx.length);
+                })
+                .animate({width:150},{
+                                        duration:5000,
+                                        queue:true},function(){
+                    $("h1>span").text(_fx.length);
+                })
+                .animate({height:150}, {
+                                        duration:5000,
+                                        queue:true},function(){
+                    $("h1>span").text(_fx.length);
+                })
+                .animate({top:650},{
+                                        duration:5000,
+                                        queue:true},function(){
+                    $("h1>span").text(_fx.length);
+                });
+
+                
+
+            });//moveBox 클릭
+
+            $("h2").click(function(){
+                $(".moveBox").stop();
+
+            });//h2클릭
+                //객체.stop(clearQueue, jumpToEnd)
+
+         });
+
+    </script>
+
+</head>
+
+<body>
+    <h1>애니메이션 개수 : <span></span></h1>
+    <h2>멈춤</h2>
+  <div class="outer">
+      <div class="moveBox"></div>
+  </div>
+</body>
+</html>

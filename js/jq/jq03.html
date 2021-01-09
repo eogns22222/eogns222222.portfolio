@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setter & getter & for문 활용</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+
+            var txt = $("h1").text();
+            var time = new Date();
+            txt +="를(을)"+ time.getFullYear()+"-"+(time.getMonth()+1)+"-"+time.getDate() +"에 배우는 jQuery";
+            console.log(txt);
+            $("p").text(txt);
+
+            var fontS = parseInt($("h1").css("font-size"));
+            //parseInt ==> string등의 전달인자를 숫자화 한다.
+            console.log(fontS);
+            $("h1").css("font-size",fontS*2);
+
+            
+            //li의 크기를 각각 2,3,4,5,6 배 시키는법
+            
+            //1.기본
+            // var size1 = parseInt($("li").css("font-size"));
+            // console.log(size1);
+            // $("ul").children().eq(0).css("font-size",size1*2)
+            // .next().css("font-size",size1*3)
+            // .next().css("font-size",size1*4)
+            // .next().css("font-size",size1*5)
+            // .next().css("font-size",size1*6)
+            
+            // 2. 반복문 사용
+            for(var i = 0; i<$("li").length; i++){
+                var tmpSize = parseInt($("li").eq(i).css("font-size"));
+                $("li").eq(i).css("font-size",tmpSize*(i+2));
+            }
+
+            //aaaaa는 공부중, bbbbb는 식사중, ccccc는 노래중, ddddd는 운동중, eeeee는 자는중
+
+            var ings = ["공부중","식사중","노래중","운동중","자는중"];
+
+            for(var i = 0; i<$("li").length; i++){
+                var tmpText = $("li").eq(i).text();
+                $("li").eq(i).text(tmpText+"는"+ings[i]);
+            }
+
+            //각 li의 속성과 값을 변경해 본다.
+            //첫번째 li는 color,red
+            //두번째 li는 background, yellow
+            //세번째 li는 border, 1px solid green
+            //네번째 li는 text-decoration, underline
+            //다섯번째 li는 font-style, italic
+
+            var ings2 = ["color","background","border","text-decoration","font-style"]
+            var ings3 = ["red","yellow","1px solid green","underline","italic"]
+
+            var ings4 = [{"color":"red"},{"background":"yellow"},{"border":"1px solid green"},{"text-decoration":"underline"},{"font-style":"italic"}]
+            //이런식으로 한번에 쓰는것도 가능하다.
+
+            for(var i = 0; i<$("li").length; i++){
+                $("li").eq(i).css(ings2[i],ings3[i]);
+                // $("li").eq(i).css(ings4[i]);
+            }
+
+            //jQuery만의 for문을 each라고 한다.
+            $("li").each(function(i,v){
+                // $("li").eq(i).css(ings2[i],ings3[i]);
+                // $(v).css(ings2[i],ings3[i]);
+                $(this).css(ings2[i],ings3[i]);
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <h1>getter, setter 및 each</h1>
+    <ul>
+        <li>aaaaa</li>
+        <li>bbbbb</li>
+        <li>ccccc</li>
+        <li>ddddd</li>
+        <li>eeeee</li>
+    </ul>
+    <p></p>
+</body>
+</html>

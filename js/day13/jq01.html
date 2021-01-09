@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // jQuery == $
+        // 1. $(function(){body를 전부 읽고 가장 나중에 실행})
+        // 2. $("css선택자-id,class,tag,자식,자손"); ---> jQuery객체
+        //      jQuery속성 사용하기 위해서
+
+        $(function(){
+            // $("h1").css("color","red");
+            $("h1").css({"color":"red","fontsize":40});
+            $("h1").text("안녕 jQuery야");
+        });
+
+    </script>
+</head>
+<body>
+    <h1>Hello jQuery</h1>
+</body>
+</html>

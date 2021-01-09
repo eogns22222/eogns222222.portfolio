@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>스크롤기초</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <style>
+        html,body{
+            height:100%;
+        }
+        div>h1{
+            position:fixed; left:47%; top:0;
+            background: #fff;
+            border:1px solid red;
+            font: 30px/60px arial,sans-serif;
+            z-index: 999;
+        }
+        body>div{
+            margin:0 auto;
+            width:1640px;
+            height:100%;
+
+        }
+        header{
+            position:relative;
+            height:150px ;
+            background:black;
+        }
+        header>div#quickBox{
+            position:absolute;
+            right:-100px;
+            top:150px;
+            width:70px;
+            height:400px;
+        }
+        header>div#quickBox>#quickMenu{
+            width:70px;
+            height:400px;
+            background:rgb(255, 255, 255);
+            border:1px solid #000;
+        }
+        
+        header>div#quickBox>#quickMenu.on{
+            position:fixed;
+            top:30px;
+        }
+        header>div#quickBox>#quickMenu>p.close{
+            position:absolute;
+            top:-20px;
+            right:0;
+            border:1px solid red;
+            width:20px;
+            height:20px;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+        }
+        div>div{
+            height:100%;
+            transition:all 2s ease;
+        }
+        div>div:nth-of-type(1){background: rgb(146, 222, 224);}
+        div>div:nth-of-type(2){background: rgb(231, 144, 144);}
+        div>div:nth-of-type(3){background: rgb(155, 133, 140);}
+        div>div.on{background: rgb(10, 4, 6);}
+        div>div:nth-of-type(4){
+            overflow: hidden;
+            position:relative;
+            background: rgb(162, 253, 150);
+        }
+        div>div:nth-of-type(5){background: rgb(179, 167, 248);}
+        div>div:nth-of-type(4)>div{
+            position:absolute;
+            transition:all 1s ease;
+            border:1px solid black;
+            box-shadow: -5px 5px 10px rgba(0,0,0,.5);
+            background: #fff;
+        }
+        div>div:nth-of-type(4)>div.leftWing{
+            left:-500px;
+            top:calc(50% - 50px);
+            width:500px;
+            height:300px;
+        }
+        div>div:nth-of-type(4)>div.leftWing.on{
+            left:500px;
+        }
+        div>div:nth-of-type(4)>div.rightWing{
+            right:-600px;
+            top:calc(50% - 200px);
+            width:600px;
+            height:400px;
+        }
+        div>div:nth-of-type(4)>div.rightWing.on{
+            right:500px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+
+            $(window).on("scroll",function(){
+                //scrollTop() ---> 윈도우의 스크롤 위치를 return
+                var sct = $(window).scrollTop();
+                $("body>div>h1").text(sct);
+                
+                //배경색 변경
+                if(sct>=1500 && sct <2200){
+                    $("body>div>div").eq(2).addClass("on");
+                }else if(sct<1500 || sct>=2200){
+                    $("body>div>div").eq(2).removeClass("on");
+                }//if문 end
+
+                if(sct>=2300 && sct<3300){
+                    $("body>div>div").eq(3).children("div").addClass("on");
+                }else if(sct>=3300 || sct<2300){
+                    $("body>div>div").eq(3).children("div").removeClass("on");
+                }//if문 end
+
+                //quick메뉴
+                if(sct>=120 ){
+                    $("#quickMenu").addClass("on");
+                }else if(sct<120){
+                    $("#quickMenu").removeClass("on");
+                }
+                
+
+            });//scroll 이벤트 end
+        
+        });//jQuery end
+
+    </script>
+
+</head>
+<body>
+    <div>
+        <h1></h1>
+        <header>
+            <div id="quickBox">
+                <aside id="quickMenu">
+                    <h1>여기서부터 퀵 메뉴</h1>
+                    <p>퀵메뉴 내용</p>
+                    <p class="close">x</p>
+                </aside>
+            </div>
+        </header>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4
+            <div class="leftWing"></div>
+            <div class="rightWing"></div>
+        </div>
+        <div>5</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>배너이동2</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <style>
+        aside{
+            overflow:hidden;
+            position:relative;
+            margin:0 auto;
+            margin-top:100px;
+            width:432px;
+            height:442px;
+        }
+        aside>div{
+            
+        }
+        aside>div>ul.bannerList>li{position:absolute; left:0; top:0;}
+        aside>div>ul.bannerList>li.on{z-index:500}
+        aside>div>ul.bannerList>li.past{z-index:400}
+        
+        aside>div>ul.bannerBullet{
+            z-index:1000;
+            position:absolute; left:0px; bottom:20px;
+            width:100%;
+            text-align:center;
+        }
+        aside>div>ul.bannerBullet>li{
+            display: inline-block;
+            margin:0 8px;
+        }
+        aside>div>ul.bannerBullet>li>a>img{width:20px; }
+        
+        aside>div>p.btnPlay{
+            z-index:1000;
+            position:absolute; right:20px; bottom:20px;
+        }
+        aside>div>p.btnPlay>img{width:20px;}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+
+            var banner = {
+                idx:0,   //내가 누른 부분을 표시해줌
+                past_idx:0,  //내가 누른 부분에 전부분으로 기억을 저장
+                bannerList : $(".bannerList"),  //bannerList저장
+                bannerBullet : $(".bannerBullet"), //bannerBullet저장
+                btnPlay : $(".btnPlay"), //btnPlay저장
+                auto:setInterval(middle, 3000),  //자동재생
+                flag:true  //toggle효과를 위한 
+
+            };
+
+            function middle (){  //자동재생 움직임 역활
+                banner.idx++;
+                if(banner.idx >= $(".bannerList").children("li").length){
+                    banner.idx = 0;
+                }
+                doBanner();
+                banner.past_idx = banner.idx;
+            }
+            
+            function doBanner(){
+
+                banner.bannerList.children("li")
+                .eq(banner.past_idx)
+                .addClass("past")
+                .siblings().removeClass("past"); //움직인 배너 전꺼를 기억해서 밑에 남겨두도록하는 요소           
+                
+                banner.bannerList.children("li")
+                .eq(banner.idx).css("left","100%")
+                .addClass("on")
+                .animate({"left":0}, 500)
+                .siblings().removeClass("on"); //배너를 움직여 주는 요소
+
+                var _onSrc = banner.bannerBullet.children("li")
+                .eq(banner.idx).find("img").attr("src");
+                _onSrc = _onSrc.replace("_off","_on");
+                
+                banner.bannerBullet.children("li")
+                .eq(banner.idx).find("img").attr("src",_onSrc); //불릿에 off에서 on으로 바꿔주는 요소
+
+                
+
+                banner.bannerBullet.children("li").not("li:eq("+banner.idx+")")
+                .each(function(){
+                    var _this = $(this);
+                    var src = _this.find("img").attr("src");
+
+                    src = src.replace("_on","_off"); 
+                    _this.find("img").attr("src",src);
+
+                }); //내가 클릭한 요소를 제외하고 on에서 off로 바꿔주는 요소
+
+            }
+            
+            banner.bannerBullet.children("li").click(function(e){
+                e.preventDefault();
+                clearInterval(banner.auto);
+
+                banner.idx = $(this).index();
+                banner.past_idx; // 이전에 클릭했던 번호 기억
+
+                doBanner();
+
+                banner.past_idx = banner.idx; //현재 클릭했던 것을 과거를 기억하는 변수에 저장
+                banner.auto = setInterval(middle, 3000);
+
+            });
+
+            banner.btnPlay.click(function(){
+                var src = $(this).find("img").attr("src");
+
+                if(banner.flag){  //정지버튼을 클릭하면 애니메이션 정지가 되고 재생버튼으로 변경 
+                    clearInterval(banner.auto);
+                    src = src.replace("_pause","_play");
+                    banner.flag = false;
+                }else{ //재생버튼을 클릭하면 애니메이션 재생이 되고 정지버튼으로 변경
+                    banner.auto = setInterval(middle, 3000);
+                    src = src.replace("_play","_pause");
+                    banner.flag = true;
+                }
+                
+                $(this).find("img").attr("src",src);
+            });
+        
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <h1>웹접근성연구소</h1>
+    <!-- aside>h1+div>(ul.bannerList>li*4>a>img)+(ul.bannerBullet>li*4>a>img)+p.btnPlay>img -->
+<aside>
+    <h1 class="hidden">웹접근성연구소 메인배너</h1>
+    <div>
+        <ul class="bannerList">
+            <li class="on"><a href="#"><img src="imgs/pc_visual01.jpg" alt="메인배너1"></a></li>
+            <li><a href="#"><img src="imgs/pc_visual02.jpg" alt="메인배너2"></a></li>
+            <li><a href="#"><img src="imgs/pc_visual03.png" alt="메인배너3"></a></li>
+            <li><a href="#"><img src="imgs/pc_visual04.jpg" alt="메인배너4"></a></li>
+        </ul>
+        <ul class="bannerBullet">
+            <li><a href="#"><img src="imgs/circle_on.png" alt="1번 배너이동 이미지"></a></li>
+            <li><a href="#"><img src="imgs/circle_off.png" alt="2번 배너이동 이미지"></a></li>
+            <li><a href="#"><img src="imgs/circle_off.png" alt="3번 배너이동 이미지"></a></li>
+            <li><a href="#"><img src="imgs/circle_off.png" alt="4번 배너이동 이미지"></a></li>
+        </ul>
+        <p class="btnPlay"><img src="imgs/btn_pause.png" alt="재생 및 일시정지"></p>
+    </div>
+</aside>
+</body>
+</html>

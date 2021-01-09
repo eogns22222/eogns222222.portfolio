@@ -1,0 +1,66 @@
+footer{
+    width:164rem;
+    height:33rem;
+    margin:0 auto;
+}
+footer>div.left_cont{
+    float:left;
+    margin-top:5.8rem;
+}
+footer>div.left_cont>ul{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom:9rem;
+    width:101rem;
+
+    font-size:2rem;
+    color:#2b2a2a;
+}
+footer>div.left_cont>ul>li{
+    position:relative;
+}
+footer>div.left_cont>ul>li:not(:last-child):after{
+    position:absolute;
+    right:-1.1rem;
+    top:-0.1rem;
+    content:"";
+    height:2rem;
+    border:1px solid rgb(99, 97, 97);
+}
+footer>div.left_cont>address>p{
+    font-size:2.3rem;
+    line-height: 3.8rem;
+    color:#2b2a2a;
+}
+
+
+footer>div.right_cont{
+    float:right;
+    margin-right:1rem;
+    
+}
+footer>div.right_cont>form{
+    margin-left:30rem;
+
+}
+footer>div.right_cont>form>select{
+    position:relative;
+    margin-top: 5rem;
+    width:28rem;
+    height:5.7rem;
+    font-size:2rem;
+    border-radius: 2.5rem;
+    z-index: 9999;
+}
+footer>div.right_cont>form>select:focus{
+    outline: none;
+}
+footer>div.right_cont>form>select>option{}
+footer>div.right_cont>div{
+    margin-top:12rem;
+    margin-left:6rem;
+   
+}
+footer>div.right_cont>div>img{
+    margin-left:3rem;
+}

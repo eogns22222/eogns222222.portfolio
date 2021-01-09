@@ -1,0 +1,259 @@
+header{
+    position:fixed;
+    z-index: 1000;
+    width:100vw;
+    transition:all .7s ease;
+}
+header>a{
+    float: left;
+}
+
+header>a>h1{
+    position:absolute;
+    left:0;
+    top:0;
+    width:14rem;
+    height:13.4rem;
+    background:#07772f;
+}
+header>a>h1>img{
+    width:90%;
+    margin:5rem 0.5rem;
+}
+header>a>p{
+    position:absolute;
+    left:0.7rem;
+    top:8rem;
+    font-size:2.5rem;
+    font-weight: bold;
+    color:#fff;
+}
+header>div.curtain{
+    position:absolute;
+    left:0;
+    top:13.4rem;
+    width:192rem;
+    height:6rem;
+    background:rgba(43, 42, 42, 0.9);
+    border-top:2px solid black;
+    opacity: 0;
+    transition:all .5s ease;
+}
+header>nav{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width:100%;
+    height:13.4rem;
+    background:rgba(65, 65, 65, 0.7);
+    transition:all 1s ease;
+}
+header>nav>ul{
+    position:relative;
+    display:flex;
+    flex-wrap: nowrap;
+    margin-left:30rem;
+    font-size: 2rem;
+}
+header>nav>ul>li{
+    flex: 0 0 auto;
+    line-height: 13.4rem;
+    margin-right:8rem;
+    
+    cursor: pointer;
+}
+header>nav>ul>li>a{
+    position:relative;
+    display: block;
+    line-height: 13.4rem;
+    color:rgb(216, 215, 215);
+}
+header>nav>ul>li>a:before{
+    display:none;
+    position:absolute;
+    right:-0.7rem;
+    top:4.5rem;
+    content: "";
+    width:0.7rem;
+    height:0.7rem;
+    background:#07772f;
+}
+
+header>nav>ul>li>ul{
+    position:absolute;
+    
+    left:0;
+    top:10rem;
+    width:192rem;
+    
+}
+header>nav>ul>li>ul>li{
+    display: none;
+    float: left;
+    margin-right:5rem;
+    font-size:1.6rem;
+    transition:all 1s ease;
+    cursor: pointer;
+}
+
+header>nav>ul>li>ul>li>a{
+    color:rgb(216, 215, 215);
+    
+}
+header>div.menu{
+    position:absolute;
+    right:30rem;
+    top:5.2rem;
+    width:4.1rem;
+    height:2.5rem;
+    cursor: pointer;
+}
+header>div.menu>p{
+    position:absolute;
+    transition: all 0.5s ease;
+    
+
+}
+header>div.menu>p:nth-of-type(2){
+    top:1rem;
+}
+header>p>img{}
+header>div.menu.on>p:nth-of-type(1){
+    transform: rotate(-45deg);
+}
+header>div.menu.on>p:nth-of-type(2){
+    top:0;
+    right:-0.3rem;
+    transform: rotate(45deg);
+}
+header>a.news{
+    display:block;
+    position:absolute;
+    right:-8.5rem;
+    top:0rem;
+    width:14rem;
+    height:13.4rem;
+    font-size:2.2rem;
+    transition:all 0.7s ease;
+    cursor: pointer;
+}
+
+header>a.news>h2{
+    position:absolute;
+    left:-5rem;
+    top:5.5rem;
+    transform: rotate(-90deg);
+    transition:all 0.7s ease;
+    color:rgb(216, 215, 215);
+}
+
+/* nav.on */
+header>nav.on{
+    align-items:flex-start;
+    width:100vw;
+    height:100vh;
+    background:rgba(65, 65, 65, 0.7);
+}
+header>nav.on>ul{
+    position:relative;
+    display:block;
+    margin-top:15rem;
+    margin-left:20rem;
+    width:45rem;
+    font-size: 4rem;
+    
+    
+}
+
+header>nav.on>ul:before{
+    position:absolute;
+    left:-6.1rem;
+    top:-15rem;
+    content: "";
+    border-right:1px solid black;
+    height:100vh;
+    
+}
+
+header>nav.on>ul:after{
+    position:absolute;
+    right:3rem;
+    top:-15rem;
+    content: "";
+    border-right:1px solid black;
+    height:100vh;
+    
+}
+
+header>nav.on>ul>li{
+    position:relative;
+    padding:4rem 0;
+    margin-right:0;
+    line-height: 4rem;
+    
+}
+
+header>nav.on>ul>li>a{
+    color:rgb(216, 215, 215);
+    display:inline-block;
+    line-height: 4rem;
+}
+
+header>nav.on>ul>li>a:before{
+    right:-1.5rem;
+    top:-0.5rem;
+    content: "";
+    width:1rem;
+    height:1rem;
+}
+
+header>nav.on>ul>li>ul{
+    position:absolute;
+    
+    left:45rem;
+    top:2.9rem;
+    width:192rem;
+    
+}
+
+header>nav.on>ul>li>ul>li{
+    float: none;
+    display: none;
+    font-size:2.2rem;
+    line-height: 4.9rem;
+}
+
+/* 이벤트 */
+
+header>nav:hover{
+    background:rgba(43, 42, 42, 0.9);
+}
+
+header>nav>ul>li:hover>ul>li{
+    display:block;
+}
+
+header>a.news:hover{
+    right:2rem;
+    top:0rem;
+    color:#fff;
+    background:#ffb71b;
+}
+
+header>a.news:hover>h2{
+    left:1.5rem;
+    transform: rotate(0deg);
+    color:#fff;
+}
+
+header>nav>ul>li:hover>a:before{
+    display:block;
+}
+
+header>nav>ul>li>ul>li>a:hover{
+    color:rgb(0, 0, 0);
+    font-weight: bold;
+    border-bottom: 1px solid rgb(2, 2, 2);
+}
+
+

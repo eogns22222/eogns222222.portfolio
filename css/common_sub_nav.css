@@ -1,0 +1,150 @@
+    main {
+        width:108rem;
+        margin:0 auto;
+}
+
+    /*'웹접근성이란?' 21px*/
+
+
+
+
+
+
+
+    /*왼쪽 네비게이터 13px, 행간20px, 두꺼운 글씨  커서 올렸을 때 색상 #1ea618*/
+
+    main > nav {
+        float:left;
+        margin-right:3rem;
+
+        width: 20rem;
+
+
+    }
+
+    main > nav > h1 {
+
+        font-weight: bold;
+
+        font-size: 2.2rem;
+
+        line-height: 5.7rem;
+
+        text-align: center;
+
+        color: #1e61a8;
+
+    }
+
+    main > nav > ul {
+
+        border-top: 0.1rem solid #d9d9d9;
+
+    }
+
+    main > nav > ul > li {
+
+        border-bottom: 0.1rem solid #d9d9d9;
+
+
+
+
+    }
+
+    main > nav > ul > li > a {
+
+        display: block;
+
+        padding-left: 1.5rem;
+
+        font-weight: bold;
+        font-size: 1.4rem;
+        line-height: 4.2rem;
+
+        letter-spacing: -0.2rem;
+
+        color: #3d3c3c;
+
+
+
+    }
+
+    main > nav > ul > li > ul {
+        padding: 0.8rem 0 0.7rem 1.5rem;
+        background: #f7f7f7;
+        display: none;
+        font-size: 1.3rem;
+        line-height: 2.3rem;
+
+    }
+
+
+
+    main > nav > ul > li > ul > li {
+
+        padding-left: 0.6rem;
+
+    }
+
+    main > nav > ul > li > ul > li > a {
+
+        color: #444;
+    }
+
+
+
+    main > nav > ul > li > ul > li > a:before {
+        content: "";
+        vertical-align: middle;
+        display: inline-block;
+        /* 이미지나 input요소처럼 이미 크기를 갖고 있는 인라인 요소처럼 작동되게 한다. */
+        margin-right: 0.3rem;
+        width: 0;
+        height: 0;
+        border: 0.2rem solid rgba(255, 255, 255, 0);
+        border-left-color: #b0b0b0;
+    }
+
+
+
+    /* 이벤트 */
+
+    main > nav > ul > li.on {
+
+        border-bottom: 0.1rem solid #d9d9d9;
+
+        background: #1e61a8 url(../imgs/left_bg.png) repeat-x 0 0;
+
+
+    }
+
+    main > nav > ul > li.on > ul {
+        display: block;
+    }
+
+
+    main > nav > ul > li.on > a {
+
+        display: block;
+
+        padding-left: 1.5rem;
+
+        font-weight: bold;
+        font-size: 1.4rem;
+        line-height: 4.2rem;
+
+        letter-spacing: -0.2rem;
+
+        background: url(../imgs/arrow.png) no-repeat 180px 50%;
+
+        color: #fff;
+
+
+
+    }
+
+
+    nav > ul > li > ul > li > a:hover {
+        font-weight: bold;
+        color: #21366b;
+    }

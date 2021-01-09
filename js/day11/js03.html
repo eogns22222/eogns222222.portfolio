@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str2 = "Javasacaraiapat"        
+        var idx2 = 0;
+
+        while(true){
+            idx2 = str2.indexOf("a");
+            if(idx2>=0){  
+                str2 = str2.replace("a","A");
+            }else if(idx2 == -1){
+                break;
+            }
+        }
+        console.log(str2);
+
+        var subS1 = str2.substr(2,4); //substr(2,4) 첫번째 전달인자 번지수부터 4개의 글자를 return한다.
+        console.log(subS1);
+
+        var subS2 = str2.substring(2,4); //substr(2,4) 첫번째 전달인자 번지수부터 두번째 전달인자 번지 이전까지
+        console.log(subS2);
+
+        var subS3 = str2.slice(2,4);
+        console.log(subS3);
+
+        var upStr = str2.toUpperCase();
+        var lwStr = str2.toLowerCase();
+        console.log(upStr);
+        console.log(lwStr);
+
+        var str3 = "  javascript  ";
+        var nonSpace = str3.trim(); // 맨뒤랑 맨앞 여백 없애기
+        console.log(nonSpace);
+
+        
+    </script>
+</body>
+</html>

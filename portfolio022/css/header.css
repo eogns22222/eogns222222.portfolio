@@ -1,0 +1,64 @@
+
+header>nav{
+    position:fixed;
+    right:0;
+    top:0;
+    padding-top:15rem;
+    box-sizing: border-box;
+    background:#fff;
+    box-shadow:5px 5px 5px 5px rgb(134, 133, 133) ;
+    width: 15rem;
+    height:98rem;
+    text-align: center;
+    z-index: 1000;
+}
+header>nav>h1{
+    margin-bottom:5.8rem;
+    cursor: pointer;
+}
+header>nav>ul{
+    position:relative;
+}
+header>nav>ul>li{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    position:absolute;
+    left:-23rem;
+    
+    background:rgb(155, 155, 155,0);
+    border-radius: 5rem;
+    width:35rem;
+    transition:all 1s ease;
+}
+header>nav>ul>li:nth-child(1){
+     top:0rem;
+}
+header>nav>ul>li:nth-child(2){
+    top:13rem;
+}
+header>nav>ul>li:nth-child(3){
+    top:26rem;
+}
+header>nav>ul>li:nth-child(4){
+    top:39rem;
+}
+header>nav>ul>li>span{
+    font-size:3rem;
+    color:rgb(77, 75, 75,0);
+    margin-left:2rem;
+    transition:all 1s ease;
+}
+
+header>nav>ul>li>img{
+    cursor: pointer;
+    width:10rem;
+    height:auto;
+}
+
+
+
+/* 이벤트 */
+
+
+

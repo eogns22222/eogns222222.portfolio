@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var obj1 = {name:'객체1', age:17, birthYear: calcBirth
+    }
+    
+    var obj2 = {name:'객체2', age:12, birthYear: calcBirth
+    }
+
+    //this는
+    //함수 내부에서 사용하는 키워드이다.
+    //어떤 객체레퍼런스가 함수를 사용할때 this는 그 객체레퍼런스(주소)를 가리킨다.
+    function calcBirth(){
+        return 2020 - this.age  //여러종류의 객체레퍼런스가 사용할때마다 
+    }                           //this는 각각 그 객체레퍼런스가 된다.
+
+    //새로운 속성이 생성
+    //obj에 birth라는 새로운 속성이 생성된다. 값은 birthYear를 실행할때 돌려받는 return의 값이다.
+    obj1.birth = obj1.birthYear();
+    console.log(obj1.birth);
+
+    obj2.birth = obj2.birthYear();
+    console.log(obj2.birth);
+    </script>
+</body>
+</html>

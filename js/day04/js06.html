@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //2이상의 임의의 값을 입력했을 때 그 숫자부터 ~2까지 곱한값을 구하시오.
+
+        var num = prompt("값을 입력하세요. 2이상의 값을 입력하시오")*1;
+        var num2 = num;
+        var num3 = --num2;
+        
+        while(true){
+            
+            
+                num *= num3;
+            
+                if(num3<3){
+                
+                    break;
+                }
+                num3--;
+            
+            
+        }
+        console.log(num);
+        
+    </script>
+</body>
+</html>

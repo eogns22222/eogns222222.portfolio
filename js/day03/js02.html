@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //중첩 || 이중 반복문 끝내기
+        // var outerNum = 0;
+        // var innerNum = 0;
+        // while(true){
+        //     outerNum++; // 1, 2, 3, 4 ....
+        //     if(outerNum==5) continue; //outerNum이 5일때를 건너뛴다.
+        //     while(true){
+
+        //         innerNum++; // 1, 2, 3, 4, 5, 6, 7, 8, 9
+        //         if(innerNum==1) continue;
+        //         if(innerNum>9){
+        //             innerNum = 0;
+        //             break;
+        //         }
+        //         console.log('외부숫자'+outerNum+'내부숫자'+innerNum);
+
+        //     }
+        //     if(outerNum==9){
+        //         break;
+        //     }
+        // }
+
+
+        // var num1 = 2;
+        // var num2 = 0;
+        // var num3 = 0;
+        // while(true){
+        //     num2++;
+        //     num3++;
+        //     num3++;
+        //     if(num3>18){
+        //         break;
+        //     }
+        //     console.log(num1 + 'x' + num2 + '=' + num3);
+        // }
+        
+        // var dan = prompt("원하는 구구단을 입력하시오.")*1;
+        // var num = 0;
+        // while(true){
+        //     num++;
+        //     console.log(dan+'x'+num+'='+(dan*num));
+        //     if(num>8){
+        //         break;
+        //     }
+        // }
+
+        var dan = 1;
+        var num = 0;
+        while(true){
+            dan++;
+            while(true){
+                num++;
+                console.log(dan+'x'+num+'='+(dan*num));
+                if(num>8){
+                    num=1;
+                    break;
+                }
+                
+            }
+            if(dan==9){
+                break;
+            }
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //1~600개까지의 5가 몇개, 1~7900까지 7이 몇개있는지 각각출력 두개 더한거 출력
+
+        var num1 = 0;
+        var point1 = 0;
+        var temp1 = 0;
+        var num2 = 0;
+        var point2 = 0;
+        var temp2 = 0;
+
+        while(true){
+            num1++;
+            temp1 = num1;
+
+            while(true){
+                if(temp1%10 == 5){
+                    point1++;
+                }
+                temp1 /= 10;
+                temp1 = parseInt(temp1);
+
+                if(temp1 != 5 && temp1 < 10 ){
+                    break;
+                }
+            }
+            if(num1 == 600){
+                break;
+            }
+        }
+        console.log(point1);
+
+        while(true){
+            num2++
+            temp2 = num2;
+
+            while(true){
+                if(temp2%10 == 7){
+                    point2++;
+                }
+                temp2 /= 10;
+                temp2 = parseInt(temp2);
+                
+                if(temp2 != 7 && temp2<10){
+                    break;
+                }
+            }
+            if(num2 == 7900){
+                break;
+            }
+        }
+        console.log(point2);
+        console.log(point1+point2);
+
+
+
+    </script>
+</body>
+</html>

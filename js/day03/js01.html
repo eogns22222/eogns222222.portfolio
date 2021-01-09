@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>Document</title>
+
+    </head>
+
+    <body>
+
+        <script>
+
+            // 여성전용 만화까페를 개설하도록 한다. 조건은 다음과 같다. 지역은 서울이면서 성별은 여성만 가입되도록 만들고 싶다. ( 가입이 되면
+            // '회원가입' 확인창 뜨고 끝 ) 다음 조건으로 20~30대라면 남성이라도 보조로 가입하도록 하고싶다. (가입이 되면 '보조회원가입' 확인창
+            // 뜨고 끝, 회원가입이 안되면 다른 회원을 계속 받을 수 있다. ) ---->>지역 값을 받는 string타입 변수는 area라고 한다.
+            // 지역은 '서울', '경기도', '충청도남도' or '북도' , '강원도', '전라남도' or '북도', '경상북도' or '경상남도'만
+            // 가능 ---->>성별 값을 받는 string타입 변수는 gender라고 한다. 성별은 '남성' 또는 '여성'만 입력가능 ---->>나이
+            // 설정은 number타입으로 age를 사용한다. 나이는 0~120 까지 입력 가능 각 변수의 값은 prompt함수 또는 confirm을
+            // 활용한다.
+
+            while (true) {
+                var gender = confirm("당신은 여성인가요?");
+                
+                while (true) {
+                    var area = prompt(
+                        "당신의 지역을 입력하시오. ex> 서울, 경기도, 강원도, 충청북도, 충청남도, 전라북도, 전라남도, 경상북도, 경상남도"
+                    );
+                    
+                    if (area == "서울" || area == "경기도" || area == "강원도" || area == "충청북도" || area == "충청남도" || area == "전라북도" || area == "전라남도" || area == "경상북도" || area == "경산남도") {
+                        break;
+                    } else {
+                        alert("정해진 지역명으로 입력하시오.");                  
+                    }
+                
+                }
+                if (gender && area == "서울") {
+                    alert("회원가입");
+                    break;
+                } else {
+                    if (!gender) {
+                        var age = prompt("당신의 나이를 입력하시오.") * 1;
+                        if (age >= 20 && age < 40) {
+                            alert("보조회원가입");
+                            break;
+                        }
+                    }
+                }
+            } // outer while End
+        </script>
+
+    </body>
+
+</html>

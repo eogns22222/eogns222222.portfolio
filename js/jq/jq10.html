@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배너 flex 크기구현</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <style>
+        
+        body>div{
+            display:flex;
+            margin:0 auto;
+            margin-top:300px;
+            background:black;
+            width:1000px;
+            height:400px;
+        }
+        div>section{
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+            flex:1 1 30px;
+            border-left:1px solid white;
+            color:#fff;
+            transition:all .5s ease;
+        }
+        div>section.on{
+            flex:10 1 30px;
+        }
+        div>section>img{
+            position:absolute;
+            width:1000px;
+        }
+        div>section>h1{
+            position:absolute;
+            z-index: 122;
+        }
+        div>section>div{
+            position:absolute;
+            left:50px; top:100px;
+            z-index: 333;
+            width:600px;
+            height:200px;
+            background:#fff;
+        }
+        
+        
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+        $(function(){
+            $("section").mouseenter(function(){
+                $(this).addClass("on").siblings().removeClass("on");
+            });
+
+            $("section").mouseleave(function(){
+                $(this).removeClass("on");
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <div>
+        <section>
+            <h1>첫번 째 섹션</h1>
+            <img src="imgs/bg_1.jpg" alt="">
+            <div></div>
+        </section>
+        <section>
+            <h1>두번 째 섹션</h1>
+            <img src="imgs/bg_2.jpg" alt="">
+            <div></div>
+        </section>
+        <section>
+            <h1>세번 째 섹션</h1>
+            <img src="imgs/bg_3.jpg" alt="">
+            <div></div>
+        </section>
+        <section>
+            <h1>네번 째 섹션</h1>
+            <img src="imgs/bg_4.jpg" alt="">
+            <div></div>
+        </section>
+    </div>
+</body>
+</html>

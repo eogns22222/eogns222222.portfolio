@@ -1,0 +1,58 @@
+
+body > .footer_bar {
+    margin-top:3rem;
+    clear: both;
+    border-top: 1px solid #cdcdcd;
+}
+
+body > .footer_bar > footer {}
+
+body > .footer_bar > footer > div {
+    overflow:hidden;
+    width: 109rem;
+    margin: 0 auto;
+    font-size: 12px;
+    line-height: 20px;
+}
+body > .footer_bar > footer > div>p.first{
+    float:left;
+    margin:3rem 4.8rem 1.2rem 8.1rem;
+}
+body > .footer_bar > footer > div>p.second, p.third{
+    float: left;
+    margin:3rem 0 0 0; 
+}
+body > .footer_bar > footer > div>p.third{
+    float:left;
+    margin-left:0.6rem;
+}
+body > .footer_bar > footer > div>div{
+    float:left;
+    margin:3rem 0.4rem 0 0;
+}
+
+body > .footer_bar > footer > div>div>dl>dd{
+   float:left;
+    margin-bottom:1.5rem; 
+}
+body > .footer_bar > footer > div>div>dl>dd.first:after{
+    content: "";
+    padding-right:0.7rem;
+    margin-right:0.7rem; 
+    border-right:1px solid #cdcdcd;
+}
+body > .footer_bar > footer > div>div>dl>dd.first:after:last-of-type{
+    content:"";
+    border:0 none;
+}
+body > .footer_bar > footer > div>div>address{
+    clear:both;
+}
+
+footer address {
+    color: #666;
+}
+
+footer a {
+    color: #000;
+}

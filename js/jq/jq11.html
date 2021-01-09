@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배너 페이징 & 자동함수</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <style>
+        aside#mainBanner{
+            position:relative;
+            margin:0 auto;
+            width:800px;
+        }
+        aside#mainBanner>div.bannerBox{
+            
+        }
+        aside#mainBanner>div.bannerBox>ul.bannerList{
+            position:relative;
+            height:500px;
+
+        }
+        aside#mainBanner>div.bannerBox>ul.bannerList>li{
+            position:absolute;
+            left:0; top:0;
+        }
+        aside#mainBanner>div.bannerBox>ul.bannerList>li.on{
+            z-index: 1000;
+        }
+        aside#mainBanner>p.btn_prev{
+            position:absolute;
+            left:20px; top:calc(40% - 40px);
+            font:bold 80px/80px arial,sans-serif;
+            color:#fff;
+            z-index: 1000;
+            cursor: pointer;
+        }
+        aside#mainBanner>p.btn_next{
+            position:absolute;
+            right:20px; top:calc(40% - 40px);
+            font:bold 80px/80px arial,sans-serif;
+            color:#fff;
+            z-index: 1000;
+            cursor: pointer;
+        }
+        aside#mainBanner>ul.bannerThumbnails{
+            display:flex;
+            margin:0 auto;
+            margin-top:50px;
+            width:440px;
+        }
+        aside#mainBanner>ul.bannerThumbnails>li{
+            flex:0 0 100px;
+            border:5px solid #fff;
+            font-size:0; line-height: 0;
+        }
+        aside#mainBanner>ul.bannerThumbnails>li.on{
+            border-color:red;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+        $(function(){
+
+
+            //setInterval(함수,시간);
+            //clearInterval(변수1);
+
+
+            var banner = {
+                idx:0, 
+                len:$("ul.bannerList").children("li").length,
+                auto:setInterval(middle,5000)
+            
+            }
+            function middle(){
+                banner.idx++
+                if(banner.idx>(banner.len)-1){
+                    banner.idx = 0
+                } 
+                make();
+
+            }
+
+            function make(){
+                    $("ul.bannerList").children("li").eq(banner.idx).fadeIn(500).siblings("li").fadeOut();
+
+                    $("ul.bannerThumbnails").children("li").eq(banner.idx)
+                    .addClass("on").siblings("li").removeClass("on");
+            }
+
+            $("p.btn_next").click(function(){
+                clearInterval(banner.auto);
+                banner.idx++
+                if(banner.idx>(banner.len)-1){
+                    banner.idx = 0
+                }
+                make();
+                banner.auto = setInterval(middle,5000);
+            });
+
+            $("p.btn_prev").click(function(){
+                clearInterval(banner.auto);
+                banner.idx--
+                if(banner.idx<0){
+                    banner.idx = 3
+                }
+                make();
+                banner.auto = setInterval(middle,5000);
+            });
+
+            $("ul.bannerThumbnails").children("li").click(function(){
+                clearInterval(banner.auto);
+                banner.idx = $(this).index()
+
+                make();
+                banner.auto = setInterval(middle,5000);
+
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <aside id="mainBanner">
+        <h1 class="hidden">메인배너</h1>
+        <div class="bannerBox">
+            <ul class="bannerList">
+                <li class="on"><a href="#"><img src="imgs/aven01_B.jpg" alt=""></a></li>
+                <li><a href="#"><img src="imgs/aven02_B.jpg" alt=""></a></li>
+                <li><a href="#"><img src="imgs/aven03_B.jpg" alt=""></a></li>
+                <li><a href="#"><img src="imgs/aven04_B.jpg" alt=""></a></li>
+            </ul>
+        </div>
+        <p class="btn_prev">&lt;<span class="hidden">이전 배너로 이동</span></p>
+        <p class="btn_next">&gt;<span class="hidden">다음 배너로 이동</span></p>
+        <ul class="bannerThumbnails">
+            <li class="on"><img src="imgs/aven01.jpg" alt=""></li>
+            <li><img src="imgs/aven02.jpg" alt=""></li>
+            <li><img src="imgs/aven03.jpg" alt=""></li>
+            <li><img src="imgs/aven04.jpg" alt=""></li>
+        </ul>
+    </aside>
+</body>
+</html>

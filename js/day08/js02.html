@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="tit"><a href="#">돔객체</a></h1>
+    <script>
+        //document객체
+        //javascript가 document를 읽는 순간까지의
+        //html문서 내의 요소, 속성, css 등 html에 관련된 사항들을 모두 속성으로 저장한다.
+
+        //html요소를 document객체는 자신의 속성으로 어딘가에 저장을 하고 그 요소를 가져올 수 있는 메소드를 제공한다.
+        //document.getElementById("html요소아이디"); id에 해당하는 요소 return
+        //document.getElementsByClassName("html요소아이디"); class에 해당하는 요소 return
+        //document.getElementsByTagName("html요소아이디"); tag에 해당하는 요소 return
+        //document.querySelector("#id||.class||tag"); 
+        var h_1 = document.getElementById("tit");
+        //이벤트 타입 -- click, dblclick, mouseleave, mouseenter, mouseover, wheel, mousedown, mouseup, auxclick,,,,
+        h_1.addEventListener("click", function(){   // 이벤트("click")이 발생했을 때 function()한다는 뜻
+            this.style.fontSize = "12px";
+            this.style.border = "1px solid red";
+            this.firstChild.style.color = "red";
+        }); 
+        
+    </script>
+    <h2>돔객체2</h2>
+    <p id="imgg"><img src="../imgs/maxresdefault.jpg" alt="첫눈"></p>
+    <!-- p또는 img를 클릭했을 때 이미지 요소가 바뀌도록 javascript를 작성하시오. -->
+    <script>
+        // var img_1 = document.getElementById("imgg");
+        // var num = 0;
+        // img_1.addEventListener("click", function(){
+        //     num++;
+        //     if(num%2 == 1){
+        //         this.firstChild.src = "../imgs/unnamed.jpg";
+        //         this.firstChild.alt = "첫눈";
+        //     }else{
+        //         this.firstChild.src = "../imgs/maxresdefault.jpg";
+        //         this.firstChild.alt = "도깨비 첫눈";
+        //     }
+            
+        // });
+        
+        // img_1.firstChild.addEventListener("click", function(){
+        //     this.src = "../imgs/unnamed.jpg";
+        // });
+        // 이렇게 할수도 있음
+        
+        // var bool = true;
+        // img_1.addEventListener("click", function(){
+            
+        //     if(bool){
+        //         this.firstChild.src = "../imgs/unnamed.jpg";
+        //         this.firstChild.alt = "첫눈";
+        //         bool = false;
+        //     }else{
+        //         this.firstChild.src = "../imgs/maxresdefault.jpg";
+        //         this.firstChild.alt = "도깨비 첫눈";
+        //         bool = true;
+        //     }
+            
+        // });
+        // 이렇게 할수도 있음 
+        
+        
+        
+        
+        var img_1 = document.getElementById("imgg");
+        img_1.firstChild.addEventListener("mousedown", function(){
+            this.src = "../imgs/unnamed.jpg";
+            this.alt = "첫눈";
+        });
+        img_1.firstChild.addEventListener("mouseup", function(){
+            this.src = "../imgs/maxresdefault.jpg";
+            this.alt = "도깨비 첫눈";
+        });
+    </script>
+    
+    
+</body>
+</html>

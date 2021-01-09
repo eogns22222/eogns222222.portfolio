@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자동 애니메이션</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <style>
+        h2{
+            font:bold 50px sans-serif;
+        }
+        .slide{
+            display:none;
+            width:400px;
+            height:500px;
+            background:red;
+        }
+        .fade{
+            width:400px;
+            height:500px;
+            background:green;
+        }
+        .toggle{
+            width:400px;
+            height:500px;
+            background:blue;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            //jQuery 자동 애니메이션
+            //- display:none;에 의해서 작동되는 애니메이션
+            //전달인자로 첫번째는 시간(1/1000),
+            //두번째 전달인자(함수)는 애니메이션 끝난이후 실행할 구문
+
+            //애니메이션을실행할객체.slideDown();
+            //애니메이션을실행할객체.slideup();
+            //애니메이션을실행할객체.slideToggle();
+
+            //애니메이션을실행할객체.fadeIn();
+            //애니메이션을실행할객체.fadeOut();
+            //애니메이션을실행할객체.fadeToggle();
+
+            //애니메이션을실행할객체.show();
+            //애니메이션을실행할객체.hide();
+            //애니메이션을실행할객체.toggle();
+            var flag_slide = true;
+            var flag_fade = true;
+            var flag_show = true;
+            $("h2").eq(0).click(function(){
+                if(flag_slide){
+                    $(this).next().slideDown(500,function(){
+                        $(this).prev().text("빨강상자가 나타났다.");
+                    });
+                    flag_slide = !flag_slide;
+                }else{
+                    $(this).next().slideUp(500,function(){
+                        $(this).prev().text("빨강상자가 사라졌다.");
+                    });
+                    flag_slide = !flag_slide;
+                }
+            });
+            $("h2").eq(1).click(function(){
+                if(flag_fade){
+                    $(this).next().fadeOut();
+                    flag_fade = !flag_fade;
+                }else{
+                    $(this).next().fadeIn();
+                    flag_fade = !flag_fade;
+                }
+            });
+            $("h2").eq(2).click(function(){
+                if(flag_show){
+                    $(this).next().hide(300);
+                    flag_show = !flag_show;
+                }else{
+                    $(this).next().show(300);
+                    flag_show = !flag_show;
+                }
+            });
+            
+        });
+    </script>
+</head>
+<body>
+    <h1>jQuery 애니메이션</h1>
+
+    <h2>slide</h2>
+    <div class="slide"></div>
+
+    <h2>fade</h2>
+    <div class="fade"></div>
+
+    <h2>show &amp; hide</h2>
+    <div class="toggle"></div>
+</body>
+</html>

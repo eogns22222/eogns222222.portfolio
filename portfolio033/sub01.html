@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>newsroom</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../js/jq/script/swiper-4.4.1/dist/css/swiper.css">
+        <link rel="stylesheet" href="css/header_sub.css">
+        <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="css/main_sub.css">
+        <style>
+            body,
+            html {
+                font-size: 62.5%;
+                color:#4f4f4f;
+                font-family:"맑은고딕",sans-serif;
+                cursor: default;
+                
+            }   
+            body{
+                overflow-x: hidden;
+            }
+            
+            a {
+                color:#4f4f4f;
+            }
+            .num{
+                font-family: 'Raleway', sans-serif;
+            }
+            section.best {
+            position: relative;
+            height: 100%;
+            }
+            section.best {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color:#000;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+            section.best>h1{
+            z-index: 900;
+            position:absolute;
+            left:17%;
+            top:70px;
+            font-size: 40px;
+            color:#07772f;
+            }
+            .swiper-container {
+                padding-top:50px;
+            margin:20px auto;
+            padding-bottom:50px;
+            width: 1400px;
+            height: 700px;
+            }
+            .swiper-slide {
+            display:flex;
+            text-align: center;
+            font-size: 18px;
+            /* background: #fff; */
+
+            /* Center slide text vertically */
+            /* display: -webkit-box; */
+            /* display: -ms-flexbox; */
+            /* display: -webkit-flex; */
+            /* display: flex; */
+            /* -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;*/
+            justify-content:space-between;
+            /*-webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;*/
+            align-items: center; 
+            }
+            .swiper-slide>img{
+            width:500px;
+            height:400px;
+            
+            }
+            .swiper-slide>ul{
+                margin:0 70px;
+            }
+            .swiper-slide>ul>li{}
+            .swiper-slide>ul>li:nth-child(1){
+                margin-bottom:2rem;
+                font-size:2.5rem;
+                line-height: 3.8rem;
+               
+            }
+            .swiper-slide>ul>li:nth-child(2){
+                margin-bottom:2.5rem;
+                font-size:1.8rem;
+               
+                color:#4f4f4f;
+            }
+            .swiper-slide>ul>li:nth-child(3){
+                margin-bottom:3rem;
+                font-size:2rem;
+                line-height: 3.3rem;
+            }
+            .swiper-slide>ul>li:nth-child(4){
+                display:inline-block;
+                position:relative;
+                font-size:2.5rem;
+                cursor:pointer;
+
+            }
+            .swiper-slide>ul>li:nth-child(4):before{
+                position:absolute;
+                right:-3rem;
+                top:0rem;
+                content:"";
+                width:0rem;
+                height:0rem;
+                border:1.2rem solid rgba(255,55,25,0);
+                border-left:9px solid #262626;
+                transition:all .5s ease;
+            }
+            section.best>ul{
+            z-index: 1000;
+            position:absolute;
+            left:48%;
+            bottom:50px;
+            text-align: center;
+            }
+            section.best>ul>li>img{
+            width:50px;
+            height:20px;
+            }
+
+            /* 이벤트 */
+            .swiper-slide>ul>li:nth-child(4):hover:before{
+                right:-4rem;    
+            }
+
+        </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/jq/script/jquery.mousewheel.min.js"></script>
+    <script>
+        $(function(){
+
+            var scrollEvent = {
+                    waitScroll:false,
+                    dir:"down"
+            }
+
+            $(window).on("mousewheel DOMMouseScroll",function(e){
+                if(e.deltaY == -1){
+
+                    scrollEvent.dir = "down";
+                }else{
+
+                     scrollEvent.dir = "up";    
+                }
+                    
+
+                if(scrollEvent.waitScroll){
+                    clearTimeout(scrollEvent.waitScroll);
+                }
+
+                scrollEvent.waitScroll = setTimeout(function(){
+                    doHeader();
+                },80)
+
+
+            });
+
+            function doHeader(){
+                if(scrollEvent.dir == "down"){
+                    $("header").css({"top":-150+"px"});
+                }else{
+                     $("header").css({"top":0});
+                }
+            }
+            //scroll 끝
+
+
+
+            var flag = true;
+                $("nav").children("ul").children("li").mouseover(function(){
+                    $("div.curtain").css("opacity",1);
+                });
+                $("nav").children("ul").children("li").mouseleave(function(){
+                    $("div.curtain").css("opacity",0);
+                });
+
+                $("div.menu").click(function(){
+                    if(flag){
+                        $("nav").addClass("on");
+                        $("div.curtain").css("display","none");
+                        $("div.menu").addClass("on");
+                        flag = false;
+                    }else{
+                        $("nav").removeClass("on");
+                        $("div.curtain").css("display","block");
+                        $("div.menu").removeClass("on");
+                        flag = true;
+                    }
+                    
+
+                });
+                //header 끝
+
+                $("ul.page").children().click(function(){
+                    len = $(this).index()-1;
+
+                    $("section.headline").children("div").eq(len)
+                    .slideDown(700).siblings("div").slideUp(700);
+                    
+                    $(this).addClass("on").siblings()
+                    .removeClass("on");
+                });
+                //main01끝
+
+                $("li.btnup").click(function(){
+                    $("div.tit").children().eq(4)
+                    .prependTo("div.tit");
+
+                    $("div.tit").children().eq(1)
+                    .addClass("top").siblings()
+                    .removeClass("top");
+
+                    $("div.tit").children().eq(2)
+                    .addClass("middle").siblings()
+                    .removeClass("middle");
+                    
+                    $("div.tit").children().eq(3)
+                    .addClass("bottom").siblings()
+                    .removeClass("bottom");
+
+                    $("div.contents").children()
+                    .eq(4).prependTo("div.contents");
+
+                    $("div.contents").children()
+                    .eq(2).addClass("on").siblings()
+                    .removeClass("on");
+
+                   
+                });
+
+                $("li.btndown").click(function(){
+                    $("div.tit").children().eq(0)
+                    .appendTo("div.tit");
+
+                    $("div.tit").children().eq(1)
+                    .addClass("top").siblings()
+                    .removeClass("top");
+
+                    $("div.tit").children().eq(2)
+                    .addClass("middle").siblings()
+                    .removeClass("middle");
+                    
+                    $("div.tit").children().eq(3)
+                    .addClass("bottom").siblings()
+                    .removeClass("bottom");
+
+                    $("div.contents").children()
+                    .eq(0).appendTo("div.contents");
+
+                    $("div.contents").children()
+                    .eq(2).addClass("on").siblings()
+                    .removeClass("on");
+                   
+                });
+                //main newnews 끝
+        });
+    </script>
+</head>
+<body>
+    <header>
+            <a href="http://eogns2222.dothome.co.kr/portfolio033/cover.html">
+                <h1>
+                    <img src="imgs.index/logo.png" alt="로고">
+                </h1>
+                <p>newsroom</p>
+            </a>
+            <div class="curtain"></div>
+            <nav>
+                <ul>
+                    <li>
+                        <a>사업소개 · 혁신기술</a>
+                        <ul>
+                            <li>
+                                <a>사업영역</a>
+                            </li>
+                            <li>
+                                <a>기술혁신</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>투자 · 가치경영
+                        </a>
+                        <ul>
+                            <li>
+                                <a>투자정보</a>
+                            </li>
+                            <li>
+                                <a>지속가능경영</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>인재채용</a>
+                        <ul>
+                            <li>
+                                <a>현대건설 사람들</a>
+                            </li>
+                            <li>
+                                <a>인사제도 · 복리후생</a>
+                            </li>
+                            <li>
+                                <a>채용공고</a>
+                            </li>
+                            <li>
+                                <a>채용안내</a>
+                            </li>
+                            <li>
+                                <a>기술교육원</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>회사소개</a>
+                        <ul>
+                            <li>
+                                <a>현대건설 비전</a>
+                            </li>
+                            <li>
+                                <a>우리가 걸어온 길</a>
+                            </li>
+                            <li>
+                                <a>보도자료</a>
+                            </li>
+                            <li>
+                                <a>자료실</a>
+                            </li>
+                            <li>
+                                <a>그룹소개</a>
+                            </li>
+                            <li>
+                                <a>현대건설배구단</a>
+                            </li>
+                            <li>
+                                <a>오시는길</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="menu">
+                <p><img src="imgs.sub01/menuBar.jpg" alt="메뉴 상단바"></p>
+                <p><img src="imgs.sub01/menuBar.jpg" alt="메뉴 하단바"></p>
+            </div>
+            <a href="http://eogns2222.dothome.co.kr/portfolio033/index.html" class="news"><h2>Hyindai E&C</h2></a>
+        </header>
+        <main>
+            <section class="headline">
+                <h1 class="hidden">헤드라인</h1>
+                <div>
+                    <div class="ment">
+                        <dl>
+                            <dt>현대건설이 새로운 웹사이트를 <br>
+                                선보입니다!</dt>
+                            <dd>현대건설이 건설업계 디지털 커뮤니케이션을 선도할 기업 <br>
+                                 홈페이지를 새단장했습니다. 이번 개편에서는 혁신과 <br>
+                                 도전으로 새로운 가치를 창조하는 현대건설의 기업 <br>
+                                 이미지와 정체성을 반영했습니다.</dd>
+                            <dd><a href="#">VIEW</a></dd>
+                        </dl>
+                    </div>
+                    <div class="newImg">
+                        <p><img src="imgs.sub01/main01_content01.jpg" alt="현대건설이 새로운 웹사이트를 선보입니다!"></p>
+                    </div>
+                </div>
+                <div>
+                    <div class="ment">
+                        <dl>
+                            <dt>모두가 함께 일궈낸 2020년,<br>
+                                Welcome 2021!</dt>
+                            <dd>힘차게 달려온 2020년도 이제 막바지에 다다랐습니다. <br>
+                                여러분은 올해 어떻게 보내셨나요? 소중한 이들에게 <br>
+                                 감사와 사랑을 전하는 연말연시가 되기를 바랍니다.</dd>
+                            <dd><a href="#">VIEW</a></dd>
+                        </dl>
+                    </div>
+                    <div class="newImg">
+                        <p><img src="imgs.sub01/main01_content02.jpg" alt="모두가 함께 일궈낸 2020년, Welcome 2021!"></p>
+                    </div>
+                </div>
+                <div>
+                    <div class="ment">
+                        <dl>
+                            <dt>2020년을 뜨겁게 달군 현대건설<br>
+                                 올해의 키워드 9</dt>
+                            <dd>팬데믹으로 어느 때보다 힘들었지만, 현대건설은 특유의 <br>
+                                ‘현대 정신’으로 도전하기를 그치지 않았습니다. 변함없이 <br>
+                                최선을 다한 2020년, 현대건설의 가슴을 뜨겁게 뛰게 <br>
+                                만든 키워드는 무엇이었을까요?</dd>
+                            <dd><a href="#">VIEW</a></dd>
+                        </dl>
+                    </div>
+                    <div class="newImg">
+                        <p><img src="imgs.sub01/main01_content03.jpg" alt="2020년을 뜨겁게 달군 현대건설 올해의 키워드 9"></p>
+                    </div>
+                </div>
+                <div>
+                    <div class="ment">
+                        <dl>
+                            <dt>국내 도시정비사업 최강자, 창사 이래 <br>
+                                4조 7383억 최대 실적 달성하다!</dt>
+                            <dd>현대건설이 2020년 도시정비사업에서 4조 7383억 <br>
+                                수주로 창사 이래 최대 실적을 달성했습니다! 지난 <br>
+                                2017년 반포주공1단지 수주 등으로 4조 6468억원의 <br>
+                                최대 실적을 기록한 후 3년 만에 신기록을 갈아치운...</dd>
+                            <dd><a href="#">VIEW</a></dd>
+                        </dl>
+                    </div>
+                    <div class="newImg">
+                        <p><img src="imgs.sub01/main01_content04.jpg" alt="국내 도시정비사업 최강자, 창사 이래 4조 7383억 최대 실적 달성하다!"></p>
+                    </div>
+                </div>
+                <ul class="num page">
+                    <li class="hidden">페이징</li>
+                    <li class="on">01</li>
+                    <li>02</li>
+                    <li>03</li>
+                    <li>04</li>
+                </ul>
+            </section>
+            <section class="tagbest">
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="5">
+                                인기태그
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a> # 스마트건설</a></td>
+                            <td><a> # 친환경 건설기술</a></td>
+                            <td><a> # ESG</a></td>
+                            <td><a> # 녹색기술</a></td>
+                            <td><a> # 현대건설</a></td>
+                        </tr>
+                        <tr>
+                            <td><a> # DJSI</a></td>
+                            <td><a> # 동반성장펀드</a></td>
+                            <td><a> # 도시정비사업</a></td>
+                            <td><a> # 수주 1위</a></td>
+                            <td><a> # 디에이치</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="newNews">
+                <h1>소셜이 전하는 최신소식</h1>
+                <div class="tit">
+                    <dl>
+                        <dt>현대건설, 전 현장에 재해 예측 AI 가동</dt>
+                        <dd class="num">2020.12.04</dd>
+                    </dl>
+                    <dl class="top">
+                        <dt>현대건설, 급여 끝전 모음으로 <br>
+                            2억 8천만원 기부</dt>
+                        <dd class="num">2020.12.23</dd>
+                    </dl>
+                    <dl class="middle">
+                        <dt>코로나 시대에도 피어난 K콘텐츠 열풍</dt>
+                        <dd class="num">2020.12.24</dd>
+                    </dl>
+                    <dl class="bottom">
+                        <dt>현대건설, ‘한남3구역 재개발 사업’<br>
+                            공사계약 체결</dt>
+                        <dd class="num">2020.12.14</dd>
+                    </dl>
+                    <dl>
+                        <dt>층간소음 걱정은 그만! H 사일런트 홈</dt>
+                        <dd class="num">2020.11.23</dd>
+                    </dl>
+                </div>
+                <div class="contents">
+                    <ul>
+                        <li><img src="imgs.sub01/main03_content04.jpg" alt="현대건설, 전 현장에 재해 예측 AI 가동"></li>
+                        <li>지난 10월부터 ‘재해 예측 AI’ 가동을 통해 본격적인 AI <br>
+                            기반 건설현장 안전관리를 시작했습니다.  ‘재해 예측 AI’<br>
+                            는 현대건설이 현재 시공 중인 국내 全 건설현장에 작업 <br>
+                            당일 예상되는 재해위험 정보를 제공해 선제적 안전관...</li>
+                        <li><a href="#">VIEW</a></li>
+                    </ul>
+                    <ul>
+                        <li><img src="imgs.sub01/main03_content02.jpg" alt="현대건설, 급여 끝전 모음으로 2억 8천만원 기부"></li>
+                        <li>현대건설이 지난 1년간 임직원들의 급여 끝전을 모아 사<br>
+                            회에 기부하는 등 한 해를 훈훈하게 마무리 한다. 현대건<br>
+                            설과 현대종합설계 임직원들은 지난 16일 광화문 정동에<br>
+                             소재한 사회복지공동모금회에 1년간 급여 모금으로 모...</li>
+                        <li><a href="#">VIEW</a></li>
+                    </ul>
+                    <ul class="on">
+                        <li><img src="imgs.sub01/main03_content01.jpg" alt="코로나 시대에도 피어난 K콘텐츠 열풍"></li>
+                        <li>올한해 문화를 담는 키워드를 꼽으라면 단연 '코로나 19'<br>
+                            가 아닐까. 코로나 19로 사회적 거리두기가 일상이 되면<br>
+                            서 예정된 공연들은 일제히 취소되거나 연기 됐고, 거리<br>
+                            두기가 1단계 완화된 여름에 강행된 공연들도 철저한...</li>
+                        <li><a href="#">VIEW</a></li>
+                    </ul>
+                    <ul>
+                        <li><img src="imgs.sub01/main03_content03.jpg" alt="현대건설, ‘한남3구역 재개발 사업’ 공사계약 체결"></li>
+                        <li>지난 6월 현대건설이 시공사로 선정된 ‘한남3재정비촉진<br>
+                            구역 주택재개발정비사업’의 공사계약서 체결식을 12월 <br>
+                            11일(금) 조합사무실에서 진행하였다. v현대건설과 조합<br>
+                            은 약 5개월간 계약 협의를 통해 계약서에 조합원 니즈... </li>
+                        <li><a href="#">VIEW</a></li>
+                    </ul>
+                    <ul>
+                        <li><img src="imgs.sub01/main03_content05.jpg" alt="층간소음 걱정은 그만! H 사일런트 홈"></li>
+                        <li>현대건설은 층간소음 저감기술 'H 사일런트 홈'을 영상으<br>
+                            로 제작해 유튜브 채널에서 볼 수 있게 했다고 16일 밝혔<br>
+                            다. 현대건설은 소비자들에게 쉽게 전달하기 위해 알파카<br>
+                             캐릭터를 통해 클린알파시스템을 설명한 것에 이어 사...</li>
+                        <li><a href="#">VIEW</a></li>
+                    </ul>
+                </div>
+                <ul class="page2">
+                    <li class="hidden">이동버튼</li>
+                    <li class="btnup"><img src="imgs.sub01/btnUp.png" alt="위로 이동 버튼"></li>
+                    <li class="btndown"><img src="imgs.sub01/btnDown.png" alt="아래로 이동 버튼"></li>
+                </ul>
+            </section>
+            <section class="best">
+                <h1>인기기사</h1>
+                <!-- Swiper -->
+                <div class="swiper-container">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="imgs.sub01/main04_content01.jpg" alt="카타르에서 ‘3,500억원 규모 토목 및 병원 공사’ 수주">
+                      <ul>
+                        <li>카타르에서 ‘3,500억원 규모  <br>
+                            토목 및 병원 공사’ 수주</li>
+                        <li class="num">2020.12.17</li>
+                        <li>현대건설은 카타르 토건 분야 최대 발주처인 공공사업청이 
+                            발주한 2,526억원 규모의 TSE (중수:하수처리수) 저장시설 
+                            설치공사에 대한 낙찰통지서 (LOA : Letter of Award)를 
+                            접수했습니다. </li>
+                        <li>VIEW</li>
+                      </ul>
+                    </div>
+                    <div class="swiper-slide">
+                        <ul>
+                            <li>오늘 출근길, 당신이 만난 현대<br>
+                                건설의 기술은 무엇인가요?</li>
+                            <li class="num">2020.12.09</li>
+                            <li>우리는 매일 수많은 길을 지나 다닙니다. 일상적으로 
+                                이용하는 평범한 길이라도 그에 적용된 다양한 기술이 
+                                우리의 빠르고 편안한 이동을 돕고 있죠. 현대건설은 
+                                우수한 기술력과 기술을 살펴보았습니다.</li>
+                            <li>VIEW</li>
+                          </ul>
+                      <img src="imgs.sub01/main04_content02.jpg" alt="오늘 출근길, 당신이 만난 현대건설의 기술은 무엇인가요?">
+                      
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="imgs.sub01/main04_content03.jpg" alt="기술사 시험 합격자 3인 대담 - 시험 이야기 함께 나눠요!">
+                        <ul>
+                            <li>기술사 시험 합격자 3인 대담 - <br>
+                                시험 이야기 함께 나눠요!</li>
+                            <li class="num">2020.12.15</li>
+                            <li>벌써 2020년 한 해를 마무리하는 12월이다. 계획하고 준비
+                                했던 일들은 얼마나 이뤘는지 돌아보게 되는 요즘. 크나큰 
+                                목표 하나를 마무리 지은 세 명의 사우를 만났습니다. 
+                                합격한 이들이 가져온 따끈따끈한 후기를 함께 살펴볼까요?</li>
+                            <li>VIEW</li>
+                          </ul>
+                      
+                    </div>
+                    <div class="swiper-slide">
+                        <ul>
+                            <li>힐스테이트의 스마트 기술! <br>
+                                지금, 만나러 갑니다</li>
+                            <li class="num">2020.12.21</li>
+                            <li>힐스테이트의 스마트 홈 기술로 아파트가 한결 편리하고
+                                안락한 공간으로 거듭나고 있습니다. 집 안의 각종 기기
+                                들을 음성으로 제어하는 ‘보이스홈’까지… 힐스테이트 
+                                리버시티에 구현된 스마트한 기술을 살펴볼까요?
+                                </li>
+                            <li>VIEW</li>
+                          </ul>
+                      <img src="imgs.sub01/main04_content04.jpg" alt="힐스테이트의 스마트 기술! 지금, 만나러 갑니다">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="imgs.sub01/main04_content05.jpg" alt="창사 이래 4조 7383억 최대 실적 달성하다!">
+                        <ul>
+                            <li>창사 이래 4조 7383억 <br>
+                                최대 실적 달성하다!</li>
+                            <li class="num">2020.12.21</li>
+                            <li>현대건설이 2020년 도시정비사업에서 4조 7383억 수주로 
+                                창사이래 최대 실적을 달성했습니다! 현대건설은 12월 19일,
+                                 용인 수지구 현대성우8단지 리모델링 정비사업의 시공권
+                                을 확보하며 역대 최대 수주를 기록했습니다.</li>
+                            <li>VIEW</li>
+                          </ul>
+                    </div>
+                    <div class="swiper-slide">
+                        <ul>
+                            <li>[현장탐방] 제물포터널, 현대<br>
+                                건설의 기술로 역사를 다시 쓰다</li>
+                            <li class="num">2020.12.11</li>
+                            <li>지하 78m 대심도 터널 공사···  현대건설의 기술로 역사를 
+                                다시 쓰다. 서울 양천구 신월나들목(IC)에서 영등포구 국회
+                                의사당 교차로로 가는 풍경이 확 바뀔 예정입니다. </li>
+                            <li>VIEW</li>
+                          </ul>
+                      <img src="imgs.sub01/main04_content06.jpg" alt="[현장탐방] 서울 제물포터널 민간투자사업 1공구 현장, 현대건설의 기술로 역사를 다시 쓰다">
+                    </div>
+                     
+                  </div>
+                  <!-- Add Arrows -->
+                  
+                  <!-- <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>-->
+                  <div class="swiper-pagination"></div>
+                </div>
+                
+                <ul>
+                    <li><img src="../portfolio022/imgs/main2_pagingUp.png" alt=""></li>
+                  <li>swipe</li>
+                  <li><img src="../portfolio022/imgs/main2_pagingDown.png" alt=""></li>
+                </ul>
+              </section>
+              <!-- Swiper JS -->
+              <script src="../js/jq/script/swiper-4.4.1/dist/js/swiper.min.js"></script>
+  
+              <!-- Initialize Swiper -->
+              <script>
+                  var swiper = new Swiper('.swiper-container', {
+                  loop:true,
+                  direction: 'vertical',
+                  effect: 'coverflow',
+                  grabCursor: true,
+                  centeredSlides: true,
+                  slidesPerView: 'auto',
+                  coverflowEffect: {
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows : true,
+                  },
+                  // navigation: {
+                  //   nextEl: '.swiper-button-next',
+                  //   prevEl: '.swiper-button-prev',
+                  // },
+                  pagination: {
+                        el: '.swiper-pagination',
+                        type: 'progressbar',
+                    },
+                  });
+              </script>
+        </main>
+        <footer>
+            <div class="bottom_cont">
+                <ul>
+                    <li><a> 개인정보처리방침</a></li>
+                    <li><a> 법적고지</a></li>
+                    <li><a> H · 두드림(현대건설 신문고)</a></li>
+                    <li><a> 기술공모전</a></li>
+                    <li><a> 사이버감사실</a></li>
+                    <li><a> 패밀리사이트 +</a></li>
+                </ul>
+                <address>
+                    <ul>
+                        <li>03058 서울시 종로구 율곡로 75 현대빌딩</li>
+                        <li>사업자등록번호 101-81-16293</li>
+                        <li>T. 1577-7755</li>
+                    </ul>
+                    <p><span>© HYUNDAI E&C</span> ALL RIGHTS RESERVED.</p>
+                </address>
+                <p><a><img src="imgs.index/footer_logo.png" alt="로고"></a></p>
+            </div>
+            <div class="icon">
+                <ul>
+                    <li><a><img src="imgs.index/footer_icon_face.png" alt="페이스북"></a></li>
+                    <li><a><img src="imgs.index/footer_icon_in.png" alt="인스타그램"></a></li>
+                    <li><a><img src="imgs.index/footer_icon_kaka.png" alt="카카오톡"></a></li>
+                    <li><a><img src="imgs.index/footer_icon_naver.png" alt="네이버"></a></li>
+                    <li><a><img src="imgs.index/footer_icon_utube.png" alt="유튜브"></a></li>
+                </ul>
+            </div>
+        </footer>
+</body>
+</html>

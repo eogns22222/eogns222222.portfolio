@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //num1, num2, num3를 임의로 prompt함수를 사용해서 입력받는다.
+        //세 변수 중에서 최대 값을 찾아내는 식을 완성하시오.
+
+        // var num1;
+        // var num2;
+        // var num3;
+
+        // var num1 = prompt("num1값을 입력하세요.")*1;
+        
+        // var num2 = prompt("num2값을 입력하세요.")*1;
+        
+        // var num3 = prompt("num3값을 입력하세요.")*1;
+        // console.log(num1);
+        // console.log(num2);
+        // console.log(num3);
+
+        // if(num1 >num2 && num1>num3){
+        //     alert(num1+"가 가장크군요");
+        // }else if(num2>num1 && num2>num3){
+        //     alert(num2+"가 가장크군요");
+        // }else if(num3>num1 && num3>num2){
+        //     alert(num3+"가 가장크군요");
+        // }
+
+        var num1;
+        var num2;
+        var num3;
+        var num4;
+        var num5;
+
+        var num1 = prompt("num1의 값을 입력하세요.");
+        var num2 = prompt("num2의 값을 입력하세요.");
+        var num3 = prompt("num3의 값을 입력하세요.");
+        var num4 = prompt("num4의 값을 입력하세요.");
+        var num5 = prompt("num5의 값을 입력하세요.");
+
+        console.log(num1);
+        console.log(num2);
+        console.log(num3);
+        console.log(num4);
+        console.log(num5);
+
+        if(num1>num2 && num1>num3 && num1>num4 && num1>num5){
+            alert(num1+"이 가장 크다.")
+        }else{
+            if(num2>num3 && num2>num4 && num2>num5){
+                alert(num2+"이 가장 크다.")
+            }else{
+                if(num3>num4 && num3>num5){
+                    alert(num3+"이 가장 크다.")
+                }else{
+                    if(num4>num5){
+                        alert(num4+"이 가장 크다.")
+                    }else{
+                        alert(num5+"이 가장 크다.")
+                    }
+                }
+            }
+        }
+
+
+    </script>
+</body>
+</html>

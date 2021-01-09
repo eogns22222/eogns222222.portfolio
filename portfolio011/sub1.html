@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>iPhone12Pro</title>
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/sub1_main.css">
+        <link rel="stylesheet" href="css/footer.css">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.typekit.net/sdr6xnn.css">
+        <style>
+            html {
+                font-size: 62.5%;
+                font-family: 'Noto Sans KR', sans-serif;
+            }
+            body::-webkit-scrollbar{
+                display:none;
+            }
+            body::-moz-scrollbar{
+                display:none;
+            }
+            body::-o-scrollbar{
+                display:none;
+            }
+            body::-ms-scrollbar{
+                display:none;
+            }
+            .eng {
+                font-family: myriad-pro, sans-serif;
+
+                font-weight: 400;
+
+                font-style: normal;
+            }
+            a {
+                color: black;
+            }
+            header {
+                display:;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="script/jquery.mousewheel.min.js"></script>
+        <script>
+
+            $(function(){
+                $("html,body").animate({"scrollTop":0},10);
+                var scrollEvent = {
+                    waitScroll:false,
+                    dir:"down",
+                    count:0,
+                    len:$("main").children().length +$("footer").length,
+                    scroll:true,
+                    stopPoint:4, //멈추고 싶은 요소의 순번
+                    expandH:100 //확장되고 싶은 비율
+                    
+                }
+                
+
+                $(".paging").children("p").click(function(){
+
+                    scrollEvent.count = $(this).index();
+                    scrollEvent.scroll = false;
+                    moveBox();
+
+                });
+                
+                $(window).on("mousewheel DDMMousescroll",function(e){
+                    scrollEvent.scroll = true;
+                    if(e.deltaY == -1){
+                        scrollEvent.dir = "down";
+                    }else{
+                        scrollEvent.dir = "up";
+                    }
+                    
+
+                    if(scrollEvent.waitScroll){
+                        clearTimeout(scrollEvent.waitScroll);
+                    }
+
+                    var scT = $(window).scrollTop();
+                    var h = $("main").children().eq(scrollEvent.stopPoint).offset().top;
+                    var expand = $("main").children().eq(0).height()*scrollEvent.expandH/120;
+                    h+expand;
+
+                    scrollEvent.waitScroll =setTimeout(function(){
+                        if(scrollEvent.dir == "down" && scrollEvent.count == scrollEvent.stopPoint){
+                            scrollEvent.scroll = false;
+                        }
+                        if(scrollEvent.dir == "down" && scT >= (h+expand)){
+                            scrollEvent.scroll = true;
+                        }
+                        if(scrollEvent.scroll){
+                            moveBox();
+                        }
+                        
+                    },80);//waitScroll 끝
+                });//mousewheel 이벤트 끝
+
+                function moveBox(){
+                    if(scrollEvent.scroll){
+                        if(scrollEvent.dir == "down"){
+                            scrollEvent.count++;
+                            if(scrollEvent.count >= scrollEvent.len){
+                                scrollEvent.count = scrollEvent.len-1;
+                            }
+                        }else{
+                            scrollEvent.count--;
+                            if(scrollEvent.count < 0){
+                                scrollEvent.count = 0;
+                            }
+                        }
+                    }
+
+                    
+                    // console.log(scrollEvent.count);
+                    var nextTop = $("main").children().eq(scrollEvent.count)
+                    .offset().top;
+                    // console.log(nextTop);
+
+                    $("html,body").animate({"scrollTop":nextTop},400,"linear");
+                    lightNow();
+                };
+
+                function lightNow(){
+                    $(".paging").children().eq(scrollEvent.count)
+                    .addClass("on").siblings().removeClass("on")
+                }
+                
+            });//jQuery끝
+
+        </script>
+    </head>
+    <body>
+        <header>
+            <div>
+                <h1>
+                    <a href="http://eogns2222.dothome.co.kr/portfolio011/index.html"><img src="imgs/logo1.png" alt="애플로고"></a>
+                </h1>
+                <nav>
+                    <ul>
+                        <li class="eng">
+                            <a href="http://eogns2222.dothome.co.kr/portfolio011/sub3.html#">iPhone12</a>
+                            <ul>
+                                <li class="eng">
+                                    <a href="http://eogns2222.dothome.co.kr/portfolio011/sub3.html#">iPhone12
+                                        <img src="imgs/2deps_arrow.png" alt="2deps표시"></a>
+                                    <ul>
+                                        <li class="eng">
+                                            <a href="http://eogns2222.dothome.co.kr/portfolio011/sub3.html#">iPhone 12</a>
+                                        </li>
+                                        <li class="eng">
+                                            <a href="http://eogns2222.dothome.co.kr/portfolio011/sub1.html#">iPhone 12 pro</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="eng">
+                            <a href="http://eogns2222.dothome.co.kr/portfolio011/sub1.html#">iPhone12 Pro</a>
+                            <ul>
+                                <li>
+                                    <a href="http://eogns2222.dothome.co.kr/portfolio011/sub1.html#">iPhone12 Pro<img src="imgs/2deps_arrow.png" alt="2deps표시"></a>
+                                    <ul>
+                                        <li class="eng">
+                                            <a href="http://eogns2222.dothome.co.kr/portfolio011/sub1.html#">iPhone12 Pro</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="eng">
+                            <a href="http://eogns2222.dothome.co.kr/portfolio011/sub2.html">Store</a>
+                        </li>
+                        <li class="eng">
+                            <a href="#">Apple</a>
+                            <ul>
+                                <li>
+                                    <a href="#">Apple<img src="imgs/2deps_arrow.png" alt="2deps표시"></a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">브랜드스토리</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">브랜드전략</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="eng">
+                            <a href="#">Apple Care</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <aside>
+                <h1 class="hidden">배너</h1>
+                <div class="cocover"></div>
+                <div class="textt">
+                    <p class="eng">iPhone 12<span>
+                            그리고</span>
+                        iPhone 12 Pro</p>
+                    <p>아이폰 오직 하나의 세상을 향해서</p>
+                    <p class="eng">iPhone</p>
+                </div>
+                <div class="paging">
+                    <p class="on">
+                        <span class="eng">iPhone</span><img src="imgs2/paging_off.png" alt="현재위치"></p>
+                    <p>
+                        <span class="eng">Display</span><img src="imgs2/paging_off.png" alt="다음위치"></p>
+                    <p>
+                        <span class="eng">Camera</span><img src="imgs2/paging_off.png" alt="다음위치"></p>
+                    <p>
+                        <span class="eng">cover</span><img src="imgs2/paging_off.png" alt="다음위치"></p>
+                    <p>
+                        <span class="eng">Technology</span><img src="imgs2/paging_off.png" alt="다음위치"></p>
+                    <p>
+                        <span class="eng">other</span><img src="imgs2/paging_off.png" alt="다음위치"></p>
+                </div>
+            </aside>
+            <article class="iPhone_front">
+                <h1 class="hidden">iPhone앞면</h1>
+                <div class="foront_textt">
+                    <p>베젤은 작아지고 화면은 커지다.</p>
+                    <p>6.1형 Super Retina XDR 디스플레이2</p>
+                </div>
+                <div class="contents">
+                    <dl>
+                        <dt>유리의 한계를 넘어선 그것.</dt>
+                        <dd>그 어떤 스마트폰 글래스보다
+                            <br>
+                            견고한<strong class="eng">
+                                Ceramic Shield</strong>
+                        </dd>
+                        <dd>나노 사이즈의 세라믹 크리스털</dd>
+                        <dd>듀얼 이온 교환 공정</dd>
+                        <dd>4배 나은 낙하 성능3</dd>
+                    </dl>
+                    <p><img src="imgs2/main1_iPhone.png" alt="iPhone앞면"></p>
+                    <section>
+                        <div class="option">
+                            <dl class="ip">
+                                <dt class="eng">iPhone
+                                    <br>
+                                    12</dt>
+                                <dd>26mm 초점 거리</dd>
+                                <dd>1.4㎛ 픽셀</dd>
+                                <dd>f/1.6 조리개</dd>
+                                <dd class="eng">100% Focus
+                                    <br>
+                                    Pixels</dd>
+                                <dd>7매 렌즈</dd>
+                                <dd class="eng">OIS</dd>
+                            </dl>
+                            <img src="imgs2/main1_sidebar.png" alt="사이드바">
+                            <dl class="ipPro">
+                                <dt class="eng">iPhone
+                                    <br>
+                                    12 Pro</dt>
+                                <dd>26mm 초점 거리</dd>
+                                <dd>1.7㎛ 픽셀</dd>
+                                <dd>f/1.6 조리개</dd>
+                                <dd class="eng">100% Focus
+                                    <br>
+                                    Pixels</dd>
+                                <dd>7매 렌즈</dd>
+                                <dd class="eng">센서 시프트 OIS</dd>
+                            </dl>
+                        </div>
+                    </section>
+                </div>
+            </article>
+            <div>
+                <div class="cover"></div>
+                <article class="iPhone_back">
+                    <h1 class="hidden">iPhone뒷면</h1>
+                    <div class="back_textt">
+                        <p>프로 카메라로 담아보는 일상
+                        </p>
+                        <p>야간 모드의 새 날이 밝다</p>
+                    </div>
+                    <div class="contents2">
+                        <dl>
+                            <dt>프로가 되는 일상을
+                                <br>
+                                만끽하세요.
+                            </dt>
+                            <dd>87% 향상된 저조도 사진 품질
+                            </dd>
+                            <dd>5배 광학 줌 범위
+                            </dd>
+                            <dd>더 큰 1.7μm 픽셀</dd>
+                            <dd>새로운 센서 시프트 광학 이미지 흔들림 보정(OIS)</dd>
+                        </dl>
+                        <p>
+                            <img src="imgs2/main2_iPhone.png" alt="iPhone뒷면">
+                            <img src="imgs2/zoom.png" alt="확대" id="lenz">
+                            <img src="imgs2/zoom.png" alt="확대" id="light">
+                            <img src="imgs2/zoom.png" alt="확대" id="light2">
+                        </p>
+
+                        <div class="zoom_textt">
+                            <div id="lenz_txt">
+                                <p>디테일을 선명하게 포착해주는
+                                    <br>새로운<em>
+                                        7매 와이드 렌즈</em>
+                                </p>
+                                <p>저조도에서 최대<em>
+                                        6배</em>
+                                    더 빠른
+                                    <br>v오토포커스를
+                                    <br>
+                                    구현하는<em>
+                                        LiDAR</em>
+                                </p>
+                            </div>
+                            <div id="light_txt">
+                                <p>ƒ/1.6 조리개로 27% 더 많은
+                                    <br>빛을 포착하는<em>
+                                        와이드 카메라</em>
+                                </p>
+                            </div>
+                            <div id="light2_txt">
+                                <p>초당<em>
+                                        5000번</em>의 흔들림<br>
+                                    보정 작업을
+                                    <br>처리하는 새로운<em>
+                                        OIS</em>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <article class="iPhone_side">
+                <h1 class="hidden">iPhone측면</h1>
+                <p>어디에서나 아이폰이 빛납니다.</p>
+                <div>
+                    <dl>
+                        <dt>우리의 일상, 물과의 만남을
+                            <br>
+                            더욱 즐거운 세상으로 인도합니다.
+                        </dt>
+                        <dd>업계 최고 수준인 IP68 등급 생활 방수 기능4</dd>
+                    </dl>
+                    <ul>
+                        <li class="hidden">iPhone색상</li>
+                        <li id="goldImg"><img src="imgs2/side_iPhone_gold.png" alt="iPhone12골드"></li>
+                        <li id="blackImg"><img src="imgs2/side_iPhone_black.png" alt="iPhone12그래파이트"></li>
+                        <li id="silverImg"><img src="imgs2/side_iPhone_silver.png" alt="iPhone12실버"></li>
+                        <li id="blueImg"><img src="imgs2/side_iPhone_blue.png" alt="iPhone12퍼시픽블루"></li>
+                        <li id="sample"><img src="imgs2/side_iPhone_blue.png" alt="iPhone샘플"></li>
+                    </ul>
+                    <div>
+                        <p>화룡점정, 4가지 마감.</p>
+                        <ul>
+                            <li class="hidden">색상</li>
+                            <li id="blue">
+                                <span class="hidden">퍼시픽블루</span></li>
+                            <li id="black">
+                                <span class="hidden">그래파이트</span></li>
+                            <li id="silver">
+                                <span class="hidden">실버</span></li>
+                            <li id="gold">
+                                <span class="hidden">골드</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            
+            <div class="special">
+                <div>
+                    <p><img src="imgs2/black_cover10.png" alt=""></p>
+                </div>
+                <ul>
+                    <li>초고속 무선<br>
+                        반가워요
+                        <br>
+                        <em>5G</em>
+                    </li>
+                    <li>소프트웨어
+                        <br>
+                        <em>최적화</em>
+                    </li>
+                    <li>최대<br>
+                        <em>50%</em>
+                        더 빠른<br>
+                        CPU 및 GPU 속도</li>
+                    <li>
+                        <em>118억 개</em><br>
+                        트랜지스터</li>
+                    <li>
+                        <em>스마트 데이터</em><br>
+                        모드로 배터리 절약</li>
+                    <li>
+                        <em>5G</em>를 위한 iPhone 설계</li>
+
+                </ul>
+            </div>
+            <section class="banner_bottom">
+                <h1 class="hidden">다른 상품들</h1>
+                <div>
+                    <div>
+                        <p class="title_font eng">WATCH</p>
+                        <p class="side_font eng">SERIES 6</p>
+                        <p class="subtitle_font">건강의 미래, 이미 손목 위에.</p>
+                        <div>
+                            <p class="moremore">
+                                <a href="">더 알아보기></a>
+                            </p>
+                            <p>
+                                <a href="">구입하기></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p class="title_font eng">iPad Air</p>
+                        <p class="subtitle_font">강력하다. 다채롭다.
+                            <br>
+                            경이롭다.</p>
+                        <div>
+                            <p class="moremore">
+                                <a href="">더 알아보기></a>
+                            </p>
+                            <p>
+                                <a href="">구입하기></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p class="title_font eng">Mac mini</p>
+                        <p class="subtitle_font">새로운 파워. 어마무시한 가능성</p>
+                        <div>
+                            <p class="moremore">
+                                <a href="">더 알아보기></a>
+                            </p>
+                            <p>
+                                <a href="">구입하기></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p class="title_font eng">MacBook Air</p>
+                        <p class="subtitle_font">Air의 흐름을 바꾸다.</p>
+                        <div>
+                            <p class="moremore">
+                                <a href="">더 알아보기></a>
+                            </p>
+                            <p>
+                                <a href="">구입하기></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div>
+                <p>
+                    <a href="#">애플아이폰앤테크놀로지 웹사이트</a>
+                </p>
+                <p>
+                    <a href="#">개인정보처리방침</a>
+                </p>
+                <p class="eng">
+
+                    Copyright © Apple i Phone & Technology Co.,Ltd. All Rights Reserved.
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
+<script>
+    var le = document.getElementById("lenz");
+    var li = document.getElementById("light");
+    var li2 = document.getElementById("light2");
+
+    var leT = document.getElementById("lenz_txt");
+    var liT = document.getElementById("light_txt");
+    var li2T = document.getElementById("light2_txt");
+
+    le.addEventListener("mouseover", function () {
+        leT.style.right = "0rem";
+    });
+    le.addEventListener("mouseleave", function () {
+        leT.style.right = "-39rem";
+    });
+    li.addEventListener("mouseover", function () {
+        liT.style.right = "0rem";
+    });
+    li.addEventListener("mouseleave", function () {
+        liT.style.right = "-39rem";
+    });
+    li2.addEventListener("mouseover", function () {
+        li2T.style.right = "0rem";
+    });
+    li2.addEventListener("mouseleave", function () {
+        li2T.style.right = "-43rem";
+    });
+</script> //main3
+
+<script>
+
+    var blu = document.querySelector("#blue");
+    var bl = document.querySelector("#black");
+    var sil = document.querySelector("#silver");
+    var go = document.querySelector("#gold");
+
+    var bluI = document.querySelector("#blueImg");
+    var blI = document.querySelector("#blackImg");
+    var silI = document.querySelector("#silverImg");
+    var goI = document.querySelector("#goldImg");
+    var samI = document.querySelector("#sample");
+
+    blu.addEventListener("click", function () {
+        blu.style.left = "-22rem";
+        bl.style.left = "0rem";
+        sil.style.left = "0rem";
+        go.style.left = "0rem";
+
+        bluI.style.zIndex = "100";
+        blI.style.zIndex = "10";
+        silI.style.zIndex = "10";
+        goI.style.zIndex = "10";
+
+        bluI.style.opacity = "1";
+        blI.style.opacity = "0";
+        silI.style.opacity = "0";
+        goI.style.opacity = "0";
+        samI.style.opacity = "0";
+    });
+    bl.addEventListener("click", function () {
+        blu.style.left = "0rem";
+        bl.style.left = "-22rem";
+        sil.style.left = "0rem";
+        go.style.left = "0rem";
+
+        bluI.style.zIndex = "10";
+        blI.style.zIndex = "100";
+        silI.style.zIndex = "10";
+        goI.style.zIndex = "10";
+
+        bluI.style.opacity = "0";
+        blI.style.opacity = "1";
+        silI.style.opacity = "0";
+        goI.style.opacity = "0";
+        samI.style.opacity = "0";
+    });
+    sil.addEventListener("click", function () {
+        blu.style.left = "0rem";
+        bl.style.left = "0rem";
+        sil.style.left = "-22rem";
+        go.style.left = "0rem";
+
+        bluI.style.zIndex = "10";
+        blI.style.zIndex = "10";
+        silI.style.zIndex = "100";
+        goI.style.zIndex = "10";
+
+        bluI.style.opacity = "0";
+        blI.style.opacity = "0";
+        silI.style.opacity = "1";
+        goI.style.opacity = "0";
+        samI.style.opacity = "0";
+    });
+    go.addEventListener("click", function () {
+        blu.style.left = "0rem";
+        bl.style.left = "0rem";
+        sil.style.left = "0rem";
+        go.style.left = "-22rem";
+
+        bluI.style.zIndex = "10";
+        blI.style.zIndex = "10";
+        silI.style.zIndex = "10";
+        goI.style.zIndex = "100";
+
+        bluI.style.opacity = "0";
+        blI.style.opacity = "0";
+        silI.style.opacity = "0";
+        goI.style.opacity = "1";
+        samI.style.opacity = "0";
+    });
+</script>//main4

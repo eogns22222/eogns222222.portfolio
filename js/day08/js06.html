@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="tit">0</h1>
+    <button id="btnP">+(증가)</button>
+    <button id="btnM">-(감소)</button>
+    <script>
+        var btnPlus = document.querySelector("#btnP");
+        var btnMinus = document.querySelector("#btnM");
+        var h_h = document.getElementById("tit");
+                
+        
+        (function (){
+            
+            var localNum = 0;
+            
+            btnPlus.addEventListener("click",
+            function (){
+                h_h.innerHTML = ++localNum;
+            });
+
+            btnMinus.addEventListener("click",
+            function (){
+                h_h.innerHTML = --localNum;
+            });
+
+        })();
+        
+    </script>
+</body>
+</html>

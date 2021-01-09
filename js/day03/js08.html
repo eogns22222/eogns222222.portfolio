@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var id = 'eogns';
+        var password = 22222;
+
+        while(true){
+            if(score==0){
+                break;
+            }
+            var id2 = prompt("아이디를 입력하세요.");
+
+            if(id==id2){
+
+                while(true){
+                    if(score==0){
+                        break;
+                    }
+                    var password2 = prompt("비밀번호를 입력하세요.");
+
+                    if(password==password2){
+                        
+
+                        while(true){
+                            var score = prompt("성적을 입력하세요.");
+                            if(score>=0 && score<=100){
+                                if(score>=90){
+                                    alert("축하합니다. "+id+"님은 A등급 이십니다.");
+                                    score = 0;
+                                    break;
+                                }else if(score>=70 && score<=89){
+                                    alert("축하합니다. "+id+"님은 B등급 이십니다.");
+                                    score = 0;
+                                    break;
+                                }else if(score>=50 && score<=69){
+                                    alert("축하합니다. "+id+"님은 C등급 이십니다.");
+                                    score = 0;
+                                    break;
+                                }else{
+                                    alert("조건에 충족되지 못합니다.");
+                                    score = 0;
+                                    break;
+                                }
+                            }else{
+                                alert("잘못입력하였습니다.");
+                            }
+                        }
+                        
+                        
+
+                    }else{
+                        alert("비밀번호가 틀렸습니다.");
+                    }
+                }
+                
+
+
+            }else{
+                alert("아이디가 틀렸습니다.");
+            }
+
+        }
+        
+
+
+    </script>
+</body>
+</html>

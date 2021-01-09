@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="../../project_usb2/html/css/reset.css">
+  <link rel="stylesheet" href="../dist/css/swiper.css">
+
+  <!-- Demo styles -->
+  <style>
+    section {
+      position: relative;
+      height: 100%;
+    }
+    section {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color:#000;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    h1{
+      z-index: 1000;
+      position:absolute;
+      left:18%;
+      top:30px;
+      font-size: 40px;
+      color:#07772f;
+    }
+    .swiper-container {
+      margin:100px auto;
+      width: 1000px;
+      height: 500px;
+    }
+    .swiper-slide {
+      display:flex;
+      text-align: center;
+      font-size: 18px;
+      /* background: #fff; */
+
+      /* Center slide text vertically */
+      /* display: -webkit-box; */
+      /* display: -ms-flexbox; */
+      /* display: -webkit-flex; */
+      /* display: flex; */
+      /* -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;*/
+      justify-content:space-between;
+      /*-webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;*/
+      align-items: center; 
+    }
+    .swiper-slide>img{
+     
+      width:500px;
+      height:300px;
+      
+    }
+    section>ul{
+      z-index: 1000;
+      position:absolute;
+      left:48%;
+      bottom:0;
+      text-align: center;
+    }
+    section>ul>li>img{
+      width:50px;
+      height:20px;
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <h1>인기기사</h1>
+    <!-- Swiper -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">slide1
+          <img src="../../project_usb2/html/portfolio033/imgs.index/main2_01.jpg" alt="">
+          <ul>
+            <li>ssdasdfasdfasdf</li>
+            <li>dddasdfasdfdfasdf <br>
+              sadfasdfasdfsad <br>
+              sadfasdfasdfsad <br>
+              sadfasdfasdfsad</li>
+          </ul>
+        </div>
+        <div class="swiper-slide">slide2
+          <ul>
+            <li>ssdasdfasdfasdf</li>
+            <li>dddasdfasdfdfasdf <br>
+              sadfasdfasdfsad <br>
+              sadfasdfasdfsad <br>
+              sadfasdfasdfsad</li>
+          </ul>
+          <img src="../../project_usb2/html/portfolio033/imgs.index/main2_01.jpg" alt="">
+          
+        </div>
+        <div class="swiper-slide">slide3
+          <img src="../../project_usb2/html/portfolio033/imgs.index/main2_01.jpg" alt="">
+          <ul>
+            <li>ssdasdfasdfasdf</li>
+            <li>dddasdfasdfdfasdf <br>
+              sadfasdfasdfsad <br>
+              sadfasdfasdfsad <br>
+              sadfasdfasdfsad</li>
+          </ul>
+          
+        </div>
+        <div class="swiper-slide">slide4
+          <ul>
+            <li>ssdasdfasdfasdf</li>
+            <li>dddasdfasdfdfasdf <br>
+              sadfasdfasdfsad <br>
+              sadfasdfasdfsad <br>
+              sadfasdfasdfsad</li>
+          </ul>
+          <img src="../../project_usb2/html/portfolio033/imgs.index/main2_01.jpg" alt="">
+        </div>
+        <div class="swiper-slide">slide5
+          <img src="../../project_usb2/html/portfolio033/imgs.index/main2_01.jpg" alt="">
+          <ul>
+            <li>ssdasdfasdfasdf</li>
+            <li>dddasdfasdfdfasdf <br>
+              sadfasdfasdfsad <br>
+              sadfasdfasdfsad <br>
+              sadfasdfasdfsad</li>
+          </ul>
+        </div>
+        <div class="swiper-slide">slide6
+          <ul>
+            <li>ssdasdfasdfasdf</li>
+            <li>dddasdfasdfdfasdf <br>
+              sadfasdfasdfsad <br>
+              sadfasdfasdfsad <br>
+              sadfasdfasdfsad</li>
+          </ul>
+          <img src="../../project_usb2/html/portfolio033/imgs.index/main2_01.jpg" alt="">
+        </div>
+      </div>
+      <!-- Add Arrows -->
+      <!-- <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div> -->
+    </div>
+    <ul>
+      <li><img src="../../project_usb2/html/portfolio022/imgs/main2_pagingUp.png" alt=""></li>
+      <li>swipe</li>
+      <li><img src="../../project_usb2/html/portfolio022/imgs/main2_pagingDown.png" alt=""></li>
+    </ul>
+  </section>
+  <!-- Swiper JS -->
+  <script src="../dist/js/swiper.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      loop:true,
+      direction: 'vertical',
+      // navigation: {
+      //   nextEl: '.swiper-button-next',
+      //   prevEl: '.swiper-button-prev',
+      // },
+      // pagination: {
+      //   el: '.swiper-pagination',
+      //   clickable:true
+      // }
+    });
+  </script>
+</body>
+</html>

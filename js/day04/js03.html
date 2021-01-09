@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //우수직원 추천서비스 - 맨처음에 추천을 원치 않을 시 나가기로 끝남, alert("다음에 추천부탁요~");
+        //p1, p2, p3 가 직원의 변수 ->순서대로 추천을 할것인지 물어봄.
+        //선택을 받았을 때 추천 포인트가 쌓이며, console.log로 점수 확인. alert("추천감사합니다.");
+        //1명이 최후의 우수직원으로 선정될 때까지 반복 -> 포인트가 3점이 쌓이면 우수직원 선정 alret("우수직원 선정!"); - 누가 선정되었는지 최종적으로 표시
+
+        var mvp = confirm("우수직원 추천 이벤트입니다. 추천하시겠습니까?");
+        
+        var point1 =0;
+        var point2 =0;
+        var point3 =0;
+
+        while(true){
+            if(mvp){
+                var p1 = confirm("은선사원을 추천하시겠습니까?");
+                if(p1){
+                    point1++;
+                    console.log("은선사원 "+point1);
+                    alert("추천감사합니다.");
+                    if(point1>=3){
+                        alert("은선사원 우수직원 선정!");
+                        break;
+                    }
+                }else{
+                    var ggg = confirm("다른사람을 추천하시겠습니까?");
+                    if(!ggg){
+                        break;
+                    }
+                }
+                var p2 = confirm("선영사원을 추천하시겠습니까?");
+                if(p2){
+                    point2++;
+                    console.log("선영사원 "+point2);
+                    alert("추천감사합니다.");
+                    if(point1>=3){
+                        alert("선영사원 우수직원 선정!");
+                        break;
+                    }
+                }else{
+                    var ggg = confirm("다른사람을 추천하시겠습니까?");
+                    if(!ggg){
+                        break;
+                    }
+                }
+                var p3 = confirm("주현사원을 추천하시겠습니까?");
+                if(p3){
+                    point3++;
+                    console.log("주현사원 "+point3);
+                    alert("추천감사합니다.");
+                    if(point1>=3){
+                        alert("주현사원 우수직원 선정!");
+                        break;
+                    }
+                    
+                }else{
+                    var ggg = confirm("다른사람을 추천하시겠습니까?");
+                    if(!ggg){
+                        break;
+                    }
+                }
+                
+            }else{
+                alert("넹 수고")
+            break;
+            }
+        }
+        
+    </script>
+</body>
+</html>

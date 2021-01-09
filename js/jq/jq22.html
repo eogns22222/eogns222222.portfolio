@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>스크롤(wheel)3</title>
+        <link rel="stylesheet" href="../../css/reset.css">
+
+        <style>
+            html,body{
+                /* min-width: 1640px; */
+                height:100%;
+                /* min-height: 800px; */
+            }
+            /* 각 브라우저별 스크롤바 없애기*/
+
+            body::-webkit-scrollbar {
+
+            display:none;
+
+            }
+
+            body::-moz-scrollbar {
+
+            display:none;
+
+            }
+
+            body::-o-scrollbar {
+
+            display:none;
+
+            }
+
+            body::-ms-scrollbar {
+
+            display:none;
+
+            }
+            .outer{
+                display: flex;
+
+                width: 400%;
+                height:100%;
+            }
+            .outer>section{
+                flex:1 1 auto;
+            }
+            .outer>section.first{
+                background:rgb(252, 214, 143);
+            }
+            .outer>section.second{
+                background:rgb(171, 148, 233);
+            }
+            .outer>section.third{
+                background:rgb(102, 171, 180);
+            }
+            .outer>section.fourth{
+                background:rgb(119, 230, 138);
+            }
+            .outer>section>h1{}
+            .outer>section>p{}
+
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="script/jquery.mousewheel.min.js"></script>
+        <script>
+
+        $(function(){
+            $("html,body").animate({"scrollLeft":0},10);
+            var scrollEvnt ={
+                count:0,
+                dir:"down",
+                wait:false,
+                len: $("section").length
+            }
+    
+            $(window).on("mousewheel DOMMouseScroll",function(e){
+    
+                if(e.deltaY == -1){
+    
+                    scrollEvnt.dir = "down";
+    
+                }else{
+    
+                    scrollEvnt.dir = "up";    
+    
+                }
+                
+  
+                if(scrollEvnt.wait){
+    
+                    clearTimeout(scrollEvnt.wait);
+    
+                }
+
+                scrollEvnt.wait = setTimeout(function(){
+                    console.log(scrollEvnt.dir);
+                    scrollAni();
+                },100);
+
+            }); //scroll이벤트 끝
+            
+            function scrollAni(){
+                if(scrollEvnt.dir == "down"){
+                    scrollEvnt.count++;
+                    if(scrollEvnt.count >= scrollEvnt.len){
+                        scrollEvnt.count = scrollEvnt.len-1;
+                    }
+                }else{
+                    scrollEvnt.count--;
+                    if(scrollEvnt.count<0){
+                        scrollEvnt.count=0;
+                    }
+                }
+                // console.log(scrollEvnt.count);
+                var lft = $("section").eq(scrollEvnt.count).offset().left;
+                console.log(lft);
+                $("html,body").animate({"scrollLeft":lft},500);
+            }//scrollAni 함수 끝
+        });//jQuery끝
+    
+        </script>
+    </head>
+    <body>
+        <div class="outer">
+            <section class="first">
+                <h1>첫번째 섹션</h1>
+                <p>내용1</p>
+            </section>
+            <section class="second">
+                <h1>두번째 섹션</h1>
+                <p>내용2</p>
+            </section>
+            <section class="third">
+                <h1>세번째 섹션</h1>
+                <p>내용3</p>
+            </section>
+            <section class="fourth">
+                <h1>네번째 섹션</h1>
+                <p>내용4</p>
+            </section>
+        </div>
+    </body>
+</html>

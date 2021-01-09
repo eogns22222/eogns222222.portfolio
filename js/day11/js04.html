@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //모든 객체의 최상위 객체 - 브라우저의 기능을 모두 가지고 있다.
+        var url = window.location.href //현재 페이지의 주소를 return한다.
+        console.log(url);
+        //현재 페이지의 파일명을 가지고 오기
+        //test.dothome.co.kr/green/day08/js_11.html
+        //마지막 '/'가 몇번지인가? 마지막 '.'이 몇번지인가?
+
+        var eogns = url.lastIndexOf("/");
+        console.log(eogns);
+        var eogns2 = url.lastIndexOf(".");
+        console.log(eogns2);
+
+        var eogns3 = url.substring(eogns+1,eogns2);
+        console.log(eogns3);
+
+        
+    </script>
+</body>
+</html>

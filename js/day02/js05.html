@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        while(true){
+            var adult = confirm("안녕하세요. 당신은 으른인가요?");
+            if(adult){
+            alert("으른이군요.");
+        }else{
+            alert("얼라군요.");
+            break;
+        }
+
+        var age = prompt("당신의 나이를 입력하시요.")*1; // number화
+
+        if(age>=18){
+            alert("통과")
+        }else{
+            alert("응 .안돼")
+            break;
+        }
+        
+        while(true){
+            var score = prompt("당신의 점수를 입력하시오.")*1;
+
+            if (score >= 0 && score <= 100) {
+                if (score <= 60) {
+                    alert("F");
+                    break;
+                } else if (score <= 71) {
+                    alert("D");
+                    break;
+                } else if (score <= 81) {
+                    alert("C");
+                    break;
+                } else if (score <= 90) {
+                    alert("B");
+                    break;
+                } else {
+                    alert("A");
+                    break;
+                }
+            } else {
+                alert('정상적인 범위의 점수가 아닙니다.')
+            }
+        }
+        
+        }
+        
+    </script>
+</body>
+</html>

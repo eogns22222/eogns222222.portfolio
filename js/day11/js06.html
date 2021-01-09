@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="fileUpload.jsp" name="fileLoad"> 
+        <input name="imgF" type="file"> 
+        <input type="submit" name="btnSubm">
+    </form>
+    <script>
+        //input 타입 text, password, file.. 등 값이 변화할 수 있는 
+        //타입들은 javascript의 이벤트 메소드 중 change 메소드가 값 변경을 감지할 수 있다.
+        //ex> document.fileLoad.imgF.addEventListener("change", function(){});
+        //jpg, jpeg, png, gif파일만 업로드 가능한 파일형식이다.
+        //전송버튼을 클릭했을 때 그 이외의 파일은 업로드가 아예 불가능하게 작성하시오.
+        //submit버튼을 클릭했었을 때 파일의 값 가져오기 --> string
+        //값을 선택하자마자 파일의 값을 가져오기 change를 사용 --->string
+        
+        //#A
+        //1.submit 이벤트 함수만 완성
+        //2.함수내에서 이미지 파일값 가져오기
+        //3.파일 확장자 분리하기
+        //4.확장자 비교하기 jpg, jpeg, png, gif
+        
+        // document.fileLoad.btnSubm.addEventListener("click", function(e){
+        //     
+        //     var fileUrl = document.fileLoad.imgF.value;
+        //     var idx = fileUrl.lastIndexOf(".");
+        //     var ext = fileUrl.substr(idx+1); //substr은 두번째 전달인자를 사용하지 않으면 마지막 글자까지 return한다.
+
+            
+
+        //     if(ext == "jpg" || ext == "jpeg" || ext == "png" || ext == "gif"){
+        //         alert(ext);
+        //     }else{
+        //         alert("확장자가 잘못됬습니다.");
+        //         e.preventDefault();
+        //     }
+        // });
+
+        //#B
+        //1.input 타입 file의 값을 선택하자마자 발생하는 이벤트 함수 연결하기
+        //2.함수내에서 이미지 파일값 가져오기
+        //3.파일 확장자 분리하기
+        //4.확장자 비교하기 jpg, jpeg, png, gif
+
+        //document.fileLoad.imgF.value  //--> c://디렉토리/..파일명.jpg
+        
+        document.fileLoad.imgF.addEventListener("change", function(){
+            var fileUrl2 = document.fileLoad.imgF.value;
+            var idx2 = fileUrl2.lastIndexOf(".");
+            var ext2 = fileUrl2.substr(idx2+1);
+
+            if(ext2 == "jpg" || ext2 == "jpeg" || ext2 == "png" || ext2 == "gif"){
+                alert(ext2);
+            }else{
+                document.fileLoad.btnSubm.addEventListener("click", function(e){
+                    e.preventDefault();
+                });
+                alert("확장자를 잘못선택하였습니다");
+            }
+
+        });
+
+    </script>
+</body>
+</html>

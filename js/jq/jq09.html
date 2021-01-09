@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배너 flex 크기 구현</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <style>
+        html,body{
+            height:100%;
+        }
+        main{
+            display:flex;
+            height:100%;
+            background:black;
+        }
+        main>section{
+            box-sizing: border-box;
+            flex:1 1 100px;
+            border-left:1px solid white;
+            color:#fff;
+            transition:all .5s ease;
+        }
+        main>section.on{
+            flex:7 1 100px;
+        }
+        main>section:nth-child(1){
+            background:url(imgs/bg_1.jpg) no-repeat -500px 0;
+            background-attachment: fixed;
+        }
+        main>section:nth-child(2){
+            background:url(imgs/bg_2.jpg) no-repeat 0 0;
+            background-attachment: fixed;
+        }
+        main>section:nth-child(3){
+            background:url(imgs/bg_3.jpg) no-repeat 0 0;
+            background-attachment: fixed;
+        }
+        main>section:nth-child(4){
+            background:url(imgs/bg_4.jpg) no-repeat 500px 0;
+            background-attachment: fixed;
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+        $(function(){
+            $("section").mouseenter(function(){
+                $(this).addClass("on").siblings().removeClass("on");
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <main>
+        <section>
+            <h1>첫번 째 섹션</h1>
+            <div></div>
+        </section>
+        <section>
+            <h1>두번 째 섹션</h1>
+            <div></div>
+        </section>
+        <section>
+            <h1>세번 째 섹션</h1>
+            <div></div>
+        </section>
+        <section>
+            <h1>네번 째 섹션</h1>
+            <div></div>
+        </section>
+    </main>
+</body>
+</html>

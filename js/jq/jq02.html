@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>traversing 메소드</title>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // jQuery는 $와 같은 레퍼런스를 갖는다.
+
+        // 즉, jQuery == $이다.
+
+        // jQuery는 $(function(){body를 모두 읽고 난 이후 실행}), $("css선택자") 주로 크게 두가지 방식으로 사용을 한다.
+
+        // jQuery(function); jQuery("선택자"); 위의 $와 같은 방식이다.
+
+        // jQuery함수 호출시 함수를 전달인자로 넣으면 body를 모두 읽고 난 이후에 실행하라는 소리
+
+        // jQuery함수 호출시 css선택자를 string타입으로 전달하면 jQuery 객체를 만들겠다는 소리이다.
+
+        
+
+        $(function(){
+
+            //setter ==> 속성(속성,값) , getter ===> 속성(속성)
+            //setter는 메소드를 계속 사용가능
+            //getter는 메소드를 계속 사용불가능
+            //이게 메소드 체이닝이다.
+            
+            //traversing메소드
+            //자주 사용하는 traversing메소드들은 대부분 전달인자를 사용해도 되고 사용하지 않아도 된다.
+            //next(), prev(), nextAll(), preAll(), siblings(), chlidren(), parent(), find(전달인자가 꼭필요), parents()
+            //.eq() .end(), .not(전달인자), .last(), .first() ...
+
+
+            var ss = document.getElementById("tit");
+            ss.innerHTML = "<strong>룰루랄라</strong>";
+
+            $("h1").css("font-size",16).text("").html("<span>타이틀</span>").next();
+            
+            $("h1").nextAll("ul").find("li").eq(2).end().not("body>ul li:eq(3)")
+
+            //트래벌싱과 메소드체이닝
+            $("h1").css({"color":"green","font-size":30})
+            .next().next().css("font-size",50)
+            .nextAll().last().css("text-decoration","underline")
+            .prevAll().first().css("border","1px solid green")
+            .prevAll("ul").children("li")
+            .eq(1).find("li")
+            .not("li:eq(1)").css("border","1px solid green")
+            .parents().eq(2).css("background","red");
+            //이런식으로 중간중간에 enter가능 ;찍으면 끝
+
+            //h1부터 시작해서 c-1,c-2의 글자 색상을 흰색, font-size는 50px로 변경하시오.
+
+            $("h1").nextAll().eq(2).find("li")
+            .eq(8).find("li").not("li:eq(2)")
+            .css("font-size",50).css("color","white");
+
+            $("div>p");
+            //이런식도 가능
+            
+        });
+    </script>
+    <!-- 이런식의 순서로 적는 것이 좋다. 폰트정해주고 링크 걸고 jquery 연결-->
+</head>
+<body>
+    <h1 id="tit">jQuery 시작</h1>
+    <p>jQuery 메소드 체이닝 - 객체가 여러가지 메소드를 한번에 사용한다.</p>
+    <p>jQuery traversing -객체가 메소드를 사용하면서 변경가능하다.</p>
+    <ul>
+        <li>
+            <a href="#">AAA</a>
+            <ul>
+                <li>a-1</li>
+                <li>a-2</li>
+                <li>a-3</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">BBB</a>
+            <ul>
+                <li>b-1</li>
+                <li>b-2</li>
+                <li>b-3</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">CCC</a>
+            <ul>
+                <li>c-1</li>
+                <li>c-2</li>
+                <li>c-3</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">DDD</a>
+            <ul>
+                <li>d-1</li>
+                <li>d-2</li>
+                <li>d-3</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">EEE</a>
+            <ul>
+                <li>e-1</li>
+                <li>e-2</li>
+                <li>e-3</li>
+            </ul>
+        </li>
+    </ul>
+    <p>하단 단락1</p>
+
+    <h2>두번째 제목</h2>
+    <p>하단 단락2</p>
+    <p>하단 단락3</p>
+
+    <h3>세번째 제목</h3>
+    <p>하단 단락4</p>
+    <p>하단 단락5</p>
+</body>
+</html>

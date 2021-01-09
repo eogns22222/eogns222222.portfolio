@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 12345 다섯가지숫자중에 prompt로 임의의 숫자를 입력할수 있도록 만든다. 만약 3을 입력했을 때 
+        // 세로로 321345 이런식으로 console을 사용해서 출력하시오.
+
+        var num;
+
+        while(true){
+            var num = prompt("1~5중에 숫자를 입력하세요.")*1;
+            if(num>0 && num<5){
+                console.log(num);
+                num--;
+                console.log(num);
+            }else{
+                break;
+            }
+        }
+    </script>
+</body>
+</html>

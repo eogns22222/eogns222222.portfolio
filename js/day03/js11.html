@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var month = 0;
+
+        while(true){
+            var month = prompt("몇개월을 등록하시겠습니까? 개월수는 3,6,9,12로 입력해주세요.");
+
+            if(month == 3 || month == 6 || month == 9 || month == 12){
+                if(month == 3){
+                    alert("9만원입니다.");
+                    break;
+                }else if(month == 6){
+                    alert("15만원입니다.");
+                    break;
+                }else if(month == 9){
+                    alert("22만원입니다.");
+                    break;
+                }else{
+                    alert("30만원입니다.");
+                    break;
+                }
+            }else{
+                alert("잘못입력하였습니다.");
+            }
+        }
+
+        if(month>=3){
+            alert("헬스");
+        }
+        if(month>=6){
+            alert("요가");
+        }
+        if(month>=9){
+            alert("스피닝");
+        }
+        if(month>=12){
+            alert("gx");
+        }
+
+        
+    </script>
+</body>
+</html>

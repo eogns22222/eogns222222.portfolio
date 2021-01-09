@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>현대건설</title>
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/footer.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+        <style>
+            body,
+            html {
+                font-size: 62.5%;
+                color:#4f4f4f;
+                font-family:"맑은고딕",sans-serif;
+                cursor: default;
+                
+            }   
+            body{
+                overflow-x: hidden;
+            }
+            
+            a {
+                color:#4f4f4f;
+            }
+            .num{
+                font-family: 'Raleway', sans-serif;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="../js/jq/script/jquery.mousewheel.min.js"></script>
+        <script>
+
+            $(function(){
+                var scrollEvent = {
+                    waitScroll:false,
+                    dir:"down"
+                }
+
+                $(window).on("mousewheel DOMMouseScroll",function(e){
+                    if(e.deltaY == -1){
+
+                        scrollEvent.dir = "down";
+                    }else{
+
+                        scrollEvent.dir = "up";    
+                    }
+                    
+
+                    if(scrollEvent.waitScroll){
+                        clearTimeout(scrollEvent.waitScroll);
+                    }
+
+                    scrollEvent.waitScroll = setTimeout(function(){
+                        doHeader();
+                    },80)
+
+
+                });
+
+                function doHeader(){
+                    if(scrollEvent.dir == "down"){
+                        $("header").css({"top":-150+"px"});
+                    }else{
+                        $("header").css({"top":0});
+                    }
+                }
+
+                $(window).on("scroll",function(){
+                    var sct = $(window).scrollTop();
+                    console.log(sct);
+
+                    if(sct >= 650){
+                        $("section.main02").css("background-color","rgba(42,42,42)");
+                        $("section.main02").children("h1").css("color","#c4f7c4");
+                        $("section.main02").children("h1").css("font-size",30);
+                    }else if(sct < 650){
+                        $("section.main02").css("background-color","rgba(0,0,0)");
+                        $("section.main02").children("h1").css("color","#fff");
+                        $("section.main02").children("h1").css("font-size",20);
+                    }
+                    if(sct >=775){
+                        $("section.main02").css("background-color","rgba(82,82,82)");
+                        $("section.main02").children("h1").css("color","#99f599");
+                        $("section.main02").children("h1").css("font-size",35);
+                    }
+                    if(sct >=900){
+                        $("section.main02").css("background-color","rgba(120,120,120)");
+                        $("section.main02").children("h1").css("color","#81ec81");
+                        $("section.main02").children("h1").css("font-size",38);
+                    }
+                    if(sct >=1025){
+                        $("section.main02").css("background-color","rgba(180,180,180)");
+                        $("section.main02").children("h1").css("color","#07772f");
+                        $("section.main02").children("h1").css("font-size",43);
+                    }
+                    if(sct >=1150){
+                        $("section.main02").css("background-color","rgba(255,255,255)");
+                        $("section.main02").children("h1").css("color","#07772f");
+                        $("section.main02").children("h1").css("font-size",53);
+                    }
+                    if(sct>=1450){
+                        $("section.main03").children("ul").children("li")
+                        .css("transform","translateZ(-250px)");
+                    }else if(sct<1450){
+                        $("section.main03").children("ul").children("li")
+                        .css("transform","translateZ(-300px)");
+                    }
+                    if(sct>=1550){
+                        $("section.main03").children("ul").children("li")
+                        .css("transform","translateZ(-200px)");
+                    }
+                    if(sct>=1650){
+                        $("section.main03").children("ul").children("li")
+                        .css("transform","translateZ(-120px)");
+                    }
+                    if(sct>=1800){
+                        $("section.main03").children("ul").children("li")
+                        .css("transform","translateZ(-10px)");
+                    }
+                    if(sct>=2000){
+                        $("section.main03").children("ul").children("li")
+                        .css("transform","translateZ(0)");
+                    }
+                    if(sct>=2600){
+                        $("section.main04").css("opacity",1);
+                    }else if(sct<2600){
+                        $("section.main04").css("opacity",0);
+                    }
+                    if(sct>=3400){
+                        $("section.main05").css("opacity",1);
+                    }else if(sct<3400){
+                        $("section.main05").css("opacity",0);
+                    }
+                    if(sct>=4100){
+                        $("section.main06").css("opacity",1);
+
+                        $("section.main06").children()
+                        .css({"margin-left":300,"opacity":1});
+                    }else if(sct<4100){
+                        $("section.main06").css("opacity",0);
+
+                        $("section.main06").children()
+                        .css({"margin-left":200,"opacity":0});
+                    }
+                });
+                //scroll 이벤트
+
+
+                var flag = true;
+                $("nav").children("ul").children("li").mouseover(function(){
+                    $("div.curtain").css("opacity",1);
+                });
+                $("nav").children("ul").children("li").mouseleave(function(){
+                    $("div.curtain").css("opacity",0);
+                });
+
+                $("div.menu").click(function(){
+                    if(flag){
+                        $("nav").addClass("on");
+                        $("div.curtain").css("display","none");
+                        $("div.menu").addClass("on");
+                        flag = false;
+                    }else{
+                        $("nav").removeClass("on");
+                        $("div.curtain").css("display","block");
+                        $("div.menu").removeClass("on");
+                        flag = true;
+                    }
+                    
+
+                });
+                //header 끝
+
+                function scroll(){
+                    $("ul.scroll").animate({"left":-140+"px"},1300,function(){
+                        
+                        
+                        $("ul.scroll").children().first().appendTo("ul.scroll");
+                        $("ul.scroll").css("left",155+"px");
+                    });
+                }
+                setInterval(scroll,1300);
+                //main01 끝
+
+                
+                $("ul.main01Paging").children().click(function(){
+                    var len = $(this).index();
+                
+                    $("section.main02").children("div")
+                    .children("div").eq(len).fadeIn()
+                    .siblings().fadeOut();
+
+                    $(this).addClass("on").siblings().removeClass("on");
+
+                });
+                //main02 끝
+
+                $("ul.business").children().click(function(){
+                    var len2 = $(this).index();
+                    $(this).addClass("on").siblings().removeClass("on");
+
+                    $("ul.businessImg").children().eq(len2).fadeIn()
+                    .siblings().fadeOut();
+
+                    $("div.ment").eq(len2).addClass("on")
+                    .siblings("div.ment").removeClass("on");
+                });
+                //main03끝
+
+
+                $("ul.newspaging").children().click(function(){
+                    var len4 = ($(this).index()-1)*1260;
+                    
+                    $("div.newscontainer").css({"left":-len4});
+                    $(this).addClass("on")
+                    .siblings().removeClass("on");
+                });
+                //main04 끝
+
+                var pagenum = {
+                    numnum:0
+                }
+
+                $("ul.page").children().click(function(){
+                    var len5 = $(this).index();
+                    pagenum.numnum = len5;
+                    
+                    $("ul.bollet").children().eq(1).addClass("on")
+                    .siblings().removeClass("on");
+
+                    $("section.main05").children("div")
+                    .children("div").eq(0).addClass("on")
+                    .siblings().removeClass("on");
+
+                    $("section.main05").children("div").eq(len5)
+                    .addClass("on").siblings().removeClass("on");
+
+                    
+
+                    $(this).addClass("on").siblings().removeClass("on");
+                    
+                });
+                
+
+                
+                $("ul.bollet").children().click(function(){
+                    var len6 = $(this).index()-1;
+
+                    $("section.main05").children("div").eq(pagenum.numnum)
+                    .children("div").eq(len6)
+                    .addClass("on").siblings()
+                    .removeClass("on");
+
+                    $(this).addClass("on").siblings().removeClass("on");
+
+                });
+                //main05 끝
+
+                
+
+
+
+
+            });
+
+        </script>
+    </head>
+    <body>
+        <header>
+            <a href="http://eogns2222.dothome.co.kr/portfolio033/cover.html">
+                <h1>
+                    <img src="imgs.index/logo.png" alt="로고">
+                </h1>
+            </a>
+            <div class="curtain"></div>
+            <nav>
+                <ul>
+                    <li>
+                        <a>사업소개 · 혁신기술</a>
+                        <ul>
+                            <li>
+                                <a>사업영역</a>
+                            </li>
+                            <li>
+                                <a>기술혁신</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>투자 · 가치경영
+                        </a>
+                        <ul>
+                            <li>
+                                <a>투자정보</a>
+                            </li>
+                            <li>
+                                <a>지속가능경영</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>인재채용</a>
+                        <ul>
+                            <li>
+                                <a>현대건설 사람들</a>
+                            </li>
+                            <li>
+                                <a>인사제도 · 복리후생</a>
+                            </li>
+                            <li>
+                                <a>채용공고</a>
+                            </li>
+                            <li>
+                                <a>채용안내</a>
+                            </li>
+                            <li>
+                                <a>기술교육원</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>회사소개</a>
+                        <ul>
+                            <li>
+                                <a>현대건설 비전</a>
+                            </li>
+                            <li>
+                                <a>우리가 걸어온 길</a>
+                            </li>
+                            <li>
+                                <a>보도자료</a>
+                            </li>
+                            <li>
+                                <a>자료실</a>
+                            </li>
+                            <li>
+                                <a>그룹소개</a>
+                            </li>
+                            <li>
+                                <a>현대건설배구단</a>
+                            </li>
+                            <li>
+                                <a>오시는길</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="menu">
+                <p><img src="imgs.index/navIcon_top.jpg" alt="메뉴 상단바"></p>
+                <p><img src="imgs.index/navIcon_bottom.jpg" alt="메뉴 하단바"></p>
+            </div>
+            <a href="http://eogns2222.dothome.co.kr/portfolio033/sub01.html" class="news"><h2>newsroom</h2></a>
+        </header>
+        <main>
+            <section class="main01">
+                <h1 class="hidden">현대건설 동영상</h1>
+                <video autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline">
+                    <source src="imgs.index/123200959064256512.mp4" type="video/mp4">
+                </video>
+                <p><img src="imgs.index/main1_ment.png" alt="멘트이미지"></p>
+                <div>
+                    <div>
+                        <ul class="scroll">
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        
+                    </div>
+                    <p>scroll</p>
+                </div>
+            </section>
+            <section class="main02">
+                <h1>주요 프로젝트</h1>
+                <p>현대건설은 창의적인 생각과 열정으로 보다 나은 세상을 건설하고,<br> 끊임없는 혁신과 도전으로 더 나은 미래를 열어갑니다.
+                </p>
+                <div>
+                    <div>
+                        <p><img src="imgs.index/main2_01.jpg" alt="쿠웨이트 셰이크 자베르 
+                            코즈웨이 해상교량"></p>
+                        <dl>
+                            <dt>쿠웨이트 셰이크 자베르<br> 
+                                코즈웨이 해상교량</dt>
+                            <dd>수도 쿠웨이트시티와 수비야 지역을 <br>
+                                연결하는 총연장 36.1㎞의 초장대교량입니다. <br> 
+                                쿠웨이트 선왕의 이름을 땄을 정도로 <br>
+                                중요한 국책 사업입니다.</dd>
+                            <dd>#현대건설 #토목사업 #해상교량</dd>
+                        </dl>
+                    </div>
+                    <div>
+                        <p><img src="imgs.index/main2_02.jpg" alt="아모레퍼시픽 신사옥"></p>
+                        <dl>
+                            <dt>아모레퍼시픽<br> 신사옥</dt>
+                            <dd>유니크한 디자인으로 눈길을 끄는 <br>
+                                아모레퍼시픽 신사옥은 현대건설의 <br>
+                                최첨단 공법으로 까다로운 독일 설계사와 <br>
+                                발주처의 높은 기대치를 충족시켰습니다.
+                                </dd>
+                            <dd>#현대건설 #건축사업 #업무공간</dd>
+                        </dl>
+                    </div>
+                    <div>
+                        <p><img src="imgs.index/main3_03.jpg" alt="카타르 국립박물관"></p>
+                        <dl>
+                            <dt>카타르<br> 국립박물관</dt>
+                            <dd>‘금세기 최고의 걸작’으로 불리는 카타르 <br>
+                                국립박물관은 세계적인 건축가 장 누벨이 <br>
+                                사막의 장미(Desert Rose)를 모티브로 설계했습니다.
+                                </dd>
+                            <dd>#현대건설 #건축사업 #문화시설v</dd>
+                        </dl>
+                    </div>
+                    <div>
+                        <p><img src="imgs.index/main2_04.jpg" alt="힐스테이트 레이크 송도 1차
+                            "></p>
+                        <dl>
+                            <dt>힐스테이트<br> 레이크 송도 1차
+                            </dt>
+                            <dd>국내 최초 고층형 제로에너지 공동주택으로서 <br>
+                                에너지 소요량을 최소화하고, 스마트홈 기술로 <br>
+                                건축물의 지능화 및 고도화를 선도하는 단지입니다.
+                                </dd>
+                            <dd>#현대건설 #주택사업 #힐스테이트 <br>
+                                #제로에너지아파트 #Smart BEMS</dd>
+                        </dl>
+                    </div>
+                    <div>
+                        <p><img src="imgs.index/main2_05.jpg" alt="현대케미칼 MX Project"></p>
+                        <dl>
+                            <dt>현대케미칼<br> MX Project</dt>
+                            <dd>
+                                혼합자일렌 연간 120만t과 경유•제트연료 등을 <br>
+                                생산하는 시설입니다. 대부분 수입에 의존했던 <br>
+                                MX의 생산으로 경제 효과만 2조원을 넘어섭니다.
+                                </dd>
+                            <dd>#현대건설 #플랜트사업 #석유화학</dd>
+                        </dl>
+                    </div>
+                </div>
+                <ul class="num main01Paging">
+                    <li class="on">01</li>
+                    <li>02</li>
+                    <li>03</li>
+                    <li>04</li>
+                    <li>05</li>
+                </ul>
+            </section>
+            <section class="main03">
+                <div class="sub_nav">
+                    <h1>사업소개</h1>
+                    <ul class="business">
+                        <li class="on">토목사업</li>
+                        <li>건축사업</li>
+                        <li>플랜트사업</li>
+                        <li>에너지사업</li>
+                    </ul>
+                </div>
+                <ul class="businessImg">
+                    <li><img src="imgs.index/main3_tomok.png" alt="토목사업"></li>
+                    <li><img src="imgs.index/main3_gunchook.png" alt="건축사업"></li>
+                    <li><img src="imgs.index/main3_plant.png" alt="플랜트사업"></li>
+                    <li><img src="imgs.index/main3_energy.png" alt="에너지사업"></li>
+                </ul>
+                <div class="ment on">
+                    <p class="tit">최첨단 기술을 바탕으로 친환경 건설까지</p>
+                    <h2>토목사업</h2>
+                    <p class="contents">현대건설은 불굴의 개척정신, 강인한 의지와 추진력을 바탕으로 <br>
+                        국가 기간산업 건설의 최선봉 역할을 해왔습니다. 바다를 메워 땅을 만들고, 육지와 바다를 가로지르는 <br>
+                        새로운 길을 만드는 등 현대건설이 건설한 다양한 인프라를 토대로 <br>
+                        우리의 삶, 나아가 인류의 삶은 편리하고 새로워지기 시작했습니다.</p>
+                    <p class="morebtn"><a href="#">view more</a></p>
+                </div>
+                <div class="ment">
+                    <p class="tit">시대를 선도하는 미래 건축공간 <br>
+                        무한한 상상력이 빚어낸 공간의 예술을 선보입니다</p>
+                    <h2>건축사업</h2>
+                    <p class="contents">아름다운 건축물은 그 존재만으로 도시를 빛내고 국가를 대표하는 상징이 됩니다. <br>
+                        현대건설은 첨단 기술을 바탕으로 무한한 상상력이 빚어낸 공간의 예술을 만듭니다. <br>
+                        공공건축물부터 첨단 상업시설, 의료, 교육, 주거, 문화·체육시설에 이르기까지 사람들에게 행복과 평안을 안겨주는 건축물을 완성해왔습니다.</p>
+                    <p class="morebtn"><a href="#">view more</a></p>
+                </div>
+                <div class="ment">
+                    <p class="tit">글로벌 리더로서 세계 플랜트 시장을 이끌어갑니다</p>
+                    <h2>플랜트사업</h2>
+                    <p class="contents">플랜트는 무언가를 생산하는 설비나 공장으로 단순 설명됩니다. <br>
+                        그러나 최종 생산품의 형태와 성격에 따라 규모와 설계가 크게 달라지기에 까다로운 건설 분야로 꼽힙니다. <br>
+                        현대건설은 다양한 메가 프로젝트 경험과 고도의 기술력을 바탕으로 세계 최고 수준의 플랜트 사업 수행 능력을 발휘하고 있습니다.</p>
+                    <p class="morebtn"><a href="#">view more</a></p>
+                </div>
+                <div class="ment">
+                    <p class="tit">첨단 에너지 사업의 선두주자로서<br>
+                        글로벌 에너지 네트워크 구축에 앞장서겠습니다</p>
+                    <h2>에너지사업</h2>
+                    <p class="contents">현대건설은 다수의 복합발전 및 화력발전소, 에너지 네트워크의 근간이 되는 송‧변전, 산업전기 등 <br>
+                        다양한 사업을 성공적으로 수행해온 에너지 부문의 실력자입니다. 또한 태양광, 풍력, 바이오매스, 연료전지 등 <br>
+                        신‧재생 에너지 사업에도 강력한 추진력을 갖고 있습니다.</p>
+                    <p class="morebtn"><a href="#">view more</a></p>
+                </div>
+            </section>
+            <section class="main04">
+                <div>
+                    <h1>보도자료</h1>
+                    <div class="newscontainer">
+                        <div>
+                            <ul>
+                                <li class="num">2020.12.17
+                                </li>
+                                <li><a href="">카타르에서 ‘3,500 <br>
+                                    억원 규모 토목 <br>
+                                    및 병원 공사’ 수주</a></li>
+                                <li><a href="">현대건설이 전통적인 수주텃 <br>
+                                    밭인 카타르에서 2,526억원 <br>
+                                    규모 ‘TSE 저장시설 설치공사...</a></li>
+                            </ul>
+                            <ul>
+                                <li class="num">2020.12.14</li>
+                                <li><a href="">현대건설, 스마트 기기 <br>
+                                    에 따라 변신하는 맞춤 <br>
+                                    형 웹사이트 구축</a></li>
+                                <li><a href="">건설 리더 기업 이미지와 역할 <br>
+                                    에 충실한 내용들로 재편하고 <br>
+                                    허브채널 ‘뉴스룸’을 신...</a></li>
+                            </ul>
+                            <ul>
+                                <li class="num">2020.12.13</li>
+                                <li><a href="">현대건설, ‘한남3구역 <br>
+                                    재개발 사업’ 공사계약 <br>
+                                    체결</a></li>
+                                <li><a href="">역대 최대 규모 재개발사업 <br>
+                                    으로 계약 이후 사업진행에 <br>
+                                    탄력이 예상된다.</a></li>
+                            </ul>
+                            <ul>
+                                <li class="num">2020.12.10</li>
+                                <li><a href="">현대건설, 코로나 극복 <br>
+                                    위한 협력사 유동성 지<br>
+                                    원 앞장선다</a></li>
+                                <li><a href="">국내 하도급 공사를 수행하고 <br>
+                                    있는 협력사들에게 공사대금을 <br>
+                                    100% 현금으로 지급한다...</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li class="num">2020.12.22
+                                </li>
+                                <li><a href="">현대건설, 급여 끝전 <br>
+                                    모음으로 2억 8천만원<br>
+                                    10년간 32,000여..</a></li>
+                                <li><a href="">현대건설이 지난 20<br>
+                                    12월부터 금년 11월까지<br>
+                                    임직원들의 급여 끝..</a></li>
+                            </ul>
+                            <ul>
+                                <li class="num">2020.12.21
+                                </li>
+                                <li><a href="">현대건설, 도시정비<br>
+                                    4조 7383억 창사<br>
+                                    최대실적 달성</a></li>
+                                <li><a href="">현대건설이 2020년<br>
+                                    정비사업에서 4조 <br>
+                                    창사이래 최대 실..</a></li>
+                            </ul>
+                            <ul>
+                                <li class="num">2020.12.14</li>
+                                <li><a href="">현대건설, 반응형<br>
+                                     선보인다 - 스마트 <br>
+                                     변신하는 맞춤형 웹..</a></li>
+                                <li><a href="">새로운 홈페이지는 유저 <br>
+                                    의 다양한 접속환경에<br>
+                                    으로 알맞게 홈페이지..</a></li>
+                            </ul>
+                            <ul>
+                                <li class="num">2020.12.13</li>
+                                <li><a href="">현대건설, ‘한남<br>
+                                    재개발 사업’ 공사<br>
+                                     역대 최대 규모..</a></li>
+                                <li><a href="">지난 6월 현대<br>
+                                    사로 선정된 ‘한남<br>
+                                    주택재개발정비사업..</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li class="num">2020.12.17</li>
+                                <li><a href="">현대건설, 카타르<br>
+                                    ‘3,500억원 규모 토<br>
+                                    병원 공사’ 수주</a></li>
+                                <li><a href="">현대건설은 카타르<br>
+                                     분야 최대 발주처인<br>
+                                     발주한 2,526억원..</a></li>
+                            </ul>
+                            <ul>
+                                <li class="num">2020.11.30</li>
+                                <li><a href="">현대건설, ‘힐스<br>
+                                     유튜브 채널, 구<br>
+                                     명 돌파</a></li>
+                                <li><a href="">현대건설이 운영<br>
+                                     유튜브 채널 ‘힐스<br>
+                                      10만 명을 돌파하며..</a></li>
+                            </ul>
+                            <ul>
+                                <li class="num">2020.11.19</li>
+                                <li><a href="">현대건설, DJSI<br>
+                                    건설·엔지니어링 <br>
+                                    세계 1위</a></li>
+                                <li><a href="">이번 세계 1위 <br>
+                                     현대건설은 글로벌<br>
+                                      ‘Industry Leader’로..</a></li>
+                            </ul>
+                            <ul>
+                                <li class="num">2020.11.17</li>
+                                <li><a href="">현대건설, 전 건<br>
+                                     ‘재해 예측 AI’ 도입<br>
+                                      안전관리</a></li>
+                                <li><a href="">현대건설이 지난 <br>
+                                     예측 AI’ 가동을<br>
+                                     기반 건설현장 안전..</a></li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                    <p><a href="http://eogns2222.dothome.co.kr/portfolio033/sub01.html"><span>+</span>more</a></p>
+                    <ul class="newspaging">
+                        <li class="hidden">페이징</li>
+                        <li class="on"></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="main05">
+                <h1>회사연혁</h1>
+                <div class="on">
+                    <div class="on">
+                        <p class="num">1970.07.07</p>
+                        <p><img src="imgs.index/main5_slide.png" alt="표시선"></p>
+                        <ul>
+                            <li>경부고속도로 전 구간 준공</li>
+                            <li>현대건설, 아시아 중동을 넘어 글로벌 <br>
+                                건설 리더로 발돋움하다</li>
+                        </ul>
+                        <p><img src="imgs.index/main5_1970_01.jpg" alt="경부고속도로 전 구간 준공"></p>
+                    </div>
+                    <div>
+                        <p class="num">1974.08.15</p>
+                        <p><img src="imgs.index/main5_slide.png" alt="표시선"></p>
+                        <ul>
+                            <li>지하철 1호선 준공 (서울역~청량리간, 98.6km)</li>
+                            <li>이로써 우리는 일본, 중국에 이어 아시아에서 <br>
+                                3번째로 지하철을 보유한 나라가 됐다.</li>
+                        </ul>
+                        <p><img src="imgs.index/main5_1970_02.jpg" alt="지하철 1호선 준공"></p>
+                    </div>
+                    <div>
+                        <p class="num">1978.04.29</p>
+                        <p><img src="imgs.index/main5_slide.png" alt="표시선"></p>
+                        <ul>
+                            <li>고리 원자력발전소 1호기 준공</li>
+                            <li>석탄 4258만t 규모의 에너지를 만들어 냈고 국내 <br>
+                                원자력 발전 규모를 세계 6위로 끌어올렸다.</li>
+                        </ul>
+                        <p><img src="imgs.index/main5_1970_03.jpg" alt="고리 원자력발전소 1호기 준공"></p>
+                    </div>
+                </div>
+                <div>
+                    <div class="on">
+                        <p class="num">1991.10.04</p>
+                        <p><img src="imgs.index/main5_slide.png" alt="표시선"></p>
+                        <ul>
+                            <li>현대석유화학단지 준공</li>
+                            <li>울산 석유화학산업은 올해로 50년을 맞는 <br>
+                                울산공업센터의 역사와 맥을 같이 한다.</li>
+                        </ul>
+                        <p><img src="imgs.index/main5_1990_01.jpg" alt="현대석유화학단지 준공"></p>
+                    </div>
+                    <div>
+                        <p class="num">1994.03.24</p>
+                        <p><img src="imgs.index/main5_slide.png" alt="표시선"></p>
+                        <ul>
+                            <li>방글라데시 진출, 자무나 교량공사</li>
+                            <li>현대건설이 방글라데시지역 첫공사로 <br>
+                                2억4천7백만달러짜리 자무나대교교 <br>
+                                량건설공사를 턴키방식으로 수주했다.</li>
+                        </ul>
+                        <p><img src="imgs.index/main5_1990_02.jpg" alt="방글라데시 진출, 자무나 교량공사"></p>
+                    </div>
+                    <div>
+                        <p class="num">1996.12.30</p>
+                        <p><img src="imgs.index/main5_slide.png" alt="표시선"></p>
+                        <ul>
+                            <li>서강대교 준공</li>
+                            <li>서울특별시 영등포구 여의도동과 마포구 신정동을 <br>
+                                잇는 길이 1,320m, 너비 29m.(유효 너비 25m)의 <br>
+                                왕복 6차선 다리로 국내 최초의 닐센계 아치교[2]다.</li>
+                        </ul>
+                        <p><img src="imgs.index/main5_1990_03.jpg" alt="서강대교 준공"></p>
+                    </div>
+                </div>
+                <div>
+                    <div class="on">
+                        <p class="num">2010.07.13</p>
+                        <p><img src="imgs.index/main5_slide.png" alt="표시선"></p>
+                        <ul>
+                            <li>쿠웨이트 부비안 항만공사 수주</li>
+                            <li>누적 총액 102억874만달러를 기록하며 쿠웨이트를 <br>
+                                중동의 핵심 텃밭으로 일궈가고 있다.</li>
+                        </ul>
+                        <p><img src="imgs.index/main5_2010_01.jpg" alt="쿠웨이트 부비안 항만공사 수주"></p>
+                    </div>
+                    <div>
+                        <p class="num">2015.07.08</p>
+                        <p><img src="imgs.index/main5_slide.png" alt="표시선"></p>
+                        <ul>
+                            <li>코트디부아르 아지토 복합화력발전소 준공</li>
+                            <li>사하라 사막 남쪽 지역인 서아프리카 코트디부아르에서 아지토 <br>
+                                복합 화력발전소 확장 공사를 최근 성공적으로 완공하고 지난달 <br>
+                                30일 현지에서 준공식을 가졌다.</li>
+                        </ul>
+                        <p><img src="imgs.index/main5_2010_02.jpg" alt="코트디부아르 아지토 복합화력발전소 준공"></p>
+                    </div>
+                    <div>
+                        <p class="num">2019.05.01</p>
+                        <p><img src="imgs.index/main5_slide.png" alt="표시선"></p>
+                        <ul>
+                            <li>현대건설 쿠웨이트 셰이크 자베르 코즈웨이 현장 준공</li>
+                            <li>쿠웨이트 선왕의 이름을 땄을 정도로 중요한 국책 <br>
+                                사업인 셰이크 자베르 코즈웨이 공사는 쿠웨이트 정부와 <br>
+                                국민의 관심을 한 몸에 받았습니다.</li>
+                        </ul>
+                        <p><img src="imgs.index/main5_2010_03.jpg" alt="현대건설 쿠웨이트 셰이크 자베르 코즈웨이 현장 준공"></p>
+                    </div>
+                </div>
+                <div>
+                    <div class="on">
+                        <p class="num">2020.04.27</p>
+                        <p><img src="imgs.index/main5_slide.png" alt="표시선"></p>
+                        <ul>
+                            <li>도시정비사업 수주 업계 최초 1조원 돌파</li>
+                            <li>'서울 장위11-2 가로주택정비사업' 및 25일(토) <br>
+                                '원주 원동나래구역 재개발정비사업' 시공사에 <br>
+                                선정되며 올해 업계 최초로 누적수주금액 1조원을 돌파했다</li>
+                        </ul>
+                        <p><img src="imgs.index/main5_2020_01.jpg" alt="도시정비사업 수주 업계 최초 1조원 돌파"></p>
+                    </div>
+                    <div>
+                        <p class="num">2020.06.21</p>
+                        <p><img src="imgs.index/main5_slide.png" alt="표시선"></p>
+                        <ul>
+                            <li>한남3구역(디에이치 한남) 수주</li>
+                            <li>현대건설이 역대 최대 규모의 재개발 사업인 <br>
+                                '한남3재정비촉진구역 주택재개발 정비사업'을 수주했다.</li>
+                        </ul>
+                        <p><img src="imgs.index/main5_2020_02.jpg" alt="한남3구역(디에이치 한남) 수주"></p>
+                    </div>
+                    <div>
+                        <p class="num">2020.09.02</p>
+                        <p><img src="imgs.index/main5_slide.png" alt="표시선"></p>
+                        <ul>
+                            <li>싱가포르 산업안전보건 혁신 어워드 수상</li>
+                            <li>싱가포르 노동부 산하 산업안전보건청(WSH)이 수여하는 ' <br>
+                                산업안전보건 혁신 어워드 2020' 건설부문에서 최고상인 <br>
+                                금상을 수상했다</li>
+                        </ul>
+                        <p><img src="imgs.index/main5_2020_03.jpg" alt="싱가포르 산업안전보건 혁신 어워드 수상"></p>
+                    </div>
+                </div>
+                <ul class="bollet">
+                    <li class="hidden">페이징</li>
+                    <li class="on"></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <ul class="page num">
+                    <li class="on">1970</li>
+                    <li>1990</li>
+                    <li>2010</li>
+                    <li>2020</li>
+                </ul>
+            </section>
+            <section class="main06">
+                <p>세상에 문제가 있는한 <br>
+                    현대건설에는 답이 있습니다. </p>
+            </section>
+        </main>
+        <footer>
+            <div class="bottom_cont">
+                <ul>
+                    <li><a> 개인정보처리방침</a></li>
+                    <li><a> 법적고지</a></li>
+                    <li><a> H · 두드림(현대건설 신문고)</a></li>
+                    <li><a> 기술공모전</a></li>
+                    <li><a> 사이버감사실</a></li>
+                    <li><a> 패밀리사이트 +</a></li>
+                </ul>
+                <address>
+                    <ul>
+                        <li>03058 서울시 종로구 율곡로 75 현대빌딩</li>
+                        <li>사업자등록번호 101-81-16293</li>
+                        <li>T. 1577-7755</li>
+                    </ul>
+                    <p><span>© HYUNDAI E&C</span> ALL RIGHTS RESERVED.</p>
+                </address>
+                <p><a><img src="imgs.index/footer_logo.png" alt="로고"></a></p>
+            </div>
+            <div class="icon">
+                <ul>
+                    <li><a><img src="imgs.index/footer_icon_face.png" alt="페이스북"></a></li>
+                    <li><a><img src="imgs.index/footer_icon_in.png" alt="인스타그램"></a></li>
+                    <li><a><img src="imgs.index/footer_icon_kaka.png" alt="카카오톡"></a></li>
+                    <li><a><img src="imgs.index/footer_icon_naver.png" alt="네이버"></a></li>
+                    <li><a><img src="imgs.index/footer_icon_utube.png" alt="유튜브"></a></li>
+                </ul>
+            </div>
+        </footer>
+        
+    </body>
+</html>
+<script>
+
+</script>

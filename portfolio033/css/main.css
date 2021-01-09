@@ -1,0 +1,512 @@
+main{
+    display:;
+}
+
+/* main01 */
+main>section.main01{
+    position:relative;
+}
+main>section.main01>video{}
+main>section.main01>p{
+    position:absolute;
+    left:calc(50% - 500px); top:calc(50% - 300px);
+}
+main>section.main01>p>img{}
+main>section.main01>div{
+    position:absolute;
+    left:calc(50% - 70px);
+    top:calc(50% + 400px);
+    transform: rotate(-90deg);
+    
+}
+main>section.main01>div>div{
+    overflow: hidden;
+    position:relative;
+    width:15.5rem;
+    height:0.7rem;
+    background:rgba(124, 124, 124, 0.8);
+}
+main>section.main01>div>div>ul{
+    display: flex;
+    position:absolute;
+    left:15.5rem; top:0;
+}
+main>section.main01>div>div>ul>li{
+    
+    width:7rem;
+    height:0.7rem;
+    background:rgb(43, 43, 43);
+}
+main>section.main01>div>p{
+    position:absolute;
+    left:18rem; top:-2.5rem;
+    font-size:4rem;
+    color:rgb(168, 168, 168);
+    
+}
+
+/* main02 */
+main>section.main02{
+    position:relative;
+    height:100rem;
+    text-align: center;
+    background:rgb(0, 0, 0);
+    transition: all .5s ease;
+}
+
+main>section.main02>h1{
+    padding-top:9rem;
+    margin-bottom:3rem;
+    font-size:2rem;
+    font-weight: bold;
+    color:#81ec81;
+    box-sizing: border-box;
+    transition:all .5s ease;
+}
+main>section.main02>p{
+    margin-bottom:6.5rem;
+    font-size:2rem;
+    line-height: 3rem;
+    color:#606060;
+}
+main>section.main02>div{
+    position:relative;
+    margin:0 auto;
+    width:100rem;
+}
+main>section.main02>div>div{
+    position:absolute;
+    left:calc(50% - 450px);
+    top:0;
+    text-align: start;
+    
+}
+main>section.main02>div>div:not(:nth-child(1)){
+    display: none;
+}
+main>section.main02>div>div>p{
+    float: left;
+    margin-right:3rem;
+}
+main>section.main02>div>div>p>img{}
+
+main>section.main02>div>div>dl{
+    float: left;
+}
+main>section.main02>div>div>dl>dt{
+    padding:8rem 0;
+    font-size:3.5rem;
+    line-height: 5rem;
+    font-weight: 500;
+    color:#07772f;
+    box-sizing: border-box;
+}
+main>section.main02>div>div>dl>dd{
+    font-size:2rem;
+    line-height: 4rem;
+    color:#000;
+}
+main>section.main02>div>div>dl>dd:nth-child(3){
+    padding-top:9.9rem ;
+    color:#a8a8a8;    
+    box-sizing: border-box;
+}
+
+main>section.main02>ul{
+    display:flex;
+    justify-content: space-around;
+    position:absolute;
+    left:0;
+    bottom:5rem;
+    margin:0 68rem;
+    width:52.5rem;
+    font-size:2rem;
+}
+main>section.main02>ul>li{
+    position:relative;
+    cursor: pointer;
+}
+main>section.main02>ul>li:before{
+    display:none;
+    position:absolute;
+    left:0.5rem;
+    top:-1rem;
+    content:"";
+    width:1rem;
+    height:1rem;
+    background:#07772f;
+    border-radius: 100%;
+}
+main>section.main02>ul>li.on{
+    color:#07772f;
+    font-weight: 600;
+}
+main>section.main02>ul>li.on:before{
+    display:block;
+}
+
+/* main03 */
+main>section.main03{
+    position:relative;
+    height:97rem;
+    text-align: center;
+    font-weight:bold;
+}
+main>section.main03>div.sub_nav{
+    position:absolute; z-index:900 ;
+    left:calc(50% - 410px);
+    top:10rem;
+}
+main>section.main03>div.sub_nav>h1{
+    margin-bottom:7.5rem;
+    font-size:5.3rem;
+    font-weight: bold;
+    color:#4f4f4f;
+}
+main>section.main03>div.sub_nav>ul{
+    display: flex;
+    justify-content: space-between;
+    width:82rem;
+    font-weight:bold;
+}
+main>section.main03>div.sub_nav>ul>li{
+    position:relative;
+    font-size:2.3rem;
+    color:#4f4f4f;
+    cursor: pointer;
+}
+main>section.main03>div.sub_nav>ul>li.on{
+    color:#07772f;
+}
+main>section.main03>div.sub_nav>ul>li:not(:nth-child(4)):after{
+    position:absolute;
+    right:-12rem;
+    top:1rem;
+    content: "";
+    background:url(../imgs.index/main3_slide.jpg) no-repeat 0 0;
+    width:10rem;
+    height:0.3rem;
+}
+
+main>section.main03>ul{
+    perspective: 800px;
+    position:relative;
+}
+main>section.main03>ul>li{
+    transform-style: preserve-3d;
+    position:absolute;
+    left:0;
+    top:0;
+    transform:translateZ(-300px);
+    transition:all .5s ease;
+}
+main>section.main03>ul>li:not(:nth-child(1)){
+    display:none;
+}
+main>section.main03>ul>li>img{}
+
+main>section.main03>div.ment{
+    display: none;
+    position:absolute;
+    left:calc(50% - 670px);
+    bottom:15rem;
+    width:135rem;
+    
+}
+main>section.main03>div.ment.on{
+    display:block;
+}
+main>section.main03>div.ment>p.tit{
+    margin-bottom:4rem;
+    font-size:2rem;
+    line-height: 3.6rem;
+    color:#4f4f4f;
+}
+main>section.main03>div.ment>h2{
+    margin-bottom:5rem;
+    font-size: 7rem;
+}
+main>section.main03>div.ment>p.contents{
+    margin-bottom:9rem;
+    font-size: 2rem;
+    line-height: 3.6rem;
+    color:#000000;
+}
+main>section.main03>div.ment>p.morebtn{
+    margin:0 auto;
+    width:24.5rem;
+    height:7.5rem;
+    border:2px solid #4f4f4f;
+    font-size:2.3rem;
+    line-height: 7.5rem;
+    cursor: pointer;
+    background:rgba(255,255,255,0);
+    transition:all 1s ease;
+}
+
+/* main04 */
+main>section.main04{
+    height:64rem;
+    background:url(../imgs.index/main4_background.jpg) no-repeat center/cover;
+    opacity: 0;
+    transition: all 1.3s ease;
+    
+}
+main>section.main04>div{
+    position:relative;
+    margin:0 auto;
+    width:126rem;
+    height:64rem;
+    overflow: hidden;
+    
+}
+main>section.main04>div>h1{
+    padding-top:4.5rem;
+    font-size:5.3rem;
+    color:#fff;
+    text-align: center;
+    box-sizing: border-box;
+}
+main>section.main04>div>div{
+    position:absolute;
+    left:0;
+    top:20rem;
+    display: flex;
+    transition:all 1s ease;
+}
+main>section.main04>div>div>div{
+    perspective: 800px;
+    display: flex;
+    justify-content: space-between;
+    width:126rem;
+    
+}
+main>section.main04>div>div>div>ul{
+    transform-style: preserve-3d;
+    position:relative;
+    width:31.5rem;
+    transition: all .6s ease;
+    transform: translateZ(0);
+}
+main>section.main04>div>div>div>ul:not(:nth-child(4)):after{
+    position:absolute;
+    right:2rem;
+    top:0;
+    content:"";
+    width:0.1rem;
+    height:29rem;
+    background:#000;
+
+}
+main>section.main04>div>div>div>ul>li{}
+main>section.main04>div>div>div>ul>li:nth-child(1){
+    margin-bottom:3rem;
+    font-size:1.5rem;
+    color:#dedddd;
+}
+main>section.main04>div>div>div>ul>li:nth-child(2){
+    margin-bottom:3rem;
+    font-size:2.8rem;
+    line-height: 3.6rem;
+    color:#fff;
+}
+main>section.main04>div>div>div>ul>li:nth-child(3){
+    font-size:1.8rem;
+    line-height: 3.6rem;
+    color:#e7e7e7;
+}
+main>section.main04>div>div>div>ul>li>a{}
+
+main>section.main04>div>p{
+    float: right;
+    font-size:2rem;
+    color:#065422;
+    font-weight:bold;
+    cursor: pointer;
+}
+main>section.main04>div>p>a>span{
+    font-size:2.5rem;
+    margin-right:1rem;
+}
+main>section.main04>div>ul{
+    position:absolute;
+    left:calc(50% - 60px);
+    bottom:2rem;
+    display:flex;
+    justify-content:space-between;
+    width:12rem;
+
+}
+main>section.main04>div>ul>li{
+    width:2rem;
+    height:2rem;
+    background:#fff;
+    border-radius:100%;
+}
+main>section.main04>div>ul>li.on{
+    background:#4f4f4f;
+}
+
+/* main05 */
+main>section.main05{
+    position:relative;
+    height:84rem;
+    text-align: center;
+    opacity: 0;
+    transition:all 1.3s ease;
+    
+}
+main>section.main05>h1{
+    padding-top:15rem;
+    font-size:5.3rem;
+    box-sizing: border-box;
+}
+main>section.main05>div{
+    display:none;
+    position:absolute;
+    left:0;
+    top:0;
+}
+main>section.main05>div.on{
+    display:block;
+}
+main>section.main05>div>div{
+    display:flex;
+    justify-content: space-between;
+    position:absolute;
+    left:5.5rem;
+    top:34.6rem;
+    width:192rem;
+    opacity: 0;
+    transition: all 1s ease;
+}
+main>section.main05>div>div.on{
+    opacity: 1;
+}
+main>section.main05>div>div>p{}
+main>section.main05>div>div>p.num{
+    flex:1 1 1rem;
+    font-size:2rem;
+    
+}
+main>section.main05>div>div>p:nth-child(2){
+    margin-top:0.5rem;
+    flex:1 1 10rem;
+}
+
+main>section.main05>div>div>p>img{}
+main>section.main05>div>div>ul{
+    margin-left:7rem;
+    flex:1 1 50.6rem;
+    text-align: start;
+    
+}
+main>section.main05>div>div>ul>li{}
+main>section.main05>div>div>ul>li:nth-child(1){
+    margin-bottom:5.5rem;
+    font-size:2.3rem;
+}
+main>section.main05>div>div>ul>li:nth-child(2){
+    font-size:2rem;
+    line-height:3.6rem;
+}
+main>section.main05>div>div>p:nth-child(4){
+     
+}
+main>section.main05>ul.bollet{
+    position:absolute;
+    left:calc(50% - 60px);
+    bottom:13.8rem;
+    display:flex;
+    justify-content:space-between;
+    width:12rem;
+}
+main>section.main05>ul.bollet>li{
+    width:2rem;
+    height:2rem;
+    background:#4f4f4f;
+    border-radius:100%;
+    cursor: pointer;
+}
+main>section.main05>ul.bollet>li.on{
+    background:#07772f;
+}
+main>section.main05>ul.page{
+    display:flex;
+    justify-content: space-around;
+    margin:58rem 3rem 0 3rem;
+    margin-top:55rem;
+    width:184.3rem;
+    height:7.2rem;
+    border-top:1px solid #000;
+    
+}
+main>section.main05>ul.page>li{
+    position:relative;
+    font-size:2.5rem;
+    line-height: 7.2rem;
+    cursor: pointer;
+}
+main>section.main05>ul.page>li:before{
+    display:none;
+    position:absolute;
+    right:-0.7rem;
+    top:1.5rem;
+    content:"";
+    width:1rem;
+    height:1rem;
+    background:#07772f;
+    border-radius:100%;
+}
+main>section.main05>ul.page>li.on{
+    color:#07772f;
+    font-weight: 600;
+}
+main>section.main05>ul.page>li.on:before{
+    display:block;
+}
+
+/* main06 */
+main>section.main06{
+    
+    height:64rem;
+    background:url(../imgs.index/main6_background.jpg) no-repeat 0 6.3rem;
+    opacity: 0;
+    transition: all 1.3s ease;
+    
+}
+main>section.main06>p{
+    padding-top:20rem;
+    margin-left:10rem;
+    font-size:6rem;
+    line-height: 7rem;
+    color:#e6e4e4;
+    box-sizing:border-box;
+    opacity: 0;
+    transition: all 1.3s ease;
+}
+
+
+
+
+/* 이벤트 */
+main>section.main03>div.ment>p.morebtn:hover{
+    background:rgba(255,255,255,.3);
+}
+
+main>section.main04>div>div>div>ul:hover{
+    transform:translateZ(-20px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

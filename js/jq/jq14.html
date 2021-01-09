@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>Document</title>
+
+        <link rel="stylesheet" href="../css/reset.css">
+
+        <style>
+
+            /* body>h1{ position:absolute;
+
+            
+
+            width:300px; height:300px;
+
+            border:1px solid green;
+
+            background: orange;
+
+            clip: rect(0, 150px, 300px, 100px);  rect(top, right, bottom, left) 각 전달인자 값은 모두 왼쪽과 상단으로부터의 거리이다.
+
+                clip은 fixed와 absolute요소에만 적용가능하다.
+
+            
+
+        } */
+
+            body > div {
+
+                position: relative;
+
+                margin: 100px auto 0;
+
+                width: 1000px;
+                height: 600px;
+
+                background: #000;
+
+            }
+
+            body > div > article {
+
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 1000px;
+                height: 600px;
+
+            }
+
+            body > div > article:nth-child(1) {
+
+                clip: rect(0,1000px, 600px,0);
+
+                background: url("imgs/bg_1.jpg") no-repeat 0 0;
+
+                background-size: 1000px 600px;
+
+            }
+
+            body > div > article:nth-child(2) {
+
+                clip: rect(0,1000px, 600px,250px);
+
+                background: url("imgs/bg_2.jpg") no-repeat 0 0;
+
+                background-size: 1000px 600px;
+
+            }
+
+            body > div > article:nth-child(3) {
+
+                clip: rect(0,1000px, 600px,500px);
+
+                background: url("imgs/bg_3.jpg") no-repeat 0 0;
+
+                background-size: 1000px 600px;
+
+            }
+
+            body > div > article:nth-child(4) {
+
+                clip: rect(0,1000px, 600px, 750px);
+
+                background: url("imgs/bg_4.jpg") no-repeat 0 0;
+
+                background-size: 1000px 600px;
+
+            }
+
+            body > div > article > h1 {
+
+                margin-top: 30px;
+
+                margin-bottom: 80px;
+
+                text-align: center;
+
+                font: bold 32px sans-serif;
+
+                color: #fff;
+
+            }
+
+            body > div > article > div {
+
+                margin: 0 auto;
+
+                width: 600px;
+                height: 300px;
+
+                background: rgba(255,255,255,.5);
+
+            }
+        </style>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <script>
+
+            $(function () {
+                
+                //이벤트 선택할 요소
+
+                var masks = $(".masks"); //집합객체
+
+                var container = $("#container");
+
+                var maskDatas = [];
+
+                masks.each(function (i, v) {
+                    
+                    maskDatas.push({"left": container.width()/masks.length*i});
+
+                });
+
+                // on을 이용한 이벤트 사용할 때는 부모요소(container요소)가
+                // 부모요소.on("이벤트명1개","부모요소의자식선택자",function(){}); 부모요소.on({"이벤트1":function(){},
+                // "이벤트2":function(){}}, "부모요소의자식선택자");
+
+                container.on({
+                    "mouseenter": function () {
+
+                        //1.  내가 어디에 들어갔는지 알아내야 한다.
+
+                        doFlex($(this).index());
+
+                        //console.log( $(this).index() );
+
+                    },
+                    "mouseleave": function () {
+                        doFlex(-1);
+                    }
+                }, ".masks");
+                
+                function doFlex(idx) {
+
+                    var w = container.width();
+
+                    var h = container.height();
+
+                    var lft;
+
+                    // console.log(w); 현재 마우스가 들어간 번호를 전달 받으면 내 것과 내것이 아닌 것들을 구분 한다. idx<숫자 ==> 오른쪽
+                    // 요소들이고 그 이외라면 내 것과 왼쪽 요소들이다.
+
+                    masks.each(function (i, v) {
+
+                        var _this = $(this);
+                        if(idx==-1){
+                            lft = w/masks.length*i;
+                        }else if (idx < i) { //오른쪽으로 이동하는 아이들
+
+                            lft = w * (1 - 0.1 * (masks.length - i));
+
+                        } else { //왼쪽으로 이동하는 아이들
+
+                            lft = w * (0.1 * i);
+
+                        }
+
+                        
+
+                        $(maskDatas[i]).stop(true).animate({
+                            "left": lft
+                        }, {
+                            duration: 300,
+
+                            progress: function () {
+
+                                this.left;
+                                _this.css("clip","rect(0,"+w+"px,"+h+"px,"+this.left+"px)");
+
+                            }
+
+                        }); //animate End
+
+                    }); // each End
+
+                } //doFlex End
+
+            });
+        </script>
+
+    </head>
+
+    <body>
+
+        <!--<h1>클리핑하기</h1> div>article.masks*4>h1+div-->
+
+        <div id="container">
+
+            <article class="masks">
+
+                <h1>메뉴 1</h1>
+
+                <div>
+                    들어갈 내용 1
+                </div>
+
+            </article>
+
+            <article class="masks">
+
+                <h1>메뉴 2</h1>
+
+                <div>
+                    들어갈 내용 2
+                </div>
+
+            </article>
+
+            <article class="masks">
+
+                <h1>메뉴 3</h1>
+
+                <div>
+                    들어갈 내용 3
+                </div>
+
+            </article>
+
+            <article class="masks">
+
+                <h1>메뉴 4</h1>
+
+                <div>
+                    들어갈 내용 4
+                </div>
+
+            </article>
+
+        </div>
+
+    </body>
+
+</html>

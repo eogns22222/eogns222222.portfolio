@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //커피 전문점
+        function coffee(){
+            this.americano = 4100;
+            this.cafuccino = 4300;
+            this.latte = 4300;
+            this.amount = 0; // 매출
+            this.level = "normal"; //"vip"
+        }
+
+        coffee.prototype.pos = function(x){
+            this.amount += x;
+            if(this.amount>10000000){
+                this.level = "vip";
+            }
+        }
+
+        var starCoffee1 = new coffee();
+        var starCoffee2 = new coffee();
+        var starCoffee3 = new coffee();
+        
+        var num = 0;
+        while(num<770){
+            num++;
+            starCoffee1.pos(starCoffee1.americano*3);
+            starCoffee1.pos(starCoffee1.cafuccino*3);
+            starCoffee1.pos(starCoffee1.latte*3);
+            starCoffee1.pos(starCoffee1.americano);
+            starCoffee1.pos(starCoffee1.americano);
+        }
+        alert(starCoffee1.amount);
+        alert(starCoffee1.level);
+        
+        var num2 = 0;
+        while(num2<770){
+            num2++;
+            starCoffee2.pos(starCoffee2.americano*2);
+            starCoffee2.pos(starCoffee2.cafuccino);
+            starCoffee2.pos(starCoffee2.latte*5);
+            starCoffee2.pos(starCoffee2.americano*2);
+            starCoffee2.pos(starCoffee2.americano*5);
+        }
+        alert(starCoffee2.amount);
+        alert(starCoffee2.level);
+
+    </script>
+</body>
+</html>

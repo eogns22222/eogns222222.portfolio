@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ko;
+        var math;
+        var en;
+        var average;
+        while(true){
+                var ko = prompt("국어점수를 입력해주세요.")*1;
+                var math = prompt("수학점수를 입력해주세요.")*1;
+                var en = prompt("영어점수를 입력해주세요.")*1;
+            if(ko>=0 && ko<=100 && math>=0 && math<=100 && en>=0 && en<=100){
+                var average = confirm("평균값은 "+(ko+math+en)/3+"입니다.");
+                var average = (ko+math+en)/3;
+                console.log(average);
+                
+                    if(average>=90 && average<=100){
+                        alert("수");
+                        break;
+                    }else if(average>=70 && average<=89){
+                        alert("우");
+                        break;
+                    }else if(average>=50 && average<=69){
+                        alert("미");
+                        break;
+                    }else if(average>=30 && average<=49){
+                        alert("양");
+                        break;
+                    }else{
+                        alert("가");
+                        break;
+                    }
+                
+                
+                
+            }else{
+                alert("잘못 입력하였습니다.");
+            }
+        }
+        
+        
+
+
+
+    </script>
+</body>
+</html>

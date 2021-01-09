@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="tit">0</h1>
+    <button id="follow">팔로우</button>
+    <button id="unfollow">언팔로우</button>
+
+    <script>
+        var hhh = document.querySelector("#tit");
+        var fooo = document.querySelector("#follow");
+        var unfo = document.querySelector("#unfollow");
+
+        (function(){
+            var localNum = 0;
+
+            fooo.addEventListener("click", function(){
+                hhh.innerHTML = ++localNum;
+            });
+            unfo.addEventListener("click", function(){
+                hhh.innerHTML = --localNum;
+            });
+
+        })();
+        
+    </script>
+</body>
+</html>

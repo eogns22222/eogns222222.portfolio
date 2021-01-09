@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //10000까지 0이라는 숫자가 몇번 나오는지 도출하시오.
+
+        var num = 0;
+        var point = 0;
+        var temp = 0;
+
+        while(true){
+            num++;
+            temp = num;
+            while(true){
+                if(temp%10 == 0){
+                    point++;
+                }
+                temp /= 10;
+                temp = parseInt(temp);
+                    if(temp != 10 && temp<10){
+                    break;
+                }
+            }
+            if(num == 10000){
+                break;
+            }
+            
+        }
+
+        
+        console.log(point);
+    </script>
+</body>
+</html>

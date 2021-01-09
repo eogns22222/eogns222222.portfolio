@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>스크롤(wheel)2</title>
+
+    <link rel="stylesheet" href="../../css/reset.css">
+
+    <style>
+
+        html,body{
+
+            height:100%;
+
+        }    
+
+        /* 각 브라우저별 스크롤바 없애기*/
+
+        body::-webkit-scrollbar {
+
+            display:none;
+
+        }
+
+        body::-moz-scrollbar {
+
+            display:none;
+
+        }
+
+        body::-o-scrollbar {
+
+            display:none;
+
+        }
+
+        body::-ms-scrollbar {
+
+            display:none;
+
+        }
+
+        
+
+        header{
+
+            display:flex;
+
+            justify-content: space-between; /*양쪽 정렬*/
+
+            align-items: flex-end; /*새로로 container 하단에 붙도록 한다.*/
+
+            position:fixed; 
+
+            left:0; top:0; 
+
+            width:100%; height:80px;
+
+            background:rgba(0,0,0,1);
+
+        }
+
+        
+
+        header>h1{
+
+            flex:0 0 200px; /*200(로고) + nav의 크기(1000)를 제외한 여유공간의 값을 전혀 가져가지 않는다. 즉, 여유공간이 있어도 커지지도 않고 작아지지도 않는다.*/
+
+            height:50px;
+
+            background:olive;
+
+            color:#fff;
+
+        }
+
+        header>nav{
+
+            flex:0 0 1000px; /*200(로고) + nav의 크기(1000)를 제외한 여유공간의 값을 전혀 가져가지 않는다. 즉, 여유공간이 있어도 커지지도 않고 작아지지도 않는다.*/
+
+            height:50px;
+
+        }
+
+        header>nav>ul{
+
+            display: flex;
+
+            height:50px;
+
+        }
+
+        header>nav>ul>li{
+
+            flex:1 1 auto;
+
+            background:#fff;
+
+        }
+
+        header>nav>ul>li.on>a{
+
+            color:coral;
+
+            background:rgba(250,240,0,1);
+
+        }
+
+        header>nav>ul>li:nth-child(odd){
+
+            background:rgba(200,200,200,0.5);
+
+        }
+
+        header>nav>ul>li>a{
+
+            display: flex; /*a 요소 내부에 있는 글자를 가운데 보내기 위한 방편*/
+
+            justify-content: center;
+
+            align-items: center;
+
+            height:50px;
+
+        }
+
+        
+
+        section{
+
+            box-sizing:border-box; 
+
+            padding-top:100px; padding-left:50px; height:100%;
+
+        }
+
+        section:nth-of-type(1){background:yellowgreen; }
+
+        section:nth-of-type(2){background:teal; }
+
+        section:nth-of-type(3){background:orangered; }
+
+        section:nth-of-type(4){background:darkblue; }
+
+        section:nth-of-type(5){background:pink; }
+
+        section>h1{font:bold 32px sans-serif; color:#fff;}
+
+        section>p{color:rgba(230,230,250,1);}
+
+        section:nth-of-type(4)>p{margin-bottom:100px;}
+
+        
+
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="script/jquery.mousewheel.min.js"></script>
+
+    <script>
+
+        $(function(){
+
+            //새로고침하면, '스크롤 바'를 가장 처음으로 이동시키기
+
+            $("html, body").animate({"scrollTop":0}, 10);
+            
+            var scrollEvnt = {
+                count: 0,
+                dir:"down",
+                waitScroll:false,
+                len:$("section").length,
+                scroll:true,
+                stopPoint:3, //멈추고 싶은 section요소의 순번
+                expandH:100 //확장되고 싶은 비율
+            }
+            $("section")
+            .eq(scrollEvnt.stopPoint).css("height",100+scrollEvnt.expandH+"%");
+        
+        
+            //네비게이터 클릭 이벤트
+            $("nav").children("ul").children("li").click(function(e){
+                e.preventDefault();
+                //현재 몇번째를 클릭했는지 알아내서 그 번지에 해당하는
+                //요소로 이동하면 된다. 
+                scrollEvnt.count = $(this).index();
+                scrollEvnt.scroll = false;
+                moveBox();
+            });
+        
+        
+            //스크롤은 개인별로 하는 방식이 모두 다르다. 
+            //스크롤은 스크롤하는 중에 이벤트가 계속 발생한다. 
+            //스크롤이 끝날때마다 하나씩 (위 또는 아래로)이동시키면 된다.
+            //DOMMouseScroll과 mousewheel은 스크롤 이벤트 할 때 같이 사용할 것.
+            $(window).on("mousewheel DOMMouseScroll",function(e){
+                scrollEvnt.scroll = true;
+                var boxH = $("section").eq(0).height();
+                // mousewheel 플러그인 이벤트 객체e에서 deltaY, deltaX등 여러가지를
+                // 속성이 있다. 이 속성은 유저가 휠을 사용할 때!! 자동으로 나타나게 된다. 
+                // 필요에 의해서 사용할 수도 있고 사용하지 않을 수도 있다. 
+                // 우리가 배경이미지를 움직였을 때 이벤트 객체에서는 document위에서
+                // 마우스가 위치한 x, y지점이 중요해서 이벤트 객체를 사용했듯이
+                // 이번에는 내가 스크롤, 마우스휠을 움직일 때 아래로 스크롤 했는지, 
+                // 위로 스크롤 했는지 판단해주는 이벤트 객체를 플러그인이 제공한다.
+                if(e.deltaY == -1){
+                    scrollEvnt.dir = "down";
+                }else{
+                    scrollEvnt.dir = "up";    
+                }
+        
+                
+                if(scrollEvnt.waitScroll){// null, undefined, 0은 이상 세가지는
+                                         // if조건문에서 false의 값을 갖는다.   
+                   //자연스러운 애니메이션을 위해서
+                   clearTimeout(scrollEvnt.waitScroll);
+                }
+        
+        
+                //멈추는 섹션의 위치에서 확장된 크기만큼 scrollTop의 위치를 
+                //알아내기 위한 변수 설정
+                //var scT = $(window).scrollTop();//스크롤탑은 수치를 return
+            
+                //결과가 %인 것은 수치와 비교할 수 없다. 그래서 수치로 변환한다. 
+                var h =  $("section").eq(scrollEvnt.stopPoint).offset().top;
+                //console.log(h);
+                var expand = $("section").eq(0).height()*scrollEvnt.expandH/100;
+        
+                scrollEvnt.waitScroll = setTimeout(function(){
+            
+                     if(scrollEvnt.dir == "down" && scrollEvnt.count == scrollEvnt.stopPoint ){
+                        scrollEvnt.scroll = false;
+                     }
+                     if(scrollEvnt.dir == "down" && $(window).scrollTop() >= (h+expand) ){
+                            //console.log("inininin");
+                            scrollEvnt.scroll = true;
+                     }                     
+                     if(scrollEvnt.dir == "up" && ( scrollEvnt.count == scrollEvnt.stopPoint+1 || scrollEvnt.count == scrollEvnt.stopPoint) ) {
+
+                        scrollEvnt.scroll = false;
+
+                        //console.log("들어와있음");
+                        //up방향일 때는 
+                        //수동으로 스크롤하면 스크롤 카운트를 변경할 수 없어서 
+                        //카운트 크기를 stopPoint로 변경
+
+                        scrollEvnt.count = scrollEvnt.stopPoint;
+                        lightNow();
+                     }
+                
+                     //console.log(scT + "/" +h);
+                     if(scrollEvnt.dir == "up" && $(window).scrollTop() <= h ){
+                        scrollEvnt.scroll = true;                     
+                     }
+                
+                     if(scrollEvnt.scroll){
+                        moveBox();      
+                     }
+
+
+                },80);//setTimeout 끝
+
+            });
+
+            
+
+            function moveBox(){
+
+                
+
+                if(scrollEvnt.scroll){
+
+                   if(scrollEvnt.dir == "down"){
+
+                        scrollEvnt.count++;
+
+                        if(scrollEvnt.count >= scrollEvnt.len ){ //스크롤을 끝까지 내렸다면, 
+
+                            scrollEvnt.count = scrollEvnt.len-1;//마지막에 고정한다.
+
+                        }
+
+                    }else{
+
+                        scrollEvnt.count--;
+
+                        if(scrollEvnt.count < 0){ //스크롤을 처음으로 위치시켰다면,
+
+                           scrollEvnt.count = 0; //처음위치에 고정한다
+
+                        }
+
+                    }
+
+                }
+
+                
+
+                //console.log(scrollEvnt.count);
+
+                //jQuery요소객체.offset()은 요소의 top과 left값을 갖고 있는 객체를
+
+                //return한다. 
+
+                //offset() vs position() ===> offset은 body로부터의 top과 left의 값을 갖고 있는 객체 return / position은 기준점으로부터의 topr과 left 값을 갖고 있는 객체 return한다. 
+
+                
+
+                var nextTop = $("section").eq(scrollEvnt.count).offset().top;
+
+                //console.log(nextTop);
+
+                $("html, body").animate({"scrollTop":nextTop},300,"linear");
+
+                
+
+                lightNow();
+
+            }//moveBox 함수 끝
+
+            
+
+            function lightNow(){
+
+                $("nav>ul").children("li")
+
+                    .eq(scrollEvnt.count).addClass("on")
+
+                    .siblings().removeClass("on");
+
+            }//lightNow 함수 끝
+
+ 
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <!-- (header>h1+nav>h1+ul>li*5>a)+section*5>h1+p  -->
+
+    <header>
+
+        <h1>로고</h1>
+
+        <nav>
+
+            <h1 class="hidden">주요 카테고리</h1>
+
+            <ul>
+
+                <li class="on"><a href="#">메뉴1</a></li>
+
+                <li><a href="#">메뉴2</a></li>
+
+                <li><a href="#">메뉴3</a></li>
+
+                <li><a href="#">메뉴4</a></li>
+
+                <li><a href="#">메뉴5</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <section class="box1">
+
+        <h1>첫번째 섹션</h1>
+
+        <p>첫번째 내용이랍니다..... 메리 크리스마스 </p>
+
+    </section>
+
+    <section class="box2">
+
+        <h1>두번째 섹션</h1>
+
+        <p>두번째 내용이랍니다..... 해피 뉴 이어 </p>
+
+    </section>
+
+    <section class="box3">
+
+        <h1>세번째 섹션</h1>
+
+        <p>세번째 내용이랍니다..... 항상 건강하세요. </p>
+
+    </section>
+
+    <section class="box4">
+
+        <h1>네번째 섹션</h1>
+
+        <p>네번째 내용이랍니다..... 새해 복복복복복~~!!!. </p>
+
+        <p>네번째 내용이랍니다..... 새해 복복복복복~~!!!. </p>
+
+        <p>네번째 내용이랍니다..... 새해 복복복복복~~!!!. </p>
+
+        <p>네번째 내용이랍니다..... 새해 복복복복복~~!!!. </p>
+
+        <p>네번째 내용이랍니다..... 새해 복복복복복~~!!!. </p>
+
+        <p>네번째 내용이랍니다..... 새해 복복복복복~~!!!. </p>
+
+        <p>네번째 내용이랍니다..... 새해 복복복복복~~!!!. </p>
+
+        <p>네번째 내용이랍니다..... 새해 복복복복복~~!!!. </p>
+
+        <p>네번째 내용이랍니다..... 새해 복복복복복~~!!!. </p>
+
+        <p>네번째 내용이랍니다..... 새해 복복복복복~~!!!. </p>
+
+    </section>
+
+    <section class="box5">
+
+        <h1>다섯번째 섹션</h1>
+
+        <p>다섯번째 내용이랍니다..... 포폴을 하시오. </p>
+
+    </section>
+
+</body>
+
+</html>

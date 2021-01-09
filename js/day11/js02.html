@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //기초데이터타입 래퍼객체
+        //string, number, boolean 3가지만 래퍼객체 존재
+        //3가지 기초데이터 타입 중 string, number가 99.99999% 래퍼객체 사용
+        
+        //래퍼객체는 기초데이터타입이 일시적으로 속성을 사용할 수 있게 해준다.
+        // String, Number, Boolean으로 존재하는 래퍼객체
+
+        var str = "javascript";
+        var letter = str.charAt(0);  //래퍼객체와 연결되어서 래퍼객체의 속성들을 사용할 수 있다.
+                        //charAt ---> 문자 가져와 (0) ---> 0에 해당하는
+                        //0123456789
+                        //javascript
+        console.log(letter);
+        var idx = str.indexOf("a"); //두번째 전달인자는 그 번지수부터 시작해서 첫번째 전달인자가 해당하는 index를 number타입으로 return한다.
+        // 두번째 전달인자가 없으면, 첫번째 전달인자에 해당하는 글자를 0번부터 처음 해당하는 index를 number타입으로 return
+        // indexOf ---> 숫자가져와  ("a") ---> a에 해당하는 ("a",2) ---> 두번째(v)이후에 a 가져와
+        
+        var num = 0;
+        var idx2 = 0;
+        while(true){
+            idx2 = str.indexOf("a",idx2);
+            if(idx2>=0){  
+                num++;
+                idx2 += 1;
+            }
+            if(idx2 == -1){
+                break;
+            }
+        }
+        console.log("a는 현재"+num+"개 있습니다.");
+
+
+        var lastIdx = str.lastIndexOf("a"); //첫번째 전달인자에 해당하는 글자가 존재한다면 
+                                            //가장 마지막에 있는 글자의 번지수를 return한다.
+        console.log(lastIdx);
+
+        var len = str.length; // 메소드가 아닌 일반 속성이다. 
+                              // 글자의 개수를 return한다. 
+                              // 개수는 0이 아닌 1부터 시작한다. 
+        
+        console.log("글자의 길이"+len);
+
+        var reStr = str.replace("ava","AvA"); //첫번째 전달인자 글자를 두번째 전달인자 글자로 변경해서 return한다.
+
+        console.log("바뀐글자"+reStr);
+
+        
+    </script>
+</body>
+</html>

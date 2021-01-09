@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="birth" action="test.jsp">
+        <input type="text" name="jumin" id="jumin" value="" placeholder="ex>주민번호 앞자리 입력 201101-1">
+        <button name="btn">앞자리 확인</button>
+        <input type="submit" value="전송">
+    </form>
+    <p><a id="linkNaver" href="https://www.naver.com">네이버로 이동</a></p>
+    <script>
+        // var aTag = document.querySelector("#linkNaver");
+        //이벤트에 관련된 모든 함수들은 매개변수(파라미터)로 이벤트 객체를 가질 수 있다. 이벤트 객체는 javascript에서 제공을 한다.
+        //요소객체.onclick = function (e){}, 요소객체.addEventListener("이벤트명", function(e){})
+        //매개변수의 이름은 중요하지 않으며 대체로 e 또는 event라고 사용한다. 다만 javascript에서 제공은 하지만, 작성자가 매개변수를 쓸 수도 있고 안쓸수도 있다.
+        //이벤트 객체는 이벤트가 일어난 위치, 이벤트가 발생한 요소, 이벤트 종류 등을 속성으로 사용하며, 이벤트를 막을수도 있다.
+        // aTag.addEventListener("click", function(e){
+        //     e.preventDefault();
+        //     window.location.href = "http://www.daum.net";
+        // });
+        // button을 클릭하면 alert을 이용해서 '2020년 11월 01일생'라고 나오게 작성하시오
+        //#1.
+        //form요소의 name값은 document객체에서 바로 속성으로 접근가능
+        //input요소가 form내부에 존재할때 input요소의 name값은 form의 name값의 속성으로 존재한다. 
+        
+        document.birth.btn.addEventListener("click", function(e){
+            e.preventDefault(); // 원래 가지고 있는 초기이벤트 활성화를 삭제 - button을 눌렀을 때 원래 링크가 넘어가는데 넘어가는 이벤트를 없앴음
+            var juminN = document.birth.jumin.value
+            if(juminN != "" && juminN.length == 8){  //juminN에 값이 없는게 아니라면
+                
+                if(juminN.indexOf("-") != -1){
+                    var numberJ = juminN.replace("-",""); //새로운 값return
+                    if(!isNaN(numberJ*1)){
+                        var genderN = numberJ.charAt(6);
+                        if(genderN == "1" || genderN == "2"){
+                            var a = numberJ.substring(0,2);
+                            var b = numberJ.substring(2,4);
+                            var c = numberJ.substring(4,6);
+                            alert("19"+a+"년생 "+b+"월"+c+"일생");
+                        }else if(genderN == "3" || genderN == "4"){
+                            var a = numberJ.substring(0,2);
+                            var b = numberJ.substring(2,4);
+                            var c = numberJ.substring(4,6);
+                            alert("20"+a+"년생 "+b+"월"+c+"일생");
+                        }
+                    }else{
+                        alert("숫자를 입력하세요");
+                    }
+                }else{
+                    alert("주어진 힌트값대로 입력하시오. ex>201103-1");
+                }
+            }else{  //juminN에 값이 없다면
+                alert("값을 정확하게 입력하시오.");
+            }
+            
+        });
+    </script>
+</body>
+</html>

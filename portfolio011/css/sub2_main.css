@@ -1,0 +1,96 @@
+main{}
+main>div{
+    
+    background:url(../imgs2/map_top2.jpg) no-repeat 0 8rem;
+    width:192rem;
+    height:28.9rem;
+}
+main>div>p{
+    color:#fff;
+    float:right;
+    font-size:5rem;
+    margin-top:15rem;
+    margin-right:37.8rem;
+}
+main>section{
+    margin:5rem auto;
+    width:128.2rem;
+    
+}
+main>section>div{
+    display:flex;
+    justify-content: space-between;
+    
+}
+main>section>div>div{
+    position:relative;
+    width:41rem;
+    height:3.8rem;
+}
+main>section>div>div>form{
+    position:absolute;
+    left:0; top:0;
+    
+}
+main>section>div>form{
+    
+}
+main>section>div>form>select{
+    width:41rem;
+    height:3.8rem;
+    font-size: 1.8rem;
+}
+
+main>section>div>form>select>option{}
+main>section>div>div>form>select{
+    width:41rem;
+    height:3.8rem;
+    font-size: 1.8rem;
+}
+main>section>div>div>form:nth-child(1){
+    z-index: 100;
+}
+
+main>section>button{
+    border:0 none;
+    background:#4b2886;
+    margin:2.8rem 49.6rem 4.8rem 49.6rem ;
+    width:29rem;
+    height:4.8rem;
+    font-size:2rem;
+    color:#fff;
+}
+
+
+
+
+main>section>table{
+    border:1px solid red;
+    width:128.2rem;
+    height:80.8rem;
+    font-size:1.6rem;
+    line-height: 2.2rem;
+    border:1px solid #d3d3d3;
+}
+main>section>table>thead{
+    height:5rem;
+    border:1px solid #d3d3d3;
+}
+main>section>table>thead>tr>th{
+    height:5rem;
+}
+main>section>table>tbody>tr>th{
+    box-sizing: border-box;
+    padding-top:3rem;
+    padding-left:2.6rem;
+    text-align: start;
+    width:38.5rem;
+    border:1px solid #d3d3d3;
+}
+main>section>table>tbody>tr>th>span{
+    font-weight: bold;
+}
+main>section>table>tbody>tr>td{
+    
+}
+

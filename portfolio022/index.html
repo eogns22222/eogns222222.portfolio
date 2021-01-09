@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>krispy</title>
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/footer.css">
+        <style>
+            html {
+                font-size: 62.5%;
+            }
+            body::-webkit-scrollbar{
+                display:none;
+            }
+            body::-moz-scrollbar{
+                display:none;
+            }
+            body::-o-scrollbar{
+                display:none;
+            }
+            body::-ms-scrollbar{
+                display:none;
+            }
+            a{
+                color:#000;
+            }
+            
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="script/jquery.mousewheel.min.js"></script>
+       
+        <script>
+
+            $(function () {
+                var banner = {idx:0,len:$("section.main1").children("div").length,
+                auto:setInterval(middle,5000)}
+
+                function middle(){
+                    banner.idx++
+                    if(banner.idx>(banner.len)-1){
+                        banner.idx = 0
+                    }
+                    make();
+
+                }
+
+                function make(){
+                        $("section.main1").children("div").eq(banner.idx).fadeIn(1000).siblings("div").fadeOut(100);
+
+                        $("ul.btn_paging").children("li").eq(banner.idx).addClass("on")
+                        .siblings("li").removeClass("on");
+                }
+                
+                $("ul.btn_paging").children("li").click(function(){
+                    clearInterval(banner.auto);
+                    banner.idx = $(this).index()
+
+                    make();
+                    ;
+                    banner.auto = setInterval(middle, 5000);
+                });
+
+                $("ul.btn_play").children("li").eq(0)
+                .click(function(){
+                    clearInterval(banner.auto);
+                    $(this).addClass("on").siblings("li")
+                    .removeClass("on");
+
+                    banner.auto = setInterval(middle,5000);
+                });
+
+                $("ul.btn_play").children("li").eq(1)
+                .click(function(){
+                    clearInterval(banner.auto);
+                    $(this).addClass("on").siblings("li")
+                    .removeClass("on");
+
+                });
+            });
+        </script>
+        <script>
+
+            $(function(){
+
+                function ddd(){
+                    $("div.ddd").children("p.top").removeClass("top");
+                    $("div.ddd").children("p").eq(1).addClass("top");
+                    
+                    $("div.ddd").children("p.middle").removeClass("middle");
+                    $("div.ddd").children("p").eq(2).addClass("middle");
+
+                    $("div.ddd").children("p.bottom").removeClass("bottom");
+                    $("div.ddd").children("p").eq(3).addClass("bottom");
+                };
+
+                function ccc(){
+                    $("div.ccc").children("p.top").removeClass("top");
+                    $("div.ccc").children("p").eq(1).addClass("top");
+                    
+                    $("div.ccc").children("p.middle").removeClass("middle");
+                    $("div.ccc").children("p").eq(2).addClass("middle");
+
+                    $("div.ccc").children("p.bottom").removeClass("bottom");
+                    $("div.ccc").children("p").eq(3).addClass("bottom");
+                };
+
+                function iii(){
+                    $("div.iii").children("p.top").removeClass("top");
+                    $("div.iii").children("p").eq(1).addClass("top");
+                    
+                    $("div.iii").children("p.middle").removeClass("middle");
+                    $("div.iii").children("p").eq(2).addClass("middle");
+
+                    $("div.iii").children("p.bottom").removeClass("bottom");
+                    $("div.iii").children("p").eq(3).addClass("bottom");
+                };
+
+                $("div.page_btn").children("ul")
+                .children("li.upup").click(function(){
+
+                    $("div.ddd").children("p").eq(4)
+                    .prependTo($("div.ddd"));
+
+                    ddd();
+
+                    $("div.dddment").children("dl").eq(4)
+                    .prependTo($("div.dddment"));
+                    $("div.dddment").children("dl.on").removeClass("on");
+                    $("div.dddment").children("dl").eq(2).addClass("on");
+
+                    $("div.dddcal1").children("ul").eq(2)
+                    .prependTo($("div.dddcal1"));
+                    $("div.dddcal1").children("ul.on").removeClass("on");
+                    $("div.dddcal1").children("ul").eq(1).addClass("on");
+
+                    $("div.dddcal2").children("p").eq(2)
+                    .prependTo($("div.dddcal2"));
+                    $("div.dddcal2").children("p.on").removeClass("on");
+                    $("div.dddcal2").children("p").eq(1).addClass("on");
+                });
+                $("div.page_btn").children("ul")
+                .children("li.downdown").click(function(){
+
+                    $("div.ddd").children("p").eq(0)
+                    .appendTo($("div.ddd"));
+
+                    ddd();
+
+                    $("div.dddment").children("dl").eq(0)
+                    .appendTo($("div.dddment"));
+                    $("div.dddment").children("dl.on").removeClass("on");
+                    $("div.dddment").children("dl").eq(2).addClass("on");
+
+                    $("div.dddcal1").children("ul").eq(0)
+                    .appendTo($("div.dddcal1"));
+                    $("div.dddcal1").children("ul.on").removeClass("on");
+                    $("div.dddcal1").children("ul").eq(1).addClass("on");
+
+                    $("div.dddcal2").children("p").eq(0)
+                    .appendTo($("div.dddcal2"));
+                    $("div.dddcal2").children("p.on").removeClass("on");
+                    $("div.dddcal2").children("p").eq(1).addClass("on");
+                });// 도넛 이벤트
+
+                $("div.page_btn").children("ul")
+                .children("li.upup").click(function(){
+
+                    $("div.ccc").children("p").eq(4)
+                    .prependTo($("div.ccc"));
+
+                    ccc();
+                    
+                    $("div.cccment").children("dl").eq(4)
+                    .prependTo($("div.cccment"));
+                    $("div.cccment").children("dl.on").removeClass("on");
+                    $("div.cccment").children("dl").eq(2).addClass("on");
+
+                    $("div.ccccal1").children("ul").eq(2)
+                    .prependTo($("div.ccccal1"));
+                    $("div.ccccal1").children("ul.on").removeClass("on");
+                    $("div.ccccal1").children("ul").eq(1).addClass("on");
+
+                    $("div.ccccal2").children("p").eq(2)
+                    .prependTo($("div.ccccal2"));
+                    $("div.ccccal2").children("p.on").removeClass("on");
+                    $("div.ccccal2").children("p").eq(1).addClass("on");
+                });
+                $("div.page_btn").children("ul")
+                .children("li.downdown").click(function(){
+
+                    $("div.ccc").children("p").eq(0)
+                    .appendTo($("div.ccc"));
+
+                    ccc();
+
+                    $("div.cccment").children("dl").eq(0)
+                    .appendTo($("div.cccment"));
+                    $("div.cccment").children("dl.on").removeClass("on");
+                    $("div.cccment").children("dl").eq(2).addClass("on");
+
+                    $("div.ccccal1").children("ul").eq(0)
+                    .appendTo($("div.ccccal1"));
+                    $("div.ccccal1").children("ul.on").removeClass("on");
+                    $("div.ccccal1").children("ul").eq(1).addClass("on");
+
+                    $("div.ccccal2").children("p").eq(0)
+                    .appendTo($("div.ccccal2"));
+                    $("div.ccccal2").children("p.on").removeClass("on");
+                    $("div.ccccal2").children("p").eq(1).addClass("on");
+                });// 커피 이벤트
+
+                $("div.page_btn").children("ul")
+                .children("li.upup").click(function(){
+
+                    $("div.iii").children("p").eq(4)
+                    .prependTo($("div.iii"));
+
+                    iii();
+
+                    $("div.iiiment").children("dl").eq(4)
+                    .prependTo($("div.iiiment"));
+                    $("div.iiiment").children("dl.on").removeClass("on");
+                    $("div.iiiment").children("dl").eq(2).addClass("on");
+
+                    $("div.iiical1").children("ul").eq(2)
+                    .prependTo($("div.iiical1"));
+                    $("div.iiical1").children("ul.on").removeClass("on");
+                    $("div.iiical1").children("ul").eq(1).addClass("on");
+
+                    $("div.iiical2").children("p").eq(2)
+                    .prependTo($("div.iiical2"));
+                    $("div.iiical2").children("p.on").removeClass("on");
+                    $("div.iiical2").children("p").eq(1).addClass("on");
+                });
+                $("div.page_btn").children("ul")
+                .children("li.downdown").click(function(){
+
+                    $("div.iii").children("p").eq(0)
+                    .appendTo($("div.iii"));
+
+                    iii();
+
+                    $("div.iiiment").children("dl").eq(0)
+                    .appendTo($("div.iiiment"));
+                    $("div.iiiment").children("dl.on").removeClass("on");
+                    $("div.iiiment").children("dl").eq(2).addClass("on");
+
+                    $("div.iiical1").children("ul").eq(0)
+                    .appendTo($("div.iiical1"));
+                    $("div.iiical1").children("ul.on").removeClass("on");
+                    $("div.iiical1").children("ul").eq(1).addClass("on");
+
+                    $("div.iiical2").children("p").eq(0)
+                    .appendTo($("div.iiical2"));
+                    $("div.iiical2").children("p.on").removeClass("on");
+                    $("div.iiical2").children("p").eq(1).addClass("on");
+                });// 아이스 이벤트
+
+                
+
+            });
+
+        </script>
+        <script>
+        
+        $(function () {
+                cliping();
+                function cliping() {
+
+                    var container = $(".mentment");
+                    var masks = $(".mentment").children(".masks");
+                    var masksLen = $(".mentment")
+                        .children(".masks")
+                        .length;
+                    var maskData = [];
+                    masks.each(function (i, v) {
+                        
+                            maskData.push({"left": container.width()/masks.length*i});
+                        
+                    });
+                    $(".mentment").on({
+                        "mouseenter": function () {
+
+                            var index = $(this).index();
+                            
+                            doClip(index);
+                        },
+                        "mouseleave": function () {
+
+                            doClip(-1);
+                        }
+                    }, ".masks");
+
+                    function doClip(idx) {
+
+                        var w = container.width();
+                        var h = container.height();
+
+                        masks.each(function (i, v) {
+
+                            var _this = $(this),
+
+                                lft;
+
+                            if (idx == -1) {
+
+                                lft = w / masksLen * i
+                            } else if (idx < i) { 
+
+                                lft = w * (1 - 0.1 * (masksLen - i)); 
+                            } else {
+
+                                lft = w * 0.1 * i; 
+                            }
+
+                            $(maskData[i]).stop(true).animate({
+                                left: lft
+                            }, { 
+                                duration: 500,
+                                progress: function () {
+                                    var now = this.left;
+                                    _this.css({
+                                        
+                                        clip: 'rect(0px ' + w + 'px ' + h + 'px ' + now + 'px)'
+                                    });
+                                }
+                            });
+                        });
+                    }
+                }
+            });
+
+        </script>
+
+        <script>
+            
+            $(function(){
+                $("html,body").animate({"scrollTop":0},10,"linear");
+                var scrollEvent = {
+                    weightScroll:false,
+                    len:$("main").children().length +$("footer").length,
+                    dir:"down",
+                    count:0,
+                    scroll:true
+                
+                }
+                
+                $("nav").children("ul").children().click(function(){
+
+                    scrollEvent.count = $(this).index()+1;
+                    scrollEvent.scroll = false;
+                    moveBox();
+                    
+
+
+                });//클릭 스크롤이동
+
+                $(window).on("mousewheel DDMMouse",function(e){
+                    scrollEvent.scroll = true;
+                    if(e.deltaY == -1){
+                        scrollEvent.dir = "down"
+                    }else{
+                        scrollEvent.dir = "up"
+                    }
+
+                    if(scrollEvent.weightScroll){
+                        clearTimeout(scrollEvent.weightScroll);
+                    }
+
+                    scrollEvent.weightScroll = setTimeout(function(){
+                        moveBox();
+                    },50);
+
+                });//마우스 휠 스크롤이동
+
+                function moveBox(){
+
+                    if(scrollEvent.scroll){
+                        if(scrollEvent.dir == "down"){
+                            scrollEvent.count++;
+                            if(scrollEvent.count >= scrollEvent.len){
+                                scrollEvent.count = scrollEvent.len-1;
+                            }
+
+                        }else{
+                            scrollEvent.count--;
+                            if(scrollEvent.count < 0){
+                                scrollEvent.count = 0;
+                            }
+                        }
+                    }
+
+                    
+
+                    var nextTop = $("main").children().eq(scrollEvent.count).offset().top;
+                    
+                    $("html,body").animate({"scrollTop":nextTop},500,"linear");
+
+                }
+
+                
+
+            });
+
+        </script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <h1><a href="#top"><img src="imgs/nav_logo.png" alt="nav로고_main1_btn"></a></h1>
+                <ul>
+                    <li id="menu01"><span>Menu</span><img src="imgs/nav_main2.png" alt="main2" id="img1"></li>
+                    <li id="menu02"><span>Home service</span><img src="imgs/nav_main3.png" alt="main3" id="img2"></li>
+                    <li id="menu03"><span>Brand</span><img src="imgs/nav_main4.png" alt="main4" id="img3"></li>
+                    <li id="menu04"><span>Store</span><img src="imgs/nav_main5.png" alt="main5" id="img4"></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="main1" id="top">
+                <div class="banner01" id="banner1">
+                    <p><img src="imgs/banner01_logo.png" alt="배너로고"></p>
+                </div>
+                <div class="banner02" id="banner2">
+                    <ul>
+                        <li id="good1">2020년 크리스피크림 도넛
+                            <br>
+                            한정판 굿즈 등장!</li>
+                        <li id="good2">귀여운
+                            <br>
+                            크리스마스 도넛이 콕콕!</li>
+                        <li id="good3">보기만 해도 달콤한
+                            <br>
+                            오리지널 글레이즈드 모양</li>
+                        <li id="good4">겨울 필수템
+                            <br>
+                            <strong>
+                                크리스마스 도넛 담요</strong>
+                        </li>
+                        <li id="good5">꿀잠 치트키
+                            <br>
+                            <strong>
+                                오리지널 글레이즈드 쿠션</strong>
+                        </li>
+                    </ul>
+                </div>
+                <div class="banner03" id="banner3">
+                    <div>
+                        <p id="orao1"><img src="imgs/banner03_ment1.png" alt="크리스피크림"></p>
+                        <p id="orao2"><img src="imgs/banner03_ment2.png" alt="출시기념"></p>
+                        <p id="orao3"><img src="imgs/banner03_ment3.png" alt="오레오첨가"></p>
+                    </div>
+                </div>
+                <div class="banner04" id="banner4">
+                    <p id="tree"><img src="imgs/banner04_tree.png" alt="크리스피 크리스마스"></p>
+                </div>
+                <article>
+                    <h1 class="hidden">페이징</h1>
+                    <ul class="btn_paging">
+                        <li class="on"><img src="imgs/paging_off.png" alt="현제페이지"></li>
+                        <li id="btn2"><img src="imgs/paging_off.png" alt="다음페이지"></li>
+                        <li id="btn3"><img src="imgs/paging_off.png" alt="다음페이지"></li>
+                        <li id="btn4"><img src="imgs/paging_off.png" alt="다음페이지"></li>
+                    </ul>
+                    <ul class="btn_play">
+                        <li class="on"><img src="imgs/paging_play.png" alt="플레이버튼"></li>
+                        <li><img src="imgs/paging_stop.png" alt="정지버튼"></li>
+                    </ul>
+                </article>
+            </section>
+            <section class="main2">
+                <div class="util">
+                    <h1 class="hidden">메뉴</h1>
+                    <ul>
+                        <li id="donut_btn">도넛 <img src="imgs/main2_donuticon_on.png" alt="도넛메뉴" id="donut_Img">
+                        </li>
+                        <li id="coffee_btn">커피/음료 <img src="imgs/main2_coffeeicon.png" alt="커피메뉴" id="coffee_Img">
+                        </li>
+                        <li id="ice_btn">아이스크림 <img src="imgs/main2_iceicon.png" alt="아이스크림메뉴" id="ice_Img">
+                        </li>
+                    </ul>
+                </div>
+                <div class="content donut" id="donutall">
+                    <h2 class="hidden">content_도넛</h2>
+                    <div class="contentDonut ddd">
+                        <p><img src="imgs/main2_donut5.png" alt="도넛5"></p>
+                        <p class="top"><img src="imgs/main2_donut1.png" alt="도넛1"></p>
+                        <p class="middle"><img src="imgs/main2_donut2.png" alt="도넛2"></p>
+                        <p class="bottom"><img src="imgs/main2_donut3.png" alt="도넛3"></p>
+                        <p><img src="imgs/main2_donut4.png" alt="도넛4"></p>
+                        
+                    </div>
+                    <div class="contentMent dddment">
+                        <dl>
+                            <dt>스노우 크리스탈</dt>
+                            <dd>SNOW CRYSTAL</dd>
+                            <dd>주요재료</dd>
+                            <dd>커스터드크림 / 딸기 쿠키 분말</dd>
+                            <dd>가격</dd>
+                            <dd>₩ 2,800</dd>
+                        </dl>
+                        <dl>
+                            <dt>크리스마스 위시 트리</dt>
+                            <dd>CHRISTMAS WISH TREE</dd>
+                            <dd>주요재료</dd>
+                            <dd>그린애플 스프레드 / 도넛크림
+                            </dd>
+                            <dd>가격</dd>
+                            <dd>₩ 2,500</dd>
+                        </dl>
+                        <dl class="on">
+                            <dt>밀카 스트로베리 필드</dt>
+                            <dd>MILKA STRAWBERRY FILLED</dd>
+                            <dd>주요재료</dd>
+                            <dd>프리미엄 딸기필링 / 밀카 초콜릿</dd>
+                            <dd>가격</dd>
+                            <dd>₩ 2,500</dd>
+                        </dl>
+                        <dl>
+                            <dt>퓨어 스노우맨</dt>
+                            <dd>PURE SNOWMAN</dd>
+                            <dd>주요재료</dd>
+                            <dd>프리미엄 딸기필링 / 레드코팅 초콜릿</dd>
+                            <dd>가격</dd>
+                            <dd>₩ 2,500</dd>
+                        </dl>
+                        <dl>
+                            <dt>글레이즈드 초콜릿 케익</dt>
+                            <dd>GLAZED CHOCOLATE CAKE</dd>
+                            <dd>주요재료</dd>
+                            <dd>-</dd>
+                            <dd>가격</dd>
+                            <dd>₩ 1,500</dd>
+                        </dl>
+                        
+                    </div>
+                    <div class="contentCal1 dddcal1">
+                        <ul>
+                            <li>780</li>
+                            <li>0.4g</li>
+                            <li>12g</li>
+                            <li>9g</li>
+                            <li>4g</li>
+                        </ul>
+                        <ul class="on">
+                            <li>750</li>
+                            <li>0.5g</li>
+                            <li>15g</li>
+                            <li>7g</li>
+                            <li>6.8g</li>
+                        </ul>
+                        <ul>
+                            <li>605</li>
+                            <li>0.7g</li>
+                            <li>12g</li>
+                            <li>5g</li>
+                            <li>6.5g</li>
+                        </ul>
+                    </div>
+                    <div class="contentCal2 dddcal2">
+                        <p><img src="imgs/main2_cal1.png" alt="cal계산"></p>
+                        <p class="on"><img src="imgs/main2_cal3.png" alt="cal계산"></p>
+                        <p><img src="imgs/main2_cal2.png" alt="cal계산"></p>
+                    </div>
+                </div>
+                <div class="content coffee" id="coffeeall">
+                    <h2 class="hidden">content_커피</h2>
+                    <div class="contentDonut ccc">
+                        <p><img src="imgs/main2_coffee5.png" alt="커피5"></p>
+                        <p class="top"><img src="imgs/main2_coffee1.png" alt="커피1"></p>
+                        <p class="middle" id="americano"><img src="imgs/main2_coffee2.png" alt="커피2"></p>
+                        <p class="bottom" id="smoodi"><img src="imgs/main2_coffee3.png" alt="커피3"></p>
+                        <p id="smoodi"><img src="imgs/main2_coffee4.png" alt="커피4"></p>
+                        
+                    </div>
+                    <div class="contentMent cccment">
+                        <dl>
+                            <dt>아이스 카푸치노</dt>
+                            <dd>ICE CAPPUCCINO</dd>
+                            <dd>주요재료</dd>
+                            <dd>에스프레소 / 우유</dd>
+                            <dd>가격</dd>
+                            <dd>₩ (M)4,400원</dd>
+                        </dl>
+                        <dl>
+                            <dt>아이스 아메리카노</dt>
+                            <dd>ICE AMERICANO</dd>
+                            <dd>주요재료</dd>
+                            <dd>에스프레소 / 물</dd>
+                            <dd>가격</dd>
+                            <dd>₩ M)4,200 / L)4,700</dd>
+                        </dl>
+                        <dl class="on">
+                            <dt>카라멜 마끼아또</dt>
+                            <dd>CARAMEL MACCHIATO</dd>
+                            <dd>주요재료</dd>
+                            <dd>신선한 우유 / 카라멜 시럽</dd>
+                            <dd>가격</dd>
+                            <dd>₩ (M)4,900</dd>
+                        </dl>
+                        <dl>
+                            <dt>망고 스무디</dt>
+                            <dd>MANGO SMOOTHIES</dd>
+                            <dd>주요재료</dd>
+                            <dd>열대과일 망고</dd>
+                            <dd>가격</dd>
+                            <dd>₩ 5,500</dd>
+                        </dl>
+                        <dl>
+                            <dt>스트로베리 스무디</dt>
+                            <dd>STRAWBERRY SMOOTHIES</dd>
+                            <dd>주요재료</dd>
+                            <dd>딸기</dd>
+                            <dd>가격</dd>
+                            <dd>₩ 5,500</dd>
+                        </dl>
+                        
+                    </div>
+                    <div class="contentCal1 ccccal1">
+                        <ul>
+                            <li>750</li>
+                            <li>0.5g</li>
+                            <li>15g</li>
+                            <li>7g</li>
+                            <li>6.8g</li>
+                        </ul>
+                        <ul class="on">
+                            <li>780</li>
+                            <li>0.4g</li>
+                            <li>12g</li>
+                            <li>9g</li>
+                            <li>4g</li>
+                        </ul>
+                        <ul>
+                            <li>605</li>
+                            <li>0.7g</li>
+                            <li>12g</li>
+                            <li>5g</li>
+                            <li>6.5g</li>
+                        </ul>
+                    </div>
+                    <div class="contentCal2 ccccal2">
+                        <p><img src="imgs/main2_cal1.png" alt="cal계산"></p>
+                        <p class="on"><img src="imgs/main2_cal2.png" alt="cal계산"></p>
+                        <p><img src="imgs/main2_cal3.png" alt="cal계산"></p>
+                    </div>
+                </div>
+                <div class="content ice" id="iceall">
+                    <h2 class="hidden">content_아이스</h2>
+                    <div class="contentDonut iii">
+                        <p id="con"><img src="imgs/main2_ice5.png" alt="아이스크림5"></p>
+                        <p class="top"><img src="imgs/main2_ice1.png" alt="아이스크림1"></p>
+                        <p class="middle"><img src="imgs/main2_ice2.png" alt="아이스크림2"></p>
+                        <p class="bottom"><img src="imgs/main2_ice3.png" alt="아이스크림3"></p>
+                        <p><img src="imgs/main2_ice4.png" alt="아이스크림4"></p>
+                        
+                    </div>
+                    <div class="contentMent iiiment">
+                        <dl>
+                            <dt>크리스피 아이스크림 콘</dt>
+                            <dd>CRISPY ICECREAM CORN</dd>
+                            <dd>주요재료</dd>
+                            <dd>-</dd>
+                            <dd>가격</dd>
+                            <dd>₩ 2,000</dd>
+                        </dl>
+                        <dl>
+                            <dt>프리미엄 스트로베리필드</dt>
+                            <dd>PRIMIUM STRAWBERRY FIELD</dd>
+                            <dd>주요재료</dd>
+                            <dd>스트로베리필드</dd>
+                            <dd>가격</dd>
+                            <dd>₩ 4,300</dd>
+                        </dl>
+                        <dl class="on">
+                            <dt>초코 쿠키 밀크쉑</dt>
+                            <dd>Choco Cookie Milkk Shakk</dd>
+                            <dd>주요재료</dd>
+                            <dd>초코 쿠키 밀크</dd>
+                            <dd>가격</dd>
+                            <dd>₩ 6,000</dd>
+                        </dl>
+                        <dl>
+                            <dt>순수우유 딸기 쉐이크</dt>
+                            <dd>STRAWBERRY SHAKE</dd>
+                            <dd>주요재료</dd>
+                            <dd>파스퇴르 우유</dd>
+                            <dd>가격</dd>
+                            <dd>₩ 6,000</dd>
+                        </dl>
+                        <dl>
+                            <dt>카라멜 쿠키 밀크쉑</dt>
+                            <dd>Caramel Cookie Milkk Shakk</dd>
+                            <dd>주요재료</dd>
+                            <dd>카라멜 쿠키 밀크</dd>
+                            <dd>가격</dd>
+                            <dd>₩ 6,000</dd>
+                        </dl>
+                        
+                    </div>
+                    <div class="contentCal1 iiical1">
+                        <ul>
+                            <li>780</li>
+                            <li>0.4g</li>
+                            <li>12g</li>
+                            <li>9g</li>
+                            <li>4g</li>
+                        </ul>
+                        <ul class="on">
+                            <li>605</li>
+                            <li>0.7g</li>
+                            <li>12g</li>
+                            <li>5g</li>
+                            <li>6.5g</li>
+                        </ul>
+                        <ul>
+                            <li>750</li>
+                            <li>0.5g</li>
+                            <li>15g</li>
+                            <li>7g</li>
+                            <li>6.8g</li>
+                        </ul>
+                        
+                    </div>
+                    <div class="contentCal2 iiical2">
+                        <p><img src="imgs/main2_cal3.png" alt="cal계산"></p>
+                        <p class="on"><img src="imgs/main2_cal1.png" alt="cal계산"></p>
+                        <p><img src="imgs/main2_cal2.png" alt="cal계산"></p>
+                    </div>
+                </div>
+                <div class="page_btn">
+                    <ul>
+                        <li class="upup"><img src="imgs/main2_pagingUp.png" alt="위로가기"></li>
+                        <li class="downdown"><img src="imgs/main2_pagingDown.png" alt="아래로가기"></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="main3">
+                <h1 class="hidden">홈서비스</h1>
+                <div class="address">
+                    <form action="test01.kdh">
+                        <p>
+                            <input type="search" id="srch" name="srch" placeholder="주소를 입력하세요.">
+                            <input type="button" value="주소찾기">
+                        </p>
+                        <p>
+                            <input type="text" placeholder="상세주소를 입력하세요." id="txt" name="txtt">
+                            <input type="text" placeholder="동" id="txtbong" name="txttdong">
+                            <input type="text" placeholder="호" id="txtho" name="txttho">
+                        </p>
+                        <p>
+                            <input type="submit" value="검색하기" id="sub">
+                        </p>
+                    </form>
+                    <p><img src="imgs/main3_logo.png" alt="로고"></p>
+                </div>
+                <div class="homeservice">
+                    <h2>홈서비스 주문방법</h2>
+                    <p><img src="imgs/main3_mentImg.png" alt="홈서비스"></p>
+                </div>
+            </section>
+            <section class="main4">
+                <h1 class="hidden">브랜드 & 이벤트 & 공지사항</h1>
+                <div class="mentment">
+                    <ul class="masks">
+                        <li>브랜드</li>
+                        <li>크리스피 크림의 탄생부터 현재까지 77주년의 <br> 역사를 확인하세요.</li>
+                        <li><img src="imgs/main4_enter_icon.png" alt="들어가기"></li>
+                    </ul>
+                    <ul class="masks">
+                        <li>이벤트</li>
+                        <li>행운의 이벤트를 알려드립니다. 다양한 경품의 행운을 만나보세요.</li>
+                        <li><img src="imgs/main4_enter_icon.png" alt="들어가기"></li>
+                    </ul>
+                    <ul class="masks">
+                        <li>공지사항</li>
+                        <li>크리스피 크림의 새로운 소식을 모아 고객 <br> 여러분께 전합니다.</li>
+                        <li><img src="imgs/main4_enter_icon.png" alt="들어가기"></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="main5">
+                <div>
+                    <h1>매장찾기</h1>
+                    <form action="test01.jsp">
+                        <input type="text" placeholder="매장명 또는 주소를 입력해주세요.">
+                    </form>
+                    <p><img src="imgs/enter_icon.png" alt="들어가기"></p>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="left_cont">
+                <ul>
+                    <li><a href="#"> 회사소개</a></li>
+                    <li><a href="#">채용정보</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">영상정보 처리기기 운영 및 관리 방침</a></li>
+                    <li><a href="#">이메일무단수집거부</a></li>
+                </ul>
+                <address>
+                    <p>서울특별시 용산구 한강대로 71길 47 대표문의: 02-709-1134 (가맹문의, 행사안내 등)</p>
+                    <p>고객지원센터 080-023-9765(고객불편사항 등) 사업자번호 : 106-81-39477 대표자 : 차우철</p>
+                    <p>COPYRIGHT @ KRISTY KREME COUGHNUTSALL RIGHTS RESERVED</p>
+                </address>
+            </div>
+            <div class="right_cont">
+                <form action="test01.kdh">
+                    <select name="lotte" id="lotte">
+                        <option value="롯데그룹">롯데그룹</option>
+                        <option value="롯데리아">롯데리아</option>
+                        <option value="엔젤리너스 커피">엔젤리너스 커피</option>
+                        <option value="티지아이프라이데이스">티지아이프라이데이스</option>
+                        <option value="롯데채용센터">롯데채용센터</option>
+                        <option value="나뚜루">나뚜루</option>
+                        <option value="파스퇴르">파스퇴르</option>
+                        <option value="롯데 하이마트">롯데 하이마트</option>
+                        <option value="롯데월드">롯데월드</option>
+                        <option value="롯데 시네마">롯데 시네마</option>
+                    </select>
+                </form>
+                <div>
+                    <img src="imgs/footer_lotte.png" alt="롯데리아로고">
+                    <img src="imgs/footer_angel.png" alt="엔젤리너스로고">
+                    <img src="imgs/footer_tgi.png" alt="Tgi로고">
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
+<script>
+
+    var img01 = document.querySelector("#img1");
+    var img02 = document.querySelector("#img2");
+    var img03 = document.querySelector("#img3");
+    var img04 = document.querySelector("#img4");
+    
+    var menu1 = document.querySelector("#menu01");
+    var menu2 = document.querySelector("#menu02");
+    var menu3 = document.querySelector("#menu03");
+    var menu4 = document.querySelector("#menu04");
+
+    img01.addEventListener("mouseover", function(){
+        menu1.style.background = "rgba(155, 155, 155,1)";
+        menu1.firstChild.style.color = "rgb(39, 39, 39)";
+    });
+    img02.addEventListener("mouseover", function(){
+        menu2.style.background = "rgba(155, 155, 155,1)";
+        menu2.firstChild.style.color = "rgb(39, 39, 39)";
+    });
+    img03.addEventListener("mouseover", function(){
+        menu3.style.background = "rgba(155, 155, 155,1)";
+        menu3.firstChild.style.color = "rgb(39, 39, 39)";
+    });
+    img04.addEventListener("mouseover", function(){
+        menu4.style.background = "rgba(155, 155, 155,1)";
+        menu4.firstChild.style.color = "rgb(39, 39, 39)";
+    });
+    img01.addEventListener("mouseleave", function(){
+        menu1.style.background = "rgba(155, 155, 155,0)";
+        menu1.firstChild.style.color = "rgb(39, 39, 39,0)";
+    });
+    img02.addEventListener("mouseleave", function(){
+        menu2.style.background = "rgba(155, 155, 155,0)";
+        menu2.firstChild.style.color = "rgb(39, 39, 39,0)";
+    });
+    img03.addEventListener("mouseleave", function(){
+        menu3.style.background = "rgba(155, 155, 155,0)";
+        menu3.firstChild.style.color = "rgb(39, 39, 39,0)";
+    });
+    img04.addEventListener("mouseleave", function(){
+        menu4.style.background = "rgba(155, 155, 155,0)";
+        menu4.firstChild.style.color = "rgb(39, 39, 39,0)";
+    });
+
+</script>//header
+
+<script>
+
+    var donutB = document.querySelector("#donut_btn");
+    var coffeeB = document.querySelector("#coffee_btn");
+    var iceB = document.querySelector("#ice_btn");
+
+    var all1 = document.querySelector("#donutall");
+    var all2 = document.querySelector("#coffeeall");
+    var all3 = document.querySelector("#iceall");
+
+    var donutI = document.querySelector("#donut_Img");
+    var coffeeI = document.querySelector("#coffee_Img");
+    var iceI = document.querySelector("#ice_Img");
+
+    donutB.addEventListener("click", function(){
+        all1.style.display = "block";
+        all2.style.display = "none";
+        all3.style.display = "none";
+
+        donutB.style.color = "#000"
+        donutB.style.fontWeight = "bold"
+        donutI.src = "imgs/main2_donuticon_on.png"
+
+        coffeeB.style.color = "#666465"
+        coffeeB.style.fontWeight = "500"
+        coffeeI.src = "imgs/main2_coffeeicon.png"
+        iceB.style.color = "#666465"
+        iceB.style.fontWeight = "500"
+        iceI.src = "imgs/main2_iceicon.png"
+    });
+    coffeeB.addEventListener("click", function(){
+        all1.style.display = "none";
+        all2.style.display = "block";
+        all3.style.display = "none";
+
+        coffeeB.style.color = "#000"
+        coffeeB.style.fontWeight = "bold"
+        coffeeI.src = "imgs/main2_coffeeicon_on.png"
+
+        donutB.style.color = "#666465"
+        donutB.style.fontWeight = "500"
+        donutI.src = "imgs/main2_donuticon.png"
+        iceB.style.color = "#666465"
+        iceB.style.fontWeight = "500"
+        iceI.src = "imgs/main2_iceicon.png"
+    });
+    iceB.addEventListener("click", function(){
+        all1.style.display = "none";
+        all2.style.display = "none";
+        all3.style.display = "block";
+
+        iceB.style.color = "#000"
+        iceB.style.fontWeight = "bold"
+        iceI.src = "imgs/main2_iceicon_on.png"
+
+        donutB.style.color = "#666465"
+        donutB.style.fontWeight = "500"
+        donutI.src = "imgs/main2_donuticon.png"
+        coffeeB.style.color = "#666465"
+        coffeeB.style.fontWeight = "500"
+        coffeeI.src = "imgs/main2_coffeeicon.png"
+    });
+
+</script>//main2
+
+<script>
+
+    var sub = document.querySelector("#sub");
+    sub.addEventListener("click",function(e){
+        e.preventDefault();
+    });
+
+</script>//main3

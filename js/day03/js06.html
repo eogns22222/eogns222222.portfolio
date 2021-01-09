@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var dan = 0;
+        var num = 0;
+
+        while(true){
+
+            dan++;
+            if(dan==3) continue;
+            if(dan==5) continue;
+            if(dan==8) continue;
+            while(true){
+                num++;
+                console.log(dan+"x"+num+"="+(dan*num));
+
+                if(num>8){
+                    num = 0;
+                    break;
+                }
+            }
+            if(dan>8){
+                break;
+            }
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //온라인 쇼핑몰
+        //회원의 등급적용과 그 등급에 따른 선물 적용할 수 있는 구문을 작성하시오.
+        //point변수는 임의로 값을 할당.
+        //1. point의 값에 의해
+        //2. grade 변수의 값이 할당이 된다.
+        //
+        //point 0~50이라면 bronze, 51~100 silver, 101~200 gold, 201이상은 vip
+
+        //등급이 bronze alert("무료배송");
+        //등급이 silver alert("무료배송"); alert("5%할인권");
+        //등급이 gold   alert("무료배송"); alert("5%할인권"); alert("이벤트 구폰");
+        //등급이 vip    alert("무료배송"); alert("5%할인권"); alert("이벤트 구폰"); alert("point적립");
+
+        // var point = 0;
+        // while(true){
+
+        //     //prompt에서 취소버튼을 클릭하면 0값이 할당.
+        //     var temp = prompt("물건값 입력")*(1/1000);
+
+        //     if(temp==0){
+        //         break;
+        //     }else{
+        //         point += temp;
+        //     }
+        //     console.log(point);
+
+            
+        // }
+
+
+        
+        var point = 0;
+        var grade = "";
+        
+        while(true){
+
+            //prompt에서 취소버튼을 클릭하면 0값이 할당.
+            var temp = prompt("물건값 입력")*(1/1000);
+            
+            if(temp==0){
+                break;
+            }else{
+                point += temp;
+            }
+            console.log(point);
+
+            
+        }
+        
+        if(point<=50){
+                grade = "bronz";
+            }else if(point<=100){
+                grade = "silver";
+            }else if(point<=200){
+                grade = "gold";
+            }else{
+                grade = "vip";
+            }
+            console.log("당신의 등급은 "+grade);
+            alert("=========이번달 혜택은 다음과 같습니다.=========")
+
+        if(point>=0){
+                alert("무료배송");
+        }
+        if(point>51){
+                alert("5%할인쿠폰");
+        }
+        if(point>101){
+                alert("이벤트 쿠폰");
+        }
+        if(point>201){
+                alert("point적립");
+        }
+
+    </script>
+</body>
+</html>

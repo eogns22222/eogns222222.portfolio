@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toggle</title>
+    <style>
+        h1{
+            border:1px solid green;
+        }
+        div{
+            width:300px;
+            height:600px;
+            border:1px solid red;
+            transition:all .3s ease;
+        }
+        div.on{
+            width:1000px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            var flag = true;
+            $("h1").click(function(){
+                if(flag){ //toggle 토글
+                    // $("div").css("width",1000);
+                    $("div").addClass("on");
+                    flag = !flag; //false
+                }else{
+                    // $("div").css("width",300);
+                    $("div").removeClass("on");
+                    flag = !flag; //true
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>jQuery 이벤트</h1>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>store</title>
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="css/sub2_main.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDT7sSTMO5sgyqu_1l0KuaIK_QAyv0U44c&callback=initMap&libraries=&v=weekly"
+            defer="defer"></script>
+        <style type="text/css">
+            /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+            #map {
+                width: 500px;
+                height: 700px;
+            }
+
+            /* Optional: Makes the sample page fill the window. */
+            body,
+            html {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+        <script>
+            let map;
+
+            function initMap() {
+                map = new google
+                    .maps
+                    .Map(document.getElementById("map"), {
+                        center: {
+                            lat: 37.5007146,
+                            lng: 127.0575143
+                        },
+                        zoom: 17
+                    });
+            }
+        </script>
+        <style>
+            html {
+                font-size: 62.5%;
+                font-family: 'Noto Sans KR', sans-serif;
+            }
+            .eng {
+                font-family: myriad-pro, sans-serif;
+
+                font-weight: 400;
+
+                font-style: normal;
+            }
+            a {
+                color: black;
+            }
+            header {
+                display:;
+            }
+            footer {
+                display:;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div>
+                <h1>
+                    <a href="http://eogns2222.dothome.co.kr/portfolio011/index.html"><img src="imgs/logo1.png" alt="애플로고"></a>
+                </h1>
+                <nav>
+                    <ul>
+                        <li class="eng">
+                            <a href="http://eogns2222.dothome.co.kr/portfolio011/sub3.html#">iPhone12</a>
+                            <ul>
+                                <li class="eng">
+                                    <a href="http://eogns2222.dothome.co.kr/portfolio011/sub3.html#">iPhone12
+                                        <img src="imgs/2deps_arrow.png" alt="2deps표시"></a>
+                                    <ul>
+                                        <li class="eng">
+                                            <a href="http://eogns2222.dothome.co.kr/portfolio011/sub3.html#">iPhone 12</a>
+                                        </li>
+                                        <li class="eng">
+                                            <a href="http://eogns2222.dothome.co.kr/portfolio011/sub1.html#">iPhone 12 pro</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="eng">
+                            <a href="http://eogns2222.dothome.co.kr/portfolio011/sub1.html#">iPhone12 Pro</a>
+                            <ul>
+                                <li>
+                                    <a href="http://eogns2222.dothome.co.kr/portfolio011/sub1.html#">iPhone12 Pro<img src="imgs/2deps_arrow.png" alt="2deps표시"></a>
+                                    <ul>
+                                        <li class="eng">
+                                            <a href="http://eogns2222.dothome.co.kr/portfolio011/sub1.html#">iPhone12 Pro</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="eng">
+                            <a href="http://eogns2222.dothome.co.kr/portfolio011/sub2.html">Store</a>
+                        </li>
+                        <li class="eng">
+                            <a href="#">Apple</a>
+                            <ul>
+                                <li>
+                                    <a href="#">Apple<img src="imgs/2deps_arrow.png" alt="2deps표시"></a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">브랜드스토리</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">브랜드전략</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="eng">
+                            <a href="#">Apple Care</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div>
+                <p>매장 찾기</p>
+            </div>
+            <section>
+                <div>
+                    <form action="test01.jsp">
+                        <select name="from" id="from">
+                            <option value="대한민국">대한민국</option>
+                        </select>
+                    </form>
+                    <form action="test01.jsp">
+                        <select name="do_search" id="doSrch">
+                            <option value="도/광역시">도/광역시</option>
+                            <option value="서울">서울</option>
+                            <option value="경기">경기</option>
+                            <option value="강원">강원</option>
+                            <option value="인천">인천</option>
+                            <option value="대전">대전</option>
+                            <option value="세종">세종</option>
+                            <option value="충남">충남</option>
+                            <option value="충북">충북</option>
+                            <option value="광주">광주</option>
+                            <option value="전북">전북</option>
+                            <option value="전남">전남</option>
+                            <option value="대구">대구</option>
+                            <option value="경북">경북</option>
+                            <option value="부산">부산</option>
+                            <option value="울산">울산</option>
+                            <option value="경남">경남</option>
+                        </select>
+                    </form>
+                    <div>
+                        <form action="test01.jsp" id="ses">
+                            <select name="se_search" id="seSrch">
+                                <option value="시/군/구">시군구</option>
+                                <option value="강남구">강남구</option>
+                                <option value="강동구">강동구</option>
+                                <option value="강북구">강북구</option>
+                                <option value="강서구">강서구</option>
+                                <option value="관악구">관악구</option>
+                                <option value="광진구">광진구</option>
+                                <option value="구로구">구로구</option>
+                                <option value="금천구">금천구</option>
+                                <option value="노원구">노원구</option>
+                                <option value="도봉구">도봉구</option>
+                                <option value="동대문구">동대문구</option>
+                                <option value="동작구">동작구</option>
+                                <option value="마포구">마포구</option>
+                                <option value="서대문구">서대문구</option>
+                                <option value="서초구">서초구</option>
+                                <option value="성동구">성동구</option>
+                                <option value="성북구">성북구</option>
+                                <option value="송파구">송파구</option>
+                                <option value="양천구">양천구</option>
+                                <option value="영등포구">영등포구</option>
+                                <option value="용산구">용산구</option>
+                                <option value="종로구">종로구</option>
+                                <option value="중구">중구</option>
+                            </select>
+                        </form>
+                        <form action="test01.jsp" id="gyg">
+                            <select name="gy_search" id="gySrch">
+                                <option value="시/군/구">시/군/구</option>
+                                <option value="고양">고양</option>
+                                <option value="과천">과천</option>
+                                <option value="광명">광명</option>
+                                <option value="구리">구리</option>
+                                <option value="군포">군포</option>
+                                <option value="김포">김포</option>
+                                <option value="남양주">남양주</option>
+                                <option value="부천">부천</option>
+                                <option value="시흥">시흥</option>
+                                <option value="안산">안산</option>
+                                <option value="안양">안양</option>
+                                <option value="양주">양주</option>
+                                <option value="의왕">의왕</option>
+                                <option value="의정부">의정부</option>
+                                <option value="파주">파주</option>
+                                <option value="포천">포천</option>
+                                <option value="하남">하남</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <button>검색</button>
+                
+                <table>
+                    <thead >
+                        <tr>
+                            <th colspan="2"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th><span> Apple 가로수길</span><br>
+                                신사동 압구정로 12길 46
+                                <br>
+                                오후 10:00까지 . 02-2086-4600</th>
+                            <td rowspan="5" id="map"></td>
+                        </tr>
+                        <tr>
+                            <th><span> 윌리스 잠실점 Apple Shop</span>
+                                <br>
+                                올림픽로 240 롯데하이마트 1층 윌리스
+                                <br>
+                                오후 10:00까지 . 02-2143-1500</th>
+
+                        </tr>
+                        <tr>
+                            <th><span> 에이샵 코엑스점</span>
+                                <br>
+                                영동대로
+                                <br>
+                                오후 10:00까지 . 02-6002-1620</th>
+
+                        </tr>
+                        <tr>
+                            <th><span> 에이샵(주)</span>
+                                <br>
+                                인계동 1125-1
+                                <br>
+                                031-898-8761</th>
+
+                        </tr>
+                        <tr>
+                            <th><span> 윌리스 신사점 Apple</span>
+                                <br>
+                                도산대로 134 1층 윌리스
+                                <br>
+                                오후 9:00까지 . 070-7732-7001</th>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+        <footer>
+            <div>
+                <p>
+                    <a href="#">애플아이폰앤테크놀로지 웹사이트</a>
+                </p>
+                <p>
+                    <a href="#">개인정보처리방침</a>
+                </p>
+                <p class="eng">
+
+                    Copyright © Apple i Phone & Technology Co.,Ltd. All Rights Reserved.
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>

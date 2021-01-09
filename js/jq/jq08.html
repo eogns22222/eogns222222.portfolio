@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아코디언</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <style>
+        ul{
+            margin:0 auto;
+            border:1px solid rgba(80,80,80,0.6);
+            width:1000px;
+        }
+        ul>li:not(:last-child){
+            border-bottom:1px solid rgba(80,80,80,0.5);
+        }
+        ul>li>h2{
+            font:bold 24px/48px sans-serif;
+            text-align: center;
+        }
+        ul>li>h2.on{
+            background:teal;
+            color:#fff;
+        }
+        ul>li>p{
+            display:none;
+            padding:10px;
+            border-top:1px solid rgba(80,80,80,0.3);
+            line-height: 32px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var flag = true;
+        $(function(){
+            $("h2").click(function(){
+                $(this).addClass("on").next().slideToggle(300,function(){
+                    if($(this).css("display") == "none"){
+                        $(this).prev().removeClass("on");
+                    }
+                });
+                $("h2").not(this).removeClass("on").next().slideUp(300);
+                
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>아코디언 메뉴</h1>
+    <ul>
+        <li>
+            <h2>메뉴1</h2>
+            <p>[헤럴드경제=김우영 기자] 도널드 트럼프 미국 대통령과 조 바이든 대통령 <br> 당선인이 8일(현지시간) 잇달아 신종 코로나바이러스 감염증(코로나19) 백신 접종과 관련한 대응계획을 내놓았다.</p>
+        </li>
+        <li>
+            <h2>메뉴2</h2>
+            <p>하지만 정권을 주고 받을 두 진영 어디에서도 서로를 향한 협력 의사는 없었다.</p>
+        </li>
+        <li>
+            <h2>메뉴3</h2>
+            <p>이날 트럼프 대통령은 백악관에서 ‘백신 최고회의’를 열어 미국에서 생산된 <br> 백신은 미국인에게 우선 접종하도록 하는 행정명령에 서명했다.</p>
+        </li>
+        <li>
+            <h2>메뉴4</h2>
+            <p>트럼프 대통령은 필요하다면 국방물자생산법(DPA)을 발동할 것이라고 밝혔다. <br> DPA는 대통령이 국가안보를 위해 필요하다고 판단할 경우 생산기업의 손실 여부와 상관 없이 우선 조달할 수 있도록 규정하고 있다.</p>
+        </li>
+        <li>
+            <h2>메뉴5</h2>
+            <p>하지만 이날 백악관에는 내년 1월 20일부터 미국을 이끌며 실제 백신 유통과 <br> 접종을 맡을 바이든 당선인 인수위 인물은 초대 받지 못했다고 AP통신은 전했다. 유임된 앤서니 파우치 미 국립알레르기·전염병연구소(NIAID) 소장은 <br> 백악관이 아닌 같은 날 조금 뒤에 열린 바이든 당선인의 보건분야 인선 소개 행사에 화상으로 참석했다.</p>
+        </li>
+    </ul>
+</body>
+</html>

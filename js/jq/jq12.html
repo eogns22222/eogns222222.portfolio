@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>배경이미지 움직이기</title>
+    <style>
+        html, body{
+            height:100%;
+        }
+        body{background:url(imgs/maxresdefault.jpg) no-repeat 50% 50%;}
+        h1{color:#fff;}
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+             //윈도우 크기 알아내기
+             var w = parseInt($(window).width()/2);
+             var h = parseInt($(window).height()/2);
+             //alert(w);
+             var imgW, imgH, baseX, baseY;
+             
+             
+             var url = $("body").css("background-image");
+             var idx1 = url.indexOf("(")+2;
+             var idx2 = url.indexOf(")")-1;
+             url = url.substring(idx1, idx2);
+
+            $("<img src='"+url+"' id='tmpId' />").appendTo( $("body") );
+         
+            setTimeout(function(){
+                 imgW = parseInt($("body").children("#tmpId").width()/2);
+                 imgH = parseInt($("body").children("#tmpId").height()/2);
+             
+                 //alert(imgW + '/'+imgH);
+
+                 if(imgW != 0 && imgH !=0){
+
+                        //객체.remove()  ---> 객체 삭제하기
+                        $("#tmpId").remove();
+                        //alert(imgW + '/'+imgH);
+                 }
+                //배경이미지 중앙으로 보내는 왼쪽 상단 위치 지정하기
+                baseX =  w - imgW;
+                baseY =  h - imgH;
+            },1);
+
+             $(window).mousemove(function(e){
+    
+                 /* 중앙으로부터 마우스 커서가 떨어진 값 */
+                 var poseX = (w - e.pageX)*0.03; //마우스 커서가 이동하는 값의 3%정도만 이동해라.
+                 var poseY = (h - e.pageY)*0.03;
+                 //baseX
+                 //baseY
+                 $("h1").text(poseX+"/"+poseY);
+
+                 $("body")
+                 .css("background-position",(baseX+poseX)+"px "+(baseY+poseY)+"px");
+             });
+
+        });
+
+    </script>
+</head>
+<body>
+    <h1></h1>
+</body>
+</html>

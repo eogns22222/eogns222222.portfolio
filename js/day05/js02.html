@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 함수.
+        // function 식별자(){} ---> 식별자는 영소, 언더바, $
+        // 함수는 원할때 실행하기 위해서. (javascript는 원하지 않아도 자동으로 아래로 오른쪽으로 실행되기에 함수로 원할 때 실행하게 해줌)
+        // 1. 함수는 호출할 때 실행 - 식별자();   
+        
+        // function foo(){
+        //     alert("함수를 호출했다.");  // 작성하는 것을 함수정의라고 한다.
+        // }
+        
+        // foo(); // foo에 표현식을 실행
+        // var foo2=foo; // foo 함수 그자체  
+        // foo2();
+
+        // 2.함수는 reset 된다. --> 함수를 호출한 다음에 실행한 이후 실행이 종료되면 함수는 다시 초기화된다.
+        
+        // function foo3(){
+        //     var ss = 0;
+        //     ss++;
+        //     console.log(ss);
+
+        // }
+        // foo3();
+        // foo3();
+        // foo3();
+
+        // 3.함수는 함수 내부에 선언된 변수를 지역변수,
+        //   함수 외부에 선언된 변수를 전역변수.
+        
+        // var global = 100; // 전역변수 - 어디에서도 부를 수 있다.
+
+        // function foo4(){
+        //     var local = 1; // 지역변수 - 선언된 함수 내부에서만 사용가능하다.
+        //     global = global - 50;
+        // }
+        // foo4();
+        // console.log(local); // error
+        // console.log(global); // 50
+
+        // 4. 함수는 함수를 호출한 곳에서 context에서 실행한다.
+
+        // function foo5(){
+        //     var s = 0;
+        //     foo6(); // foo6는 실행하지만, 그뿐이다. foo5안에 변수에 영향없음
+        //     s++;
+        // }
+        // function foo6(){
+        //     var s = 100;
+            
+        // }
+
+        // 5. 함수는 ( 함수 외부의 값을 내부로 전달 할 수 있다. ) 함수 외부의 값을 내부로 전달하는 방식 --> 파라미터
+        
+        // var value = 1000;   //온라인 마켓에 있는 개인 자산.
+        // foo7();
+        // function foo7(){   // foo7은 전역변수 value의 값을 100씩 증가 시키는 역할
+                              // 전역변수 value를 사용 포인트 계산
+        //     var potint = 0;
+        //     point = value + 100;
+        //     foo8(point); // value는 전달인자 - 전역변수 값을 가공해서 foo8에게 전달해준다.
+        // }
+        // function foo8(x){   // 포인트가지고 진행하는 이벤트 함수
+                               // x는 파라미터  즉, x=point 
+        //                     // x는 외부의 값을 전달 받아서 가공후 이벤트와 합쳐진다.
+        //                     // 전달인자에 의해서 함수의 고정 포맷이 다른 값들로 변활될 수 있다.
+        //     x /= 10;        
+        //     alert(x+"를 이벤트로 전환");
+        // }
+        // foo9(10000);
+        // function foo9(y){   // y는 파라미터
+        //                     // 외부의 전달인자를 가공해서 foo8에 전달 호출한다.
+        //     y -= 100;
+        //     foo8(y);
+        // }
+
+        // 6. 함수는 return키위드를 갖는다.
+        //    함수를 호출한 곳에 return 다음의 값을 남겨두고 함수는 사라진다.
+        //    함수를 호출한 곳에 return 다음의 값을 남겨두고 함수는 그 순간 바로 종료된다.
+        //    함수는 return키위드를 만나는 순간 종료된다.
+
+        // var re = square(128);
+        
+        // function square(x){
+        //     var result = x*x;
+            
+        //     return result;
+        // }
+        // console.log(re);
+        var re = square(8);
+        var result2 = square( prompt("값을 입력하시오.") );
+        alert(result2);
+        
+        function square(x){
+            var result = x*x;
+            if(result>0){
+                
+                return result;
+            }else{
+                alert("숫자를 넣었어야 했어요.");                                
+
+                var bool = confirm("다시 진행하시겠습니까?"); //confirm함수는 return을 boolean한다.
+                if(bool){
+                    return square( prompt("값을 입력하시오.") );
+                    
+                }else{
+                    alert("완전종료");
+                    return "The End";
+                }
+            }
+        }
+        console.log(re);
+        
+    </script>
+</body>
+</html>

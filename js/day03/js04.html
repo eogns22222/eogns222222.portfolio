@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var point = 0;
+        
+        while(true){
+            var item = prompt("상품의 가격을 적어주세요. 단위는 100원단위로 입력해주세요.")*(1/100) ;
+
+            if(item==0){
+                break;
+            }else{
+                point += item;
+            }
+            console.log(point);
+            
+        }
+
+    </script>
+</body>
+</html>

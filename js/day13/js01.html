@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var nums = [35, 13, 4, 37, 9, 27, 48]
+        var muhans = ['길','유재석','하하','박명수','정준하','황광희','노홍철','정형돈']
+
+        //배열은 sort메소드를 사용해서 오름차순, 내림차순으로 변경가능
+        //1.배열.sort(); 오름차순으로 기존 배열이 변경된다. 
+        //2.배열.sort(function(a,b){});
+
+        nums.sort();  //이상하게 됨
+        console.log(nums);
+
+        nums.sort(function(a,b){ //오름차순
+            if(a<b){
+                return -1; // 음수를 return하면 a와 b의 위치를 냅둬라.
+            }else{
+                return 1; // 양수를 return하면 a와 b의 위치를 바뀐다.
+            }
+        })
+        console.log(nums);
+
+        nums.sort(function(a,b){ //내림차순
+            if(a>b){
+                return -1;
+            }else{
+                return 1;
+            }
+        })
+        console.log(nums);
+
+        muhans.sort(function(a,b){
+            if(a<b){
+                return -1;
+            }else{
+                return 1;
+            }
+        });
+        console.log(muhans);
+
+    </script>
+</body>
+</html>

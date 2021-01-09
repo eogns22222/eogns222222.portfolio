@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자크기 이벤트</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+
+            //jQuery객체.이벤트명(function(){이벤트 발생시 실행할 구문});
+            //객체에 이벤트명을 붙여서 작동되게 한다.
+
+            //jQuery객체.bind("이벤트명",function(){이벤트 발생시 실행할 구문});
+            //객체에 이벤트를 붙여서 작동되게 한다.
+            //bind대신에 unbind를 사용하면 붙여져 있던 이벤트가 있다면, 이를 삭제할수 있다.
+            //setTimeout(function(){아이템.unbind("click")}, 1시간 56분);
+
+            //jQuery객체.on("이벤트명","자손",function(){이벤트 발생시 실행할 구문});
+            //아직 생성되지 않은 요소에게 미리 이벤트를 예약해줄 수 있다.
+
+            // var size = parseInt($("p").css("font-size"));
+            // console.log(size);
+            // $("li").eq(0).click(function(){
+            //     //16px 아래로 감소되지 않는다.
+            //     //한번 클릭시 2px씩 감소된다.
+            //     if(size>16){
+            //         size -= 2
+            //         $("p").css("font-size",size);
+            //     }
+                
+            // });
+            // $("li").eq(1).click(function(){
+            //     //24px 위로 증가되지 않는다.
+            //     //한번 클릭시 2px씩 증가된다.
+            //     if(size<24){
+            //         size += 2
+            //         $("p").css("font-size",size);
+            //     }
+                
+            // });
+
+            $("li").eq(0).click(function(){
+                //16px 아래로 감소되지 않는다.
+                //한번 클릭시 2px씩 감소된다.
+                var size = parseInt($("p").eq(0).css("font-size"));
+                size -= 2;
+                if(size<16){
+                    size = 16;
+                }
+                $("p").css("font-size",size);
+                
+            });
+            $("li").eq(1).click(function(){
+                //24px 위로 증가되지 않는다.
+                //한번 클릭시 2px씩 증가된다.
+                var size = parseInt($("p").eq(0).css("font-size"));
+                size += 2;
+                if(size>24){
+                    size = 24;
+                }
+                $("p").css("font-size",size);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>글자 키우기</h1>
+    <ul>
+        <li> - (글자 작게)</li>
+        <li> + (글자 크게)</li>
+    </ul>
+    <p>영국 일간 가디언은 유통이 상당히 까다로운 화이자·바이오엔테크의 '메신저 리보핵산(mRNA·전령RNA)' 방식 백신이 특수 상자에 소량 포장돼 각 병원으로 옮겨지고 있다고 보도했다.</p>
+    <p>화이자 백신은 영하 70도 이하의 초저온 상태에서 보관해야 하며, 운반할 때는 드라이아이스로 채운 특수 상자가 동원돼야 한다. 한 상자에는 최대 975회 분의 백신이 담긴다.</p>
+    <p>백신의 효능을 유지하기 위해 약품의 이동은 단 4번으로 제한되며, 일반 냉장 온도에서는 5일 간 보관이 가능하다.</p>
+</body>
+</html>

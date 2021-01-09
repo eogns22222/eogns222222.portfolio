@@ -1,0 +1,105 @@
+section.contents{
+    float:left;
+}
+
+section.contents>article.txt{
+    background:url(../imgs/son.jpg) no-repeat 100% 0%;
+}
+section.contents>article.txt>blockquote{
+    font-size:28px; color:#444;
+    margin-top:4.7rem;
+    margin-bottom:5.4rem;
+    font-size: 28px;
+    font-weight: bold;
+    line-height:3.6rem;
+}
+
+section.contents>article.txt>blockquote strong{
+    color:#1f9b0f;
+}
+section.contents>article.txt>blockquote em{
+    font-style:normal;
+}
+section.contents>article.txt>p{
+    margin-bottom:2.4rem;
+    font:1.2rem/2rem '돋움',sans-serif;
+    color:#444444;
+}
+section.contents>article.txt>p:last-of-type{
+    margin-bottom:5.9rem;
+}
+/*  테이블 특징
+    1.테이블은 블럭요소와 크기 속성 비슷하지만, 컨텐츠가 셀을 벗어날 수 없다.
+    2. 셀 자체는 인라인 블럭처럼 작동되서 vertical-align적용가능
+
+    border-collapse:; separate(기본값) || collapse
+    1.만약 separate를 사용한다면 
+      border-spacing:;
+      margin:좌우 상하;
+    (thead, tbody, tr에는 border안됨)
+    table, td, th ===> border 가능
+
+*/
+
+section.contents>article.txt>table{
+    margin-top:1.6rem;
+    border-collapse:collapse;
+    border-top:0.2rem solid #1e61a8;
+    font:1.2rem/2rem '돋움',sans-serif;
+    letter-spacing: -0.1rem;
+}
+section.contents>article.txt>table .line{
+    width:24rem;
+    border-right:0.1rem solid #dadada;
+}
+section.contents>article.txt>table .clr{
+    color:#3d7f12;
+}
+section.contents>article.txt>table th>a.no{
+    font-weight:normal;
+    color:#000;
+}
+section.contents>article.txt>table>tbody>tr>td>strong{
+    color:#c54304;
+}
+section.contents>article.txt>table>thead{
+    
+}
+section.contents>article.txt>table>thead>tr{
+    height:3.5rem;
+    background:#f2f2f2;
+}
+section.contents>article.txt>table>thead>tr>th{
+    padding:0.7rem 1rem;
+     border-bottom:0.1rem solid #dadada;
+    font-weight:bold;
+    vertical-align: middle;
+}
+section.contents>article.txt>table>tbody{
+    
+}
+section.contents>article.txt>table>tbody>tr{
+    
+}
+section.contents>article.txt>table>tbody>tr>th{
+    padding:0.7rem 1rem;
+     border-bottom:0.1rem solid #dadada;
+    font-weight: bold;
+    vertical-align: middle;
+    text-align: left;
+}
+section.contents>article.txt>table>tbody>tr>td{
+    padding:0.7rem 1rem;
+     border-bottom:0.1rem solid #dadada;
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
+
+
+

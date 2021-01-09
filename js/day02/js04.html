@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 반복문
+        // while(조건){ 조건이 true라면 반복 }
+        // 반복문을 빠져나가는 방법은 조건이 false이거나, 실행구문에서 break; 키워드를 만나는 즉시 빠져나간다.
+        var num = 0
+        var num2 = 1
+        // while(num<10){
+        //     num++;
+        //     console.log(num);
+        // }
+        // while(true){
+        //     num++;
+        //     if(num<10){
+        //         console.log(num);
+        //     }else{
+        //         break;
+        //     }
+            
+        // }
+
+        //1~100사이 숫자중 홀수만 화면에 출력하시오.
+        // while(true){
+        //     num++;
+        //     if(num<=100){
+        //         console.log(num);
+        //         num++;
+        //     }else{
+        //         break;
+        //     }
+            
+        // }
+        // while(num2<100){
+        //     num2++;
+        //     if(num2%2 == 1){
+        //         console.log(num2);
+        //     }
+            
+        // }
+
+        //1부터 100까지 숫자 중에서 홀수일때는 -를 화면에 출력하고 짝수일때는 +를 화면에 출력한다. 다만 3의 배수일때는 숫자를 출력한다.
+
+        // var num3 = 0
+
+        // while(num3<100){
+        //     num3++
+        //     if(num3%3 == 0){
+        //         console.log(num3);
+        //     }else if(num3%2 == 1){
+        //         console.log("-");
+        //     }else if(num3%2 == 0){
+        //         console.log("+");
+        //     }
+        // }
+        
+        while(true){
+            var score = prompt("당신의 점수를 입력하시오.")*1;
+            if (score >= 0 && score <= 100) {
+                if (score <= 60) {
+                    alert("F");
+                    break;
+                } else if (score <= 71) {
+                    alert("D");
+                    break;
+                } else if (score <= 81) {
+                    alert("C");
+                    break;
+                } else if (score <= 90) {
+                    alert("B");
+                    break;
+                } else {
+                    alert("A");
+                    break;
+                }
+            } else {
+                alert('정상적인 범위의 점수가 아닙니다.')
+            }
+        }
+
+        
+        
+    </script>
+</body>
+</html>

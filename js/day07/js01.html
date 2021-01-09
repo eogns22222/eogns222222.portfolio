@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //복합데이터 타입
+        //object, array, function
+
+        //익명함수
+        //이름(식별자)이 없는 함수 
+        // (function (n){ /*표현식*/ alert(n); }(10));  // alert(10);
+        
+        
+        // //test(); // Error
+        // var test = function(){
+        //     /*표현식*/  
+        // } // 데이터로 직접 할당된 함수는 삭제 가능
+        // test(); // 함수로 사용가능
+        // test = 1; // 함수삭제 line21 부터 test는 함수로 사용할 수 없다.
+        
+        // function foo(){
+        //     alert("나는 foo야");
+        // }
+
+        // test = foo; // test를 foo함수로 바꿈
+        // test(); //다시 호출가능
+
+        //객체 object
+        //객체는 여러데이터 타입의 모음.
+        //하나의 의미있는 객체를 완성하기 위한 의미가 있는 속성과 값들의 모임.
+        //만드는 방법 2가지 타입으로 완성된다.
+        //1. var 식별자 = {속성:값, 속성:값,,,,,}
+        //2. var 식별자 = new object();
+        //       식별자.속성 = 값;
+        //       식별자.속성 = 값; ,,,
+        //속성에 접근할 수 있는 것은 해당객체만 가능하다.
+        //해당객체.속성 ===> 그 속성이 갖고 있는 값을 의미한다.
+        //속성은 삭제가 가능하다 ---> delete 객체.속성
+        
+        //외부에서는 속성에 바로 접근할 수 없다.
+        //var obj = {x:1}
+        //obj.x //ok
+        //x     //error
+
+        //var bycicle = {'pedal':true, 'hanble':true, 'chain':true, 'wheel':true, 'seat':true}
+        //var ansunyoung = {height:170, weight:48, face:'baby', study:'hard', game:'queen', pet:'dog', web:true,,,,}
+
+        var book = { paper:true, cover:true, page:true, text:true }
+        
+        console.log(book.paper);
+
+
+
+        
+    </script>
+</body>
+</html>

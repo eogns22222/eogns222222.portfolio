@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배너 이동</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <style>
+        p{
+            font-size:40px;
+        }
+        ul{
+            position:relative;
+            margin:0 auto;
+            width:800px;
+            height:400px;
+        }
+        ul>li{
+            overflow: hidden;
+            position:absolute;
+            left:0; top:0;
+            width:100%;
+            height:100%;
+            opacity:0;
+            transition:all .3s ease;
+            
+            font-size:50px;
+        }
+        ul>li.on{
+            z-index: 100;
+            opacity: 1;
+        }
+        ul>li.ban01{
+            background:rgb(212, 243, 101);
+        }
+        ul>li.ban02{
+            background:rgb(143, 70, 70);
+        }
+        ul>li.ban03{
+            background:rgb(22, 148, 95);
+        }
+        ul>li.ban04{
+            background:rgb(37, 90, 126);
+        }
+        ul>li.ban05{
+            perspective: 800px;
+            background:rgb(224, 158, 199);
+        }
+
+        /* 이동을 하기 위해서는 position:relative; 또는 absolute만 가능하다. static인 상황에서는 이동 애니메이션 힘들다.*/
+        ul>li>span{
+            position:absolute;
+            transition:all .5s ease;
+        }
+        ul>li.ban01>span{
+            left:-200px; top:100px;
+        }
+        ul>li.ban02>span{
+            right:-200px; top:100px;
+        }
+        ul>li.ban03>span{
+            left:45%; top:-100px;
+        }
+        ul>li.ban04>span{
+            left:45%; bottom:-100px;
+        }
+        ul>li.ban05>span{
+            left:45%; top:45%; transform:translateZ(1000px);
+        }
+
+        ul>li.on.ban01>span{left:45%;}
+        ul>li.on.ban02>span{right:45%;}
+        ul>li.on.ban03>span{top:45%;}
+        ul>li.on.ban04>span{bottom:45%;}
+        ul>li.on.ban05>span{transform: translateZ(0);}
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            //요소를 부모요소의 마지막 자식으로 이동하기
+            //부모객체.append( 자식객체 ), 자식객체.appendTo( 부모객체 )
+
+            //요소를 부모요소의 첫번째 자식으로 이동하기
+            //부모객체.prepend( 자식객체 ), 자식객체.prependTo( 부모객체 )
+
+            //이전(앞)으로 보내기, 이후(뒤)로 보내기.
+            //요소객체.before( 앞으로보낼객체 )
+            //요소객체.after( 뒤로보낼객체 )
+
+            //이전클릭
+            $(".prev").click(function(){
+                $("ul").children().last().prependTo($("ul"));
+                // $("ul").prepend($("ul").children().last());
+                // $("ul").children().first()
+                // .before($("ul").children().last());
+                $("ul").children("li.on").removeClass("on");
+                $("ul").children("li").eq(1).addClass("on");
+            });
+
+            //다음클릭
+            $(".next").click(function(){
+                $("ul").children().first().appendTo($("ul"));
+                // $("ul").append($("ul").children().first());
+                // $("ul").children().last()
+                // .after($("ul").children().first());
+                $("ul").children("li.on").removeClass("on");
+                $("ul").children("li").eq(1).addClass("on");
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>요소 이동시키기</h1>
+    <p class="prev">이전</p>
+    <p class="next">다음</p>
+    <ul>
+        <li class="ban01"><span> eeee</span></li>
+        <li class="on ban02"> <span> aaaa</span></li>
+        <li class="ban03"> <span> bbbb</span></li>
+        <li class="ban04"> <span> cccc</span></li>
+        <li class="ban05"> <span> dddd</span></li>
+    </ul>
+</body>
+</html>

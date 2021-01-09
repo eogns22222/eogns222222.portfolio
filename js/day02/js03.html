@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 함수
+        // 정의되어있는 함수, 정의해야하는 함수
+        // alert(전달인자); console.log(전달인자); ---> 전달인자를 확인시켜주는 함수 
+        // confirm(전달인자); ---> 전달인자의 질문이 맞으면 '확인', 틀리면 '취소' 버튼을 클릭하면 각각 true 와 false를(boolean) return한다. 
+        // prompt(전달인자); ----> 전달인자에 해당하는 값을 유저가 직접 입력할 수 있고, 유저가 입력한 값(string)을 return한다.
+
+        var adult = confirm("안녕하세요. 당신은 으른인가요?");
+
+        if(adult){
+            alert("으른이군요.");
+        }else{
+            alert("얼라군요.");
+        }
+
+        var age = prompt("당신의 나이를 입력하시요.")*1; // number화
+
+        if(age>=18){
+            alert("통과")
+        }else{
+            alert("응 안돼")
+        }
+
+        var score = prompt("당신의 점수를 입력하시오.")*1;
+
+            if (score >= 0 && score <= 100) {
+                if (score <= 60) {
+                    alert("F");
+                } else if (score <= 71) {
+                    alert("D");
+                } else if (score <= 81) {
+                    alert("C");
+                } else if (score <= 90) {
+                    alert("B");
+                } else {
+                    alert("A");
+                }
+            } else {
+                alert('정상적인 범위의 점수가 아닙니다.')
+            }
+
+            
+        
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>배너 횡이동</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <style>
+        
+        div#bannerBox{
+            overflow: hidden;
+            position:relative;
+            margin:100px auto;
+            width:200px;
+            height:50px;
+            border:3px solid red;
+        }
+        div#bannerBox>ul#bannerList{
+            display:flex;
+            position:absolute;
+            left:0; top:0;
+            width:500%; /* 보여줄 자식 요소가 5개이기 때문에 5x */
+            height:50px;
+        }
+        div#bannerBox>ul#bannerList>li{
+            flex:1 1 auto;
+        }
+
+        div#bannerBox>ul#bannerList>li.first{background:hotpink;}
+        div#bannerBox>ul#bannerList>li.second{background:rgb(42, 107, 109);}
+        div#bannerBox>ul#bannerList>li.third{background:rgb(22, 58, 75);}
+        div#bannerBox>ul#bannerList>li.fourth{background:rgb(99, 189, 126);}
+        div#bannerBox>ul#bannerList>li.fifth{background:rgb(255, 203, 105);}
+        
+        
+        p.btnPrev{
+            margin-left:50px;
+        }
+        p.btnNext{
+            margin-left:50px;
+        }
+
+        ul.bullet{
+            margin-left:50px;
+        }
+        ul.bullet>li{}
+        ul.bullet>li.on{
+            background:red;
+            color:#fff;
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            var banner = {
+
+                idx:0,
+                len: $("#bannerList").children().length,
+                auto:setInterval(middleFn,3000)
+                
+
+            }
+            
+            function middleFn(){
+                banner.idx++; 
+
+                if(banner.idx >= banner.len){
+
+                    banner.idx = 0;  
+
+                }
+                doBullet();
+                doNext();
+            }
+
+            $("#bannerList").css("width",banner.len*100+"%");
+
+            for(var i =0; i<banner.len; i++){
+                if(i==0){
+                    $(".bullet").append($("<li class='on'>"+(i+1)+"</li>"));
+                }else{
+                    
+                    $(".bullet").append($("<li>"+(i+1)+"</li>"));
+
+                }
+                
+            };
+
+            $(".btnNext").click(function(){
+                clearInterval(banner.auto);
+                middleFn();
+                banner.auto = setInterval(middleFn,3000);
+            });
+
+            $(".btnPrev").click(function(){
+                clearInterval(banner.auto);
+                banner.idx--;
+                if(banner.idx < 0){
+
+                    banner.idx = banner.len - 1;  
+
+                }
+
+                
+                doBullet();
+                doPrev();
+                banner.auto = setInterval(middleFn,3000);
+                
+            });
+
+            $(".bullet").children("li").click(function(){
+                clearInterval(banner.auto);
+                var now_idx = $(this).index();
+                
+                //뺀만큼 이동시키기 위한 빼기 연산 현재 클릭한 번호를 지정한 번호에서 빼기
+                var dir_Count = now_idx - banner.idx;
+                
+                if(dir_Count>0){//뺀수가 양수이면 next
+
+                    for(var k=0; k<dir_Count; k++){
+                        doNext();
+                        
+                    }
+                }else{//뺀수가 음수이면 prev
+                    dir_Count *= -1; //음수를 양수로 변환 
+                    for(var k=0; k<dir_Count; k++){
+                        doPrev();
+                        
+                    }
+                }
+                banner.idx = now_idx;
+                doBullet();
+                banner.auto = setInterval(middleFn,3000);
+            });
+
+            function doBullet(){
+                $(".bullet").children("li")
+                .eq(banner.idx).addClass("on")
+                .siblings().removeClass("on");
+            }
+
+            function doNext(){
+               
+                $("#bannerList").stop(true,true).animate({"left":"-100%"},1000
+                ,function(){
+                    var _this = $(this);
+
+                    $("#bannerList").children().first().appendTo(_this);
+                    _this.css("left",0);
+                });//애니메이션 끝
+            }
+
+            function doPrev(){
+                var bannerUl = $("#bannerList");
+                bannerUl.children().last().prependTo(bannerUl);
+                bannerUl.css("left","-100%");
+                bannerUl.stop(false,false).animate({"left":0},1000);
+                //애니메이션 끝
+            }
+             
+         });//전체 함수 끝
+
+    </script>
+
+</head>
+<body>
+    <div id="bannerBox">
+        <ul id="bannerList">
+            <li class="first">1번 배너</li>
+            <li class="second">2번 배너</li>
+            <li class="third">3번 배너</li>
+            <li class="fourth">4번 배너</li>
+            <li class="fifth">5번 배너</li>
+        </ul>
+    </div>
+    <p class="btnPrev">이전</p>
+    <p class="btnNext">다음</p>
+    <ul class="bullet">
+        
+    </ul>
+</body>
+</html>

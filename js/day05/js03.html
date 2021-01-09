@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //2.
+        // 
+
+        var s = 128;
+        foo();      // ??? 출력되는 값은 무엇일까요.
+        function foo(){
+            s++;
+            s++;
+            foo1(s);
+        }
+        function foo1(x){
+            x /= 2;
+            alert(x);
+            foo2(x)
+        }
+        
+        function foo2(y){
+            y /= 5;
+            alert(y);
+        }
+    </script>
+</body>
+</html>

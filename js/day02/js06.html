@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // 여탕 출입 구문을 만들도록 한다. 변수 gender에는 string타입으로 '남성' or '여성' 둘중의 하나의 값만 입력한다. 변수
+            // age는 number타입으로 0~120사이 값만 입력하도록 한다. 여탕 출입구문 성별이 여성이면 무조건 alert("여탕 출입"); 성별이
+            // 남성이라도 4살 이하면 alert("여탕 출입"); 구문이 되도록 작성
+            
+            
+            while (true) {
+                var gender = prompt("성별");
+
+                if (gender == '여성') {
+                    alert("여탕 출입");
+                    break;
+                } else if (gender == '남성') {
+                    var age = prompt("나이가 어떻게 되시나요") * 1;
+
+                    if (age <= 4) {
+                        alert("여탕 출입");
+                        break;
+                    } else if(age>4 && age<=120){
+                        alert("응 안돼");
+                        break;
+                    }
+                } else {
+                    alert("잘못 기입하셧습니다.")
+                }
+            }
+        </script>
+    </body>
+</html>

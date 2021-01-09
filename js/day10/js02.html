@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //함수
+        //프로토타입
+        //모체, 원형, 완제품을 만들기 바로 전 모델
+
+        //1. 함수는 prototype속성을 갖는다.
+        //2. prototype은 상속받는 객체의 모체이다.
+        //3. 함수는 생성자 함수가 될 수 있다.
+        //4. 모든 객체는 __proto__속성을 갖고 있다.
+        //5. __proto__속성은 모체와 연결된다.
+        function Car(){
+            this.engine = true;
+        }
+        
+        //prototype은 Car 함수의 속성을 새롭게 연결시키는 객체의 모체.
+        //
+        Car.prototype.getBbang = function(){
+            alert(this.bbang);
+        }
+        Car.prototype.bbang = "빵빵";
+        Car.prototype.door = 2;
+        var sportsCar = new Car(); //{} --> {engin:true, bbang:"빵빵", __proto__:Car.prototype}
+        sportsCar.getBbang();
+        var truck = new Car();
+        truck.getBbang();
+        var sedan = new Car();
+        sedan.getBbang();
+
+        Car.prototype.green = "환경자동차";
+        Car.prototype.bbang = "뺑뺑";
+        sedan.bbang = "빠아아~~아앙";
+
+        alert(sedan.green);
+        truck.getBbang();
+        sedan.getBbang();
+
+    </script>
+</body> 
+</html>

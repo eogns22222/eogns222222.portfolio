@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>현대건설</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" media="only screen and (min-width:981px)" href="css/cover_web.css">
+    <link rel="stylesheet" media="only screen and (max-width:980px)" href="css/cover_mobile.css">
+    <style>
+        
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("div.official").click(function(){
+                $("div.official").children("ul").addClass("on");
+                $("div.official").find("li").addClass("on");
+                $("div.cover").addClass("on").removeClass("on2");
+                $("div.cover").children().addClass("on").removeClass("on2");
+                
+            });
+            
+            $("div.media").click(function(){
+                $("div.media").children("ul").addClass("on");
+                $("div.media").find("li").addClass("on");
+                $("div.cover").addClass("on2")
+                $("div.cover").children().addClass("on2")
+                
+            });
+            $("div.cover").children("p").click(function(){
+                $("div.official").children().removeClass("on")
+                .children().removeClass("on");
+                
+                $("div.media").children().removeClass("on")
+                .children().removeClass("on");
+                
+                $("div.cover").removeClass("on").children()
+                .removeClass("on");
+                $("div.cover").removeClass("on2").children()
+                .removeClass("on2");
+                
+
+            });
+            
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <div class="official">
+            <h1><img src="imgs.cover/cover.logo.png" alt="로고"></h1>
+            <ul>
+                <li>Official Site</li>
+                <li>Hyundai E&C</li>
+                <li><a href="http://eogns2222.dothome.co.kr/portfolio033/index.html">Official Site</a></li>
+                <li><a href="http://eogns2222.dothome.co.kr/portfolio033/index.html"><img src="imgs.cover/arrow.png" alt="들어가기"></a></li>
+            </ul>
+        </div>
+        <div class="media">
+            <ul>
+                <li>Media Hub</li>
+                <li>Newsroom</li>
+                <li><a href="http://eogns2222.dothome.co.kr/portfolio033/sub01.html">Media Hub</a></li>
+                <li><a href="http://eogns2222.dothome.co.kr/portfolio033/sub01.html"><img src="imgs.cover/arrow.png" alt="들어가기"></a></li>
+            </ul>
+        </div>
+        <div class="cover">
+            <p><img src="imgs.cover/delete.png" alt="닫기"></p>
+        </div>
+    </div>
+</body>
+</html>

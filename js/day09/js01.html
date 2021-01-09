@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="imgg"><img src="../imgs/cd3f9ec10e9960f99bd16e020e5c20ea.jpg" alt="첫눈"></p>
+    <script>
+        var pp = document.getElementById("imgg");
+
+        pp.addEventListener("mouseenter", function(){
+            this.firstChild.src = "../imgs/PEP20191127018801848_P4.jpg";
+            this.firstChild.alt = "크리스마스 트리";
+        });
+        pp.addEventListener("mouseleave", function(){
+            this.firstChild.src = "../imgs/cd3f9ec10e9960f99bd16e020e5c20ea.jpg";
+            this.firstChild.alt = "첫눈";
+        });
+    </script>
+</body>
+</html>

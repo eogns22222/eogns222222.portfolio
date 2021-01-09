@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1. 1~100까지 숫자 중에서 홀수는 홀수대로 짝수는 짝수끼리의 합을 구하시오
+        
+        // function num(){
+        //     var num1 = 0;
+        //     var num2 = 1;
+        //     var temp = num1;
+        //     var temp2 = num2;
+                
+        //             while(true){
+                        
+        //                     num1++;
+        //                     num1++;
+        //                     if(num1>100){
+        //                         break;
+        //                     }
+        //                     temp += num1;
+                            
+        //                     num2++;
+        //                     num2++;
+        //                     if(num2>100){
+        //                         break;
+        //                     }
+        //                     temp2 += num2;
+                        
+        //             }
+        //             console.log(temp);
+        //             console.log(temp2);
+                    
+                
+        // }
+        // num();
+
+
+        //2. 피보나치의 수
+        //1, 1, 2, 3, 5, 8, 13,,,,,
+        //반복하는 숫자를 입력하면 그에 해당하는 피보나치 숫자들을 나열하시오.
+        //반복하는 숫자가 필요 == 유저 입력
+        //pervprev
+        //prev
+        //now = prevprev + prev
+        //prevprev = prev
+        //prev = now
+        var numFibo = prompt("피보나치 수열을 반복할 횟수를 입력하시오.")*1;
+        var startNum = 2;
+        var result = "";
+        
+        if(numFibo == 1){
+            result = "1"; //결과 숫자
+        }else if(numFibo >= 2){
+            result = "1";
+            var prevprev = 0;
+            var prev = 1;
+            var now = prev + prevprev;
+            result += ","+now;
+        }
+        
+        if(numFibo>=3){
+            while(startNum<numFibo){
+                prevprev = prev;
+                prev = now;
+                now = prevprev + prev;
+
+                startNum++;
+                result += ","+now;
+            }
+        }
+        console.log(result);
+        
+    </script>
+</body>
+</html>

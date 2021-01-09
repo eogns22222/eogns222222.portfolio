@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 4칙연산 함수
+        // 계산기 
+        // 1.임의의 숫자 2개를 따로 입력하고 
+        // 2.연산자를 따로 입력하면 
+        // 3.그 결과값을 alert을 사용해서 띄우는 함수를 작성하시오.
+        
+        // 4칙연산 (1)
+        // while(true){
+        //     if(col>0 || col<0){
+        //         break;
+        //     }
+        //     var x = prompt("값을 입력하세요.")*1;
+        //     if(x>=0 || x<0){
+        //         while(true){
+        //             if(col>0 || col<0){
+        //                 break;
+        //             }
+        //             var y = prompt("연산자를 입력하세요.");
+
+        //             if(y == "+" || y == "-" || y == "*" || z == "/"){
+        //                 while(true){
+        //                     var z = prompt("값을 입력하세요.")*1;
+
+        //                     if(z>=0 || x<0){
+        //                         var col = calc(x, y, z);
+        //                         alert(col);
+        //                         break;
+                                
+        //                     }else{
+        //                         alert("다시입력하세요.");
+        //                     }
+        //                 }
+                        
+                        
+        //             }else{
+        //                 alert("다시입력하세요.");
+        //             }
+        //         }
+                
+        //     }else{
+        //         alert("다시입력하세요.");
+        //     }
+        // }
+        
+        // function calc(x, y, z){ //x가 첫번째 숫자, y는 연산자, z는 두번째 숫자
+        //     alert(x+y+z);
+        //     if(y == "+"){
+        //         col = x+z;
+        //         return col;
+        //     }else if(y == "-"){
+        //         col = x-z;
+        //         return col;
+        //     }else if(y == "*"){
+        //         col = x*z;
+        //         return col;
+        //     }else{
+        //         col = x/z;
+        //         return col;
+        //     }
+
+        // }
+
+
+        // 4칙연산 (2)
+        while(true){
+            var value = clac( prompt("숫자를 입력하시오."), prompt("연산자를 입력하시오."), prompt("숫자를 입력하시오.") );
+            if(value){
+                
+                break;
+            }
+            alert("제대로 입력해주세요.");
+        }
+        alert(value);
+        
+
+        function clac(x, y, z){ 
+            x *= 1;
+            z *= 1;
+            if(isNaN(x)){
+                return false;
+            }; //NaN이면 true;
+            if(isNaN(z)){
+                return false;
+            }; //NaN이면 true;
+            var result;
+            if(y == "+"){
+                result = x+"+"+z+"="+(x+z);
+            }else if(y == "*"){
+                result = x+"x"+z+"="+(x*z);
+            }else if(y == "-"){
+                result = x+"-"+z+"="+(x-z);
+            }else if(y == "/"){
+                result = x+"/"+z+"="+(x/z);
+            }else{
+                return false;
+            }
+
+
+            return result;
+        }
+    </script>
+</body>
+</html>

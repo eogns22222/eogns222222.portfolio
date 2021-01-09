@@ -1,0 +1,120 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+
+	<title>Document</title>
+
+	<link rel="stylesheet" href="../reset.css">
+
+	<style>
+
+        #vidOuter {position:relative; margin:0 auto; width:640px; height:360px; }
+
+        #btnImg{
+            position:absolute; z-index:100;
+            left:calc(50% - 55px); top:calc(50% - 30px); 
+            width:110px; height:60px; 
+            background:olive; 
+            cursor:pointer; 
+        }
+
+    </style>
+
+	<script
+
+  src="https://code.jquery.com/jquery-3.3.1.js"
+
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+
+  crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+<!-- 1.유튜브 영상을 넣을 div태그가 필요 -->
+    <div id="vidOuter">
+        <div id="btnImg"></div>
+        <div id="player0" class="vid">
+        </div>
+	</div>
+
+	<p><span id="btn_play">플레이</span></p>
+	<p><span id="btn_pause">일시정지</span></p>
+	<p><span id="btn_stop">스톱</span></p>
+
+	<script>
+      // 2. iframe api를 로드시키고 싱크시키는 역할.
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. 이함수는 api코드를 다운로드한 이후에, 유튜브 iframe를 만들고 자동으로 실행
+      //    <iframe> (and YouTube player)
+      //    after the API code downloads.
+
+	  //아래 각 변수는 유튜브 동영상을 담아두는 변수일뿐 이름은 상관없음.
+      var player0;
+
+
+      function onYouTubeIframeAPIReady() {
+        player0 = new YT.Player('player0', { //첫 번째 전달인자 - 유튜브가 들어갈 html태그 id선택
+          playerVars: { //플레이어 관련된 속성
+          	'autoplay': 0,  //0이면 false, 1이면 true 
+         	'controls': 0
+  		  },
+          height: '360', //크기 지정하기
+          width: '640', //크기 지정하기
+          videoId: '8jxC-Nx9KPg', //비디오 id 지정하기
+          events: {
+            'onReady': onPlayerReady
+          }
+        });
+
+
+      }
+
+
+      // 4. 이api는 유튜브가 준비가 되면 실행할 것이다.
+      function onPlayerReady(event) {
+		 // console.log(event.target);
+      	//event.target.stopVideo(); //처음 로딩 화면을 멈춘채로 있겠다.
+        event.target.playVideo();
+      }
+
+      //예를 들면 $("#stop").click(function(){  stopVideo(); });
+	  
+		$("#btn_play, #btnImg").click(function(){ 
+               
+					if(player0){
+						var fn = function(){
+                            player0.playVideo();
+                            $("#btnImg").fadeOut(300);
+                        }
+						setTimeout(fn, 1000);
+					} 
+		});  
+
+		$("#btn_stop").click(function(){ 
+                    $("#btnImg").fadeIn(10);
+					player0.stopVideo();
+
+		}); 
+
+		$("#btn_pause").click(function () {
+
+					player0.pauseVideo();//일시정지
+
+		});
+
+ 
+
+    </script>
+
+</body>
+
+</html>

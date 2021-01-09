@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //복합데이터타입 vs 기초데이터타입
+        //변수를 호출시 반응하는 타입
+        //call by reference VS call by value
+
+        var origin = {x:10}
+        var refer = origin;
+        refer.x = 20;
+        origin.x  //20
+        
+        var val = 10;
+        var copy = val;
+        copy = 20;
+        val  //10
+
+        var student = {name:"학생"}
+        var moveStudent = student.name;
+        moveStudent = "전학생";
+        alert(student.name);      //학생
+
+        var student = {name:"학생"}
+        var moveStudent = student.name;
+        moveStudent.name = "전학생";
+        alert(student.name);      //학생
+        
+        var student = {name:"학생"}
+        var moveStudent = student;
+        moveStudent = "전학생";
+        alert(student.name);      //학생
+        
+        var student = {name:"학생"}
+        var moveStudent = student;
+        moveStudent.name = "전학생";
+        alert(student.name);      //전학생
+
+    </script>
+</body>
+</html>

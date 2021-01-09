@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //재귀함수
+        // var k = recursive(3);
+        // console.log(k);
+        // function recursive(x){
+        //     var result;
+        //     x--;
+        //     if(x==0){
+        //         return x;
+        //     }
+        //     result = recursive(x);
+        //     alert(result);
+        //     return x;
+        // }
+        
+        //임의의 값을 입력했을 때 그 값부터 0까지 합을 구하시오.
+
+        // var k = sumNum(prompt("값을 입력하세요.")*1);
+        // console.log(k);
+        
+        
+        // function sumNum(x){
+            
+        //     if(x==0){
+        //         return x;
+        //     }
+        //     return x + sumNum(x-1);
+        // }
+
+        //임의의 숫자를 집어넣으면 10까지 짝수들의 합을 구하여라.
+        
+        // var k = sumEven(prompt("값을 입력하세요")*1);
+        // alert(k);
+
+        // function sumEven(x){
+
+        //     if(x == 10){
+        //         return x;
+        //     }
+        //     if(x%2 == 0){
+        //         return x + sumEven(x+1);
+        //     }else{
+        //         return sumEven(x+1);
+        //     }
+            
+        // }
+
+        //지역군에서 인구조사를 한다고한다.
+        //인구를 조사했을 때 그인구의 각각의 자리수를 비교하고 싶다. ex>천의자리, 백의자리, 십의자리, 일의자리
+        //천의자리 띄우고 백의자리 띄우고 십의자리 띄우고 일의자리를 마지막으로 띄우도록 출력하시오.
+        //Math.floor(x/10);
+        // var k = people(prompt("인구를 입력하시오.")*1);
+        // console.log(k);
+        // function people(x){
+        //     var result = 0;
+        //     var re = 0;
+            
+        //     if(x < 10){
+        //         return x 
+        //     }
+        //     result = people(Math.floor(x/10));
+        //     if(result < 10){
+        //         result;
+        //         console.log(result);
+                
+        //     }else if(result <100){
+        //         re = Math.floor(result/10);
+        //         re = re*10
+        //         result -= re;
+        //         console.log(result);
+                
+        //     }else if(result <1000){
+        //         re = Math.floor(result/10);
+        //         re = re*10
+        //         result -= re;
+        //         console.log(result);
+        //     }
+        //     if(x >1000){
+        //         re = Math.floor(x/10);
+        //         re = re*10
+        //         x -= re;
+        //     }
+        //     return x;
+        // }
+
+
+        // while(true){
+        //     var n = prompt("임의의 숫자를 입력하세요.")*1;
+        //     if(!isNaN(n)){ // isNaN은 전달인자가 숫자형식이 아닌 number타입을 true로 반환, 즉, 숫자형식의 number는 false로 return한다.
+        //         checkNum(n);
+        //         break;
+        //     }
+        // }
+
+        // function checkNum(num){
+        //     if(num<10){
+        //         console.log(num);
+        //         return;
+        //     }
+        //     checkNum(parseInt(num/10));
+        //     console.log(num%10);
+        // }
+
+
+        // 1.임의의 숫자를 집어 넣으면 그 값부터 1까지의 곱을 구하시오.
+        
+        // var num = sumNum(prompt("값을 입력하세요.")*1);
+        // console.log(num);
+        // function sumNum(x){
+            
+        //     if(x == 1){
+        //         return x;
+        //     }
+        //     return x * sumNum(x-1);
+        // }
+
+        // 2.임의의 숫자를 집어 넣으면 11까지 홀수들의 합을 구하시오.
+
+        // var num = sumNum(prompt("값을 입력하세요.")*1);
+        // console.log(num);
+        // function sumNum(x){
+        //     if(x == 11){
+        //         return x;
+        //     }
+        //     if(x%2 == 1){
+        //         return x + sumNum(x+1);
+        //     }else if(x%2 == 0){
+        //         return sumNum(x+1);
+        //     }
+        // }
+
+        // 3.임의의 숫자를 집어 넣으면 10까지 홀수들을 console.log로 출력시키시오.
+        
+        // var num = numNum(prompt("값을 입력하세요.")*1);
+
+        // function numNum(x){
+        //     var result = 0;
+        //     if(x == 10){
+        //         return x;
+        //     }
+        //     if(x%2 == 1){
+        //         numNum(x+1);
+        //         console.log(x);
+        //     }else if(x%2 == 0){
+        //         numNum(x+1);
+        //     }
+            
+        // }
+
+        // 4. 임의의 숫자를 집어 넣었을 때 그값이 홀수라면 그값부터 11까지의 합을 구하고 짝수라면 그값부터 0까지의 합을 구하시오.(1) 그리고 처음에 적었던 값을 return해서 보여주어라.(2)
+
+        // var num = sumNum(prompt("값을 입력하세요.")*1);
+        // console.log(num);
+        // function sumNum(x){
+        //     if(x%2 == 1){
+        //         y = x;
+        //         var result = sumNum2(y);
+        //         function sumNum2(y){
+        //             if(y == 11){
+        //                 return y;
+        //             }
+        //             return y + sumNum2(y+1);
+        //         }
+        //         console.log(result);
+        //         return x;
+        //     }else if(x%2 == 0){
+        //         z = x;
+        //         var result2 = sumNum3(z);
+        //         function sumNum3(z){
+        //             if(z == 0){
+        //                 return z;
+        //             }
+        //             return z + sumNum3(z-1);
+        //         }
+        //         console.log(result2);
+        //         return x;
+        //     }
+        // }
+
+        
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 3,5,7 이 각각 가위,바위,보 일때 세 값중 하나를 입력시 그 수를 이길 수 있는 값을 도출 
+        // 가위내면 바위, 바위내면 보가 뜨도록.
+        // rock-paper-scissors
+
+        var scissors = "가위"
+        var rock = "바위"
+        var paper = "보"
+        var point = 0;
+
+        while(true){
+            var win = prompt("가위바위보중 하나를 내면 이겨드립니다. 숫자로 입력해주세요.  ex> 가위=3, 바위=5, 보=7")*1;
+
+            if(win==3){
+                alert(rock);
+                point++;
+            }else if(win==5){
+                alert(paper);
+                point++;
+            }else if(win==7){
+                alert(scissors);
+                point++;
+            }else{
+                alert("다시입력해주세요.");
+            }
+            if(point==3){
+                var ment = confirm("계속 하시겠습니까?");
+                if(ment){
+                    alert("네 알겠습니다.");
+                    point = 0;
+                }else{
+                    alert("수고하셧습니다.");
+                    break;
+                }
+            }
+        }
+
+
+    </script>
+</body>
+</html>

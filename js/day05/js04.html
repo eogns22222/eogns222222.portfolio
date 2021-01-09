@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //3.
+        // 출력되는 값은?
+
+        var a = 199;
+        var aa;
+        foo();          // ??  
+        foo4();         // ??
+        function foo(){
+            a++;
+            foo3(a);
+        }
+        function foo2(aa){
+            a++;
+            aa++;
+            aa += aa + a;
+            alert(aa);
+        }
+        foo3(1000);          // ??
+        function foo3(y){
+            y /= 10;
+            alert(y);
+        }
+        function foo4(z){
+            aa = 100;
+            foo2(aa);
+        }
+
+    </script>
+</body>
+</html>

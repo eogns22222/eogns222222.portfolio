@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //일하는 시간에 비례해서 월급을 받을 수 있고 월급에 비례해서 
+        //식사의 종류가 조정된다.
+        //일하는 시간은 work_hours라고 하며 각자 원하는 시간만큼 일할 수 있다.
+        //시간당 임금은 15000이라고 지정한다.
+        //급료는 payment라고 한다. 
+        //급료에 따라서 200만 미만은 enjoy가 되며, 350만 미만은 normal이고,
+        //500미만은 hard이다. 마지막으로 500이상이 되면 goldbug이다. 
+        //이는 변수 life에 할당한다. 
+
+        //각 라이프는 급료에 따라서 바뀌고 음식의 종류가 바뀐다.        
+        //enjoy라이프는 'bread'과 'egg'으로 만족하며
+        //normal라이프는 'bread'와 'egg' 그리고 'ham'
+        //hard라이프는 'bread'와 'egg' 그리고 'ham' 에 'source'를 추가한다.
+        //goldbug라이프는 'bread'와 'egg' 그리고 'ham' 에 'source'를 추가하고 'juice'도 마신다. 
+        //이를 변수로 저장해서 alert(변수)로 나타낸다. 
+        //변수명은 각자 정하시오.
+
+        // var work_hours = 0;
+        // var payment = 0;
+        // var life = "";
+
+        // while(true){
+        //     var work_hours = prompt("근무시간을 입력해주세요.")*15000;
+            
+        //     if(work_hours == 0){
+        //         break;
+        //     }else{
+        //         payment += work_hours;
+        //         console.log(payment);
+        //         if(payment<=2000000){
+        //         var life = "enjoy";
+        //         alert("당신의 등급은"+life+"입니다.");
+        //         }else if(payment<=3500000){
+        //         var life = "normal";
+        //         alert("당신의 등급은"+life+"입니다.");
+        //         }else if(payment<5000000){
+        //         var life = "hard";
+        //         alert("당신의 등급은"+life+"입니다.");
+        //         }else{
+        //         var life = "goldbug";
+        //         alert("당신의 등급은"+life+"입니다.");
+        //         }
+        //     }
+        // }
+
+        
+
+        // if(payment>=5000000){
+        //     alert("juice");
+        // }
+        // if(payment>=3500000){
+        //     alert("source");
+        // }
+        // if(payment>=2000000){
+        //     alert("ham");
+        // }
+        // if(payment>=0){
+        //     alert("bread egg");
+        // }
+        
+        var work_hours = 0;
+        var payment = 0;
+        var life = "";
+        var day = 0;
+        while(day<21){
+            
+            work_hours = prompt("당일 일했던 시간을 입력하세요. 최대근무시간은 8시간을 초과할 수 없습니다.")*1;
+            if(work_hours>24) {
+                continue;
+            }else{
+                payment += work_hours*15000;
+                day++;
+                console.log("당신의 하루 일한시간은"+work_hours+"시간이고 현재까지 번돈은"+payment+"입니다.");
+            }
+            
+        }
+        if(payment<=200){
+            life = "enjoy";
+        }else if(payment<=350){
+            life = "normal";
+        }else if(payment<=500){
+            life = "hard";
+        }else{
+            life = "goldbug";
+        }
+
+        if(payment > 15000){
+            alert("bread & egg");
+        }
+        if(payment > 2000000){
+            alert("ham");
+        }
+        if(payment > 3500000){
+            alert("soruce");
+        }
+        if(payment > 5000000){
+            alert("juice");
+        }
+
+        
+    </script>
+</body>
+</html>

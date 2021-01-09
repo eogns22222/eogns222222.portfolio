@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // 변수 score를 작성한다. 점수는 0~100사이 정수를 입력한다. score가 100~90사이면 alert("A") score가
+            // 81~90사이면 alert("B") score가 71~80사이면 alert("C") score가 61~70사이면 alert("D")
+            // score가 60이하면 alert("F")
+
+            var score = 120;
+
+            if (score >= 0 && score <= 100) {
+                if (score <= 60) {
+                    alert("F");
+                } else if (score <= 71) {
+                    alert("D");
+                } else if (score <= 81) {
+                    alert("C");
+                } else if (score <= 90) {
+                    alert("B");
+                } else {
+                    alert("A");
+                }
+            } else {
+                alert('정상적인 범위의 점수가 아닙니다.')
+            }
+        </script>
+    </body>
+</html>

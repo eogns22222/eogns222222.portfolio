@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //#1.
+        //임의의 숫자를 입력했을 때 그 숫자부터 ~~ 1까지의 합을 도출하시오.
+
+        //#2.
+        //10000까지 8이라는 숫자가 몇번 나오는지 도출하시오.
+        //1의 숫자8
+        //10의 숫자는 18,28,38 ,,,,
+        //100의 숫자는 108,118,128,,,,
+        //var num = ? num%10 == 8,
+        //8888%10 == 8, 888%10 == 8, 88%10 == 8
+
+        //#1-1
+        // var num = prompt("숫자를 입력하세요")*1;
+        // var num4 = num;
+        // var num2 = --num4;
+        // while(true){
+            
+        //     var num3 = (num += num2);
+        //     console.log(num3);
+        //     num2--;
+        //     if(num2 == 0){
+        //         break;
+        //     }
+        // }
+
+        //#1-2
+        // var num = prompt("숫자를 입력하시오.")*1;
+        // var sum = num;
+        // while(true){
+            
+        //     num--;
+        //     sum +=num;
+            
+        //     if(num < 1){
+        //         console.log(sum);
+        //         break;
+        //     }
+        // }
+
+        //스왑 예제
+        // var x = 1;
+        // var y = 2;
+        // var tmp ;
+        
+        // tmp = x;
+        // x = y;
+        // y = tmp;
+        // console.log(x);
+        // console.log(y);
+        
+
+
+
+
+        //#2.
+        var num = 0;
+        var count = 0;
+        var tmp = 0;
+        while(true){
+
+            num++;
+            tmp = num;
+            while(true){
+                if(tmp%10 == 8){count++;}
+                tmp /= 10;
+                tmp = parseInt(tmp);
+                if(tmp != 8 && tmp <10){
+                    break;
+                }
+            }
+            
+            if(num == 10000){
+                break;
+            }
+        }
+        console.log(count);
+    </script>
+</body>
+</html>

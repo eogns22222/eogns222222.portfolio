@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수동애니메이션</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <style>
+        li{
+            width:500px;
+            height:50px;
+            border:1px solid red;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+        $(function(){
+            //수동애니메이션
+
+            //애니메이션이라는 것은
+            //시간동안에 움직임을 계속 보여주는 것.
+            //jQuery에서 애니메이션은 jQuery객체의 속성을 지정한 시간동안 점차 변화되는 값으로 되어가는 과정일 뿐이다.
+
+            //$({X:1,y:"와이"}).animate({x:1000},1000,function(){});
+            //x:1이 1초 동안에 x:1000이 되고 function을 실행해라 라는뜻
+
+            //1.
+            //jQuery객체.animate({변화될속성:값,,,,},시간,function(){애니메이션끝난이후 실행할 구문});
+
+            //2.
+            //jQuery객체.animate({변화될속성:속성:값,,,,},{duration:숫자,step:function(){},progress:function(){} },function(){애니메이션이후 실행할 구문});
+
+            //3.애니메이션 객체에는 stop을 지정할 수 있다.
+            // 다만, stop메소드는 현재 진행중인 애니메이션을 멈춘다.
+            // 진행되어야할 애니메이션을 멈추지는 않는다.
+            // 객체.stop(clearQueue, jumpToEnd) 두 전달인자는 boolean값
+            
+
+
+            $("ul").children("li").mouseenter(function(){
+
+                $(this).stop(true,true).animate({"width":1000},500);
+
+            });
+            
+            $("ul").children("li").mouseleave(function(){
+
+                $(this).stop(true,true).animate({"width":500},500);
+
+            });
+
+
+        });
+
+    </script>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+</html>

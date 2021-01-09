@@ -1,0 +1,133 @@
+body {
+    font-family: 'nanum';
+}
+
+
+/* main sub navigator */
+main{
+    overflow:hidden;
+    margin-bottom:3rem; 
+}
+
+main > section.contents {
+    margin-bottom:3rem;
+    width: 84.8rem;
+    border: 0.1rem solid #dcdcdc;
+}
+
+main > section.contents > div.titBar {
+    
+    height: 5.6rem;
+    background: url(../imgs/tit.gif) repeat-x 0 0;
+}
+
+main > section.contents > div.titBar > h4 {
+    float:left;
+    padding-left: 1.5rem;
+    font: bold 1.8rem/5.4rem 'nanum', sans-serif;
+    color: #111;
+}
+
+main > section.contents > div.titBar > dl {
+
+    float:right;
+    margin:1.9rem 1.5rem 0 0 ;
+    padding-left: 1.3rem;
+    font-size: 1.1rem;
+    background: url(../imgs/house.gif) no-repeat 0 0;
+}
+
+main > section.contents > div.titBar > dl > dt {}
+
+main > section.contents > div.titBar > dl > dd {
+    color: #555;
+}
+
+main > section.contents > div.titBar > dl > dd > strong {
+    color: #333;
+}
+
+/* 본문 text */
+
+article.txt {
+    padding: 3.3rem 2.5rem 0 2.5rem;
+}
+
+article.txt > .titBar > dl {
+    font-size: 11px;
+}
+
+article.txt h5 {
+    font-weight: bold;
+    padding-left: 2.3rem;
+    background: url(../imgs/blut.gif) no-repeat 0 30%;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    color: #1e61a8;
+}
+
+article.txt .conTxt {
+    font-size: 12px;
+    font-family: "돋움", sans-serif;
+}
+
+/*하단 위로가기*/
+
+.top {
+    float:right;
+    margin: 6.5rem 1.9rem 0.4rem 0rem;
+    width: 8.1rem;
+    height: 2.3rem;
+    background: #636363;
+}
+
+.top > a {
+    display: block;
+    font:bold 1.3rem/2.3rem "돋움", sans-serif;
+    letter-spacing: -0.2rem;
+    text-align: center;
+    color: #fff;
+
+}
+
+.top > a:before {
+    display: inline-block;
+    margin-right: 0.4rem;
+    width: 0;
+    height: 0;
+    border: 0.4rem solid rgba(0, 0, 0, 0);
+    border-bottom-color: #fff;
+
+    vertical-align: 0.4rem;
+    content: "";
+}
+
+.top + blockquote {
+    clear:both;
+    margin:0 1.8rem 1.6rem 1.8rem;
+    padding:1.6rem 0 0 11rem;
+    font:1.2rem/2.7rem "돋움",sans-serif;
+    letter-spacing: -0.1rem;
+    word-spacing: 0.3rem;
+    border:0.1rem solid #aac2dc;
+    height:9.8rem;
+    background:#f1f4f8 url(../imgs/com_bg.gif) no-repeat 20px 50%;
+}
+
+.top + blockquote > p {
+    color:#444;
+}
+.top + blockquote > p:last-of-type{
+    color:#c03200;
+    text-shadow: 0 0 1px #c03200, 0 0 1px #c03200;
+}
+
+
+
+
+
+
+
+
+
+

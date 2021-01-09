@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Apple</title>
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/footer.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.typekit.net/sdr6xnn.css">
+        <style>
+            html {
+                font-size: 62.5%;
+                font-family: 'Noto Sans KR', sans-serif;
+            }
+            .eng {
+                font-family: myriad-pro, sans-serif;
+
+                font-weight: 400;
+
+                font-style: normal;
+            }
+            a {
+                color: black;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(function(){
+
+                $(".prev").click(function(){
+                    $("ul.contents").children().eq(3)
+                    .prependTo($("ul.contents"));
+                    $("ul.contents").children("li.on").removeClass("on");
+                    $("ul.contents").children("li").eq(1).addClass("on");
+
+                    $("section.textt").children("article").children().eq(3)
+                    .prependTo($("article.ararar"));
+                    $("section.textt").children("article").children("div.on")
+                    .removeClass("on");
+                    $("section.textt").children("article").children("div")
+                    .eq(1).addClass("on");
+                });
+                $(".next").click(function(){
+                    $("ul.contents").children().eq(0)
+                    .appendTo($("ul.contents"));
+                    $("ul.contents").children("li.on").removeClass("on");
+                    $("ul.contents").children("li").eq(1).addClass("on");
+
+                    $("section.textt").children("article").children().eq(0)
+                    .appendTo($("article.ararar"));
+                    $("section.textt").children("article").children("div.on")
+                    .removeClass("on");
+                    $("section.textt").children("article").children("div")
+                    .eq(1).addClass("on");
+                });
+
+            });
+        </script>
+
+    </head>
+    <body>
+        <header>
+            <div>
+                <h1>
+                    <a href="http://eogns2222.dothome.co.kr/portfolio011/index.html"><img src="imgs/logo1.png" alt="애플로고"></a>
+                </h1>
+                <nav>
+                    <ul>
+                        <li class="eng">
+                            <a href="http://eogns2222.dothome.co.kr/portfolio011/sub3.html#">iPhone12</a>
+                            <ul>
+                                <li class="eng">
+                                    <a href="http://eogns2222.dothome.co.kr/portfolio011/sub3.html#">iPhone12
+                                        <img src="imgs/2deps_arrow.png" alt="2deps표시"></a>
+                                    <ul>
+                                        <li class="eng">
+                                            <a href="http://eogns2222.dothome.co.kr/portfolio011/sub3.html#">iPhone 12</a>
+                                        </li>
+                                        <li class="eng">
+                                            <a href="http://eogns2222.dothome.co.kr/portfolio011/sub1.html#">iPhone 12 pro</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="eng">
+                            <a href="http://eogns2222.dothome.co.kr/portfolio011/sub1.html#">iPhone12 Pro</a>
+                            <ul>
+                                <li>
+                                    <a href="http://eogns2222.dothome.co.kr/portfolio011/sub1.html#">iPhone12 Pro<img src="imgs/2deps_arrow.png" alt="2deps표시"></a>
+                                    <ul>
+                                        <li class="eng">
+                                            <a href="http://eogns2222.dothome.co.kr/portfolio011/sub1.html#">iPhone12 Pro</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="eng">
+                            <a href="http://eogns2222.dothome.co.kr/portfolio011/sub2.html">Store</a>
+                        </li>
+                        <li class="eng">
+                            <a href="#">Apple</a>
+                            <ul>
+                                <li>
+                                    <a href="#">Apple<img src="imgs/2deps_arrow.png" alt="2deps표시"></a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">브랜드스토리</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">브랜드전략</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="eng">
+                            <a href="#">Apple Care</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <aside class="banner_top">
+                <section class="textt">
+                    <p class="hidden">배너 텍스트</p>
+                    <div class="cover"></div>
+                    <article class="ararar">
+                    <div class="txton ing">
+                        <p>Apple</p>
+                        <p class="eng">MacBook Air</p>
+                        <p>Air의 흐름을 바꾸다.</p>
+                        <p>
+                            <a href=""><img src="imgs/more_btn.png" alt="자세히 보기">자세히 보기</a>
+                        </p>
+                    </div>
+                    <div class="off on ing">
+                        <p>Apple</p>
+                        <p class="eng">iPhone12</p>
+                        <p>애플 iPhone는 어디서든 부드럽고 빠른 LTE를 제공합니다.</p>
+                        <p>
+                            <a href=""><img src="imgs/more_btn.png" alt="자세히 보기">자세히 보기</a>
+                        </p>
+                    </div>
+                    <div class="off ing">
+                        <p>당신에게 알맞은 iPhone은?</p>
+                        <p class="eng">Apple</p>
+                        <p>iPhone, Apple에서 사면 가장 좋은이유</p>
+                        <p>
+                            <a href=""><img src="imgs/more_btn.png" alt="자세히 보기">자세히 보기</a>
+                        </p>
+                    </div>
+                    <div class="off ing">
+                        <p>Apple</p>
+                        <p class="eng">WATCH</p>
+                        <p>건강의 미래, 이미 손목 위에</p>
+                        <p>
+                            <a href=""><img src="imgs/more_btn.png" alt="자세히 보기">자세히 보기</a>
+                        </p>
+                    </div>
+                </article>
+                </section>
+                <div class="back">
+                    <p><img src="imgs/back1.png" alt="배경"></p>
+                </div>
+                <ul class="contents">
+                    <li class="content"><img src="imgs/banner4.jpg" alt="배너1"></li>
+                    <li class="content on"><img src="imgs/banner1.jpg" alt="배너2"></li>
+                    <li class="content"><img src="imgs/banner2.jpg" alt="배너3"></li>
+                    <li class="content"><img src="imgs/banner3.jpg" alt="배너4"></li>
+                </ul>
+                <div class="control">
+                    <p class="next">
+                        <img src="imgs/next_btn.png" alt="다음으로">
+                    </p>
+                    <p class="prev">
+                        <img src="imgs/before_btn.png" alt="이전으로">
+                    </p>
+                </div>
+            </aside>
+            <script></script>
+            <div class="banner_tit">
+                <p>iPhone 신제품 출시</p>
+            </div>
+            <div class="cont">
+                <div>
+                    <img src="imgs/iPhone.jpg" alt="iPhone12">
+                    <p class="eng">iPhone 12</p>
+                    <p>
+                        <a href="#">더 알아보기 ></a>
+                    </p>
+                    <p>
+                        <a href="#">사전예약하기 ></a>
+                    </p>
+                </div>
+                <div>
+                    <img src="imgs/iPhone pro.jpg" alt="iPhone12pro">
+                    <p class="eng">iPhone 12 Pro</p>
+                    <p>
+                        <a href="#">더 알아보기 ></a>
+                    </p>
+                    <p>
+                        <a href="#">사전예약하기 ></a>
+                    </p>
+                </div>
+                <div>
+                    <img src="imgs/iPhone mini.jpg" alt="iPhone12mini">
+                    <p class="eng">iPhone 12 mini</p>
+                    <p>
+                        <a href="#">더 알아보기 ></a>
+                    </p>
+                    <p>
+                        <a href="#">사전예약하기 ></a>
+                    </p>
+                </div>
+            </div>
+            <aside class="banner_bottom">
+                <div>
+                    <img src="imgs/watch.png" alt="애플워치">
+                    <p>특별한 시즌, 빛나는 선물
+                    </p>
+                    <p>최신 연말연시 선물을 모두 만나보세요. 쇼핑 중에는 언제든지<br>
+                        스페셜리스트의 도움을 받을 수도 있죠.</p>
+                    <p>
+                        <a href="#"><img src="imgs/more_btn.png" alt="더보기">
+                            선물 쇼핑하기</a>
+                    </p>
+                </div>
+            </aside>
+            <div class="video">
+                <article>
+                    <!-- <iframe
+                        width="1440"
+                        height="650"
+                        src="https://www.youtube.com/embed/cnXapYkboRQ"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen="allowfullscreen"></iframe> -->
+                        <iframe id="myVideo" width="1440"
+                        height="650"  src="https://www.youtube.com/embed/cnXapYkboRQ?controls=0&showinfo=0&autoplay=1&loop=1&mute=1&showinfo=0&playlist=v2je4hMQkpI" frameborder="0" allowfullscreen ="allowfullscreen"></iframe>
+                </article>
+            </div>
+        </main>
+        <footer>
+            <div>
+                <p>
+                    <a href="#">애플아이폰앤테크놀로지 웹사이트</a>
+                </p>
+                <p>
+                    <a href="#">개인정보처리방침</a>
+                </p>
+                <p class="eng">
+        
+                    Copyright © Apple i Phone & Technology Co.,Ltd. All Rights Reserved.
+                </p>
+            </div>
+            
+        </footer>
+
+    </body>
+</html>

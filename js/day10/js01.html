@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var num1 = pebo(prompt("값을 입력하세요.")*1);
+        // console.log(num1);
+        
+
+        while(true){  //숫자인지 아닌지 판별
+            var tmpNum = prompt("피보나치 반복 횟수를 입력하시오.");
+            if(!isNaN(tmpNum)){
+                break;
+            }
+        }
+        var num = 0;
+        var msg = "";
+        while(num<tmpNum){  //반복할 횟수를 넣으면 그 횟수만큼 결과를 모두 얻기 위한 반복문
+            num++;
+            var result = pebo(num);
+            if(num == 1){
+                msg += result;
+            }else{
+                msg += ","+result;
+            }
+            
+        }
+        console.log(msg);
+        
+        function pebo(x){
+            if(x == 1 || x == 2){   
+                return 1;
+            }
+            return pebo(x-1)+pebo(x-2);
+        }
+    </script>
+</body>--
+</html>

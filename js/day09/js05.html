@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0; padding:0;
+            
+        }
+        li{
+            list-style:none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .hidden{
+            position:absolute;
+            left:-9999px;
+            top:-9999px; 
+        }
+        /* 나중에 시험을 보러 갈때는 reset이 없을수도 있기에 이렇게 적고 시작할수 있다. */
+
+        div{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            margin:0 auto;
+            width:500px;
+            height:300px;
+            background:red;
+            font-size: 40px;
+            color:white;
+
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 id="tit">상자요소 toggle하기</h1>
+    <div id="di">box</div>
+    <script>
+        //h1을 클릭할때마다 div의 배경과 크기가 변경되도록 작성해본다.
+        //배경 색상은 blue로 변경되고, width:300px;, height:200px;로 변경된다.
+
+        //클로저를 이용해본다.
+        //외부함수(익명함수) 필요한 변수 var bool = true;
+        //한번 클릭하면, width:500px;, height:300px;, background:red;
+        //다시 클릭하면, width:300px;, height:200px;, background:blue;
+        var h_1 = document.querySelector("#tit");
+        var didiv = document.querySelector("#di");
+        
+        
+        (function (){
+            var bool = true;
+            h_1.addEventListener("click", function(){
+                    
+                    if(bool){
+                        didiv.style.width = "300px";
+                        didiv.style.height = "200px";
+                        didiv.style.backgroundColor = "blue";
+                        
+                        bool = false; 
+                                        
+                    }else{
+                        didiv.style.width = "500px";
+                        didiv.style.height = "300px";
+                        didiv.style.backgroundColor = "red";
+                        
+                        bool = true;
+                    }
+                
+            });
+            
+
+        })();
+        
+    </script>
+</body>
+</html>
