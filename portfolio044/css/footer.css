@@ -1,3 +1,46 @@
 footer{
     display:none;
 }
+footer>div{}
+
+footer>div>dl.firstline{}
+footer>div>dl.firstline>dd{}
+footer>div>dl.firstline>dd>a{}
+
+footer>div>dl.secondline{}
+footer>div>dl.secondline>dd{}
+
+footer>div>dl.thirdline{}
+footer>div>dl.thirdline>dd{}
+footer>div>dl.thirdline>dd>a{}
+
+/* icon */
+footer>div>div{}
+footer>div>div>dl{}
+footer>div>div>dl>dd{}
+footer>div>div>dl>dd>a{}
+footer>div>div>dl>dd>a>img{}
+
+
+/* family,group */
+footer>div>div>select{}
+footer>div>div>select>option{}
+
+footer>div>div>div{}
+footer>div>div>div>h3{}
+footer>div>div>div>div{}
+footer>div>div>div>div>dl{}
+footer>div>div>div>div>dl>dt>a{}
+footer>div>div>div>div>dl>dd{}
+footer>div>div>div>div>dl>dd>a{}
+/*  */ 
+
+
+footer>div>address{}
+footer>div>address>dl{}
+footer>div>address>dl>dd{}
+footer>div>address>p{}
+
+footer>div>p{}
+footer>div>p>a{}
+footer>div>p>a>img{}
