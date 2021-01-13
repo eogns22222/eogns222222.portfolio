@@ -1,0 +1,31 @@
+header{}
+header>div{}
+header>div>ul{}
+header>div>ul>li{}
+header>div>ul>li>a{}
+
+header>div>h1{}
+header>div>h1>a{}
+header>div>h1>a>img{}
+
+/* 1depth */
+header>div>nav{}
+header>div>nav>ul{}
+header>div>nav>ul>li{}
+header>div>nav>ul>li>a{}
+
+
+/* 2depth*/
+header>div>nav>ul>li>ul{}
+header>div>nav>ul>li>ul>li{}
+header>div>nav>ul>li>ul>li>a{}
+
+
+/* 3depth*/
+header>div>nav>ul>li>ul>li>ul{}
+header>div>nav>ul>li>ul>li>ul>li{}
+header>div>nav>ul>li>ul>li>ul>li>a{}
+
+
+header>div>form{}
+header>div>form>input{}
