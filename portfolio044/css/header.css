@@ -1,31 +1,149 @@
-header{}
-header>div{}
-header>div>ul{}
-header>div>ul>li{}
+header{
+    margin:0 auto;
+    width:138.5rem;
+}
+header>div{
+
+}
+header>div>ul{
+    display:flex;
+    float:right;
+}
+header>div>ul>li{
+
+}
 header>div>ul>li>a{}
 
-header>div>h1{}
-header>div>h1>a{}
-header>div>h1>a>img{}
+header>div>div{
+    display:flex;
+    justify-content: space-between;
+    padding-top:5.3rem;
+    width:100%;
+}
+header>div>div>h1{
+    margin-right:10.5rem;
+}
+header>div>div>h1>a{}
+header>div>div>h1>a>img{}
 
 /* 1depth */
-header>div>nav{}
-header>div>nav>ul{}
-header>div>nav>ul>li{}
-header>div>nav>ul>li>a{}
+header>div>div>nav{}
+header>div>div>nav>ul{
+    position:relative;
+    display:flex;
+    width:95rem;
+    height:2.5rem;
+}
+header>div>div>nav>ul>li{
+    
+    font-size:1.3rem;
+    line-height: 2.5rem;
+    margin-right:3rem;
+
+}
+
+header>div>div>nav>ul>li>a{
+    position:relative;
+    display:block;
+    line-height: 2.5rem;
+}
+header>div>div>nav>ul>li>a:before{
+    display:none;
+    content: "";
+    position:absolute;
+    right:-1.1rem;
+    top:-0.6rem;
+    width:0.8rem;
+    height:0.8rem;
+    background:#000;
+}
 
 
 /* 2depth*/
-header>div>nav>ul>li>ul{}
-header>div>nav>ul>li>ul>li{}
-header>div>nav>ul>li>ul>li>a{}
+header>div>div>nav>ul>li>ul{
+    display:flex;
+    justify-content: space-around;
+    position:absolute;
+    left:-5rem;
+    top:2.5rem;
+    width:100rem;
+    height:5rem;
+    background:rgb(179, 179, 179);
+}
+header>div>div>nav>ul>li>ul{
+    display:none;
+}
+
+header>div>div>nav>ul>li>ul>li{
+    padding:0 1rem;
+    line-height: 5rem;
+}
+header>div>div>nav>ul>li>ul>li>a{
+    position:relative;
+    display:block;
+    line-height: 5rem;
+}
+header>div>div>nav>ul>li>ul>li>a:before{
+    display:none;
+    content: "";
+    position:absolute;
+    left:calc(50% - 6px);
+    bottom:0;
+    width:0;
+    height:0;
+    border:6px solid rgba(0,0,0,0);
+    border-top:6px solid rgba(0,0,0,1);
+}
 
 
 /* 3depth*/
-header>div>nav>ul>li>ul>li>ul{}
-header>div>nav>ul>li>ul>li>ul>li{}
-header>div>nav>ul>li>ul>li>ul>li>a{}
+header>div>div>nav>ul>li>ul>li>ul{
+    display:none;
+    position:absolute;
+    left:0;
+    top:5rem;
+    padding-top:2rem;
+    width:100rem;
+    height:40rem;
+    background:rgb(102, 100, 100);
+    
+}
 
 
-header>div>form{}
-header>div>form>input{}
+header>div>div>nav>ul>li>ul>li>ul>li{
+    padding:0 1rem;
+}
+header>div>div>nav>ul>li>ul>li>ul>li>a{
+    display:block;
+    line-height: 2.8rem;
+}
+
+
+header>div>div>form{
+    margin-left:9rem;
+}
+header>div>div>form>input{}
+header>div>div>form>input:nth-child(1){
+    display:none;
+}
+
+/* 이벤트 */
+
+header>div>div>nav>ul>li>a:hover:before{
+    display:block;
+}
+
+header>div>div>nav>ul>li:hover>ul{
+    display:flex;
+}
+
+header>div>div>nav>ul>li>ul>li:hover>ul{
+    display:block;
+}
+
+header>div>div>nav>ul>li>ul>li>a:hover:before{
+    display:block;
+}
+header>div>div>nav>ul>li>ul>li>ul>li>a:hover{
+    color:rgb(136, 137, 211);
+}
