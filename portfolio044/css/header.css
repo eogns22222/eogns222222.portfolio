@@ -1,3 +1,6 @@
+.tablet, .mobile{
+    display:none;
+}
 header{
     margin:0 auto;
     width:138.5rem;
@@ -8,11 +11,48 @@ header>div{
 header>div>ul{
     display:flex;
     float:right;
+    padding-top:1rem;
 }
 header>div>ul>li{
-
+    position:relative;
+    margin-right:1.5rem;
+    line-height: 2rem;
+    font-size:1.1rem;
+    
 }
-header>div>ul>li>a{}
+header>div>ul>li:nth-child(1){
+    border:1px solid  rgb(133, 131, 131);
+    width:4.4rem;
+    line-height: 2rem;
+    text-align: center;
+}
+header>div>ul>li:nth-child(2){
+    margin-right:2rem;
+}
+header>div>ul>li:nth-child(2):before{
+    content:"";
+    position:absolute;
+    right:-1rem;
+    top:0.5rem;
+    width:0;
+    height:1rem;
+    border:1px solid rgb(133, 131, 131);
+}
+header>div>ul>li:nth-child(4){
+    margin-right:2rem;
+}
+header>div>ul>li:nth-child(4):before{
+    content:"";
+    position:absolute;
+    right:-1rem;
+    top:0.5rem;
+    width:0;
+    height:1rem;
+    border:1px solid rgb(133, 131, 131);
+}
+header>div>ul>li>a{
+    color: rgb(133, 131, 131);
+}
 
 header>div>div{
     display:flex;
@@ -77,6 +117,7 @@ header>div>div>nav>ul>li>ul{
 header>div>div>nav>ul>li>ul>li{
     padding:0 1rem;
     line-height: 5rem;
+    
 }
 header>div>div>nav>ul>li>ul>li>a{
     position:relative;
@@ -133,9 +174,9 @@ header>div>div>nav>ul>li>a:hover:before{
     display:block;
 }
 
-header>div>div>nav>ul>li:hover>ul{
+/* header>div>div>nav>ul>li:hover>ul{
     display:flex;
-}
+} */
 
 header>div>div>nav>ul>li>ul>li:hover>ul{
     display:block;

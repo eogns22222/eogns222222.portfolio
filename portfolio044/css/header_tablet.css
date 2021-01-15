@@ -1,0 +1,233 @@
+.tablet{
+    display:block;
+}
+.web{
+    display:;
+}
+
+header{
+    margin:0 auto;
+    width:100%;
+}
+header>div{
+
+}
+header>div>ul{
+    display:flex;
+    float:right;
+    padding-top:1rem;
+}
+header>div>ul>li{
+    position:relative;
+    margin-right:1.5rem;
+    line-height: 2rem;
+    font-size:1.1rem;
+    
+}
+header>div>ul>li:nth-child(1){
+    border:1px solid  rgb(133, 131, 131);
+    width:4.4rem;
+    line-height: 2rem;
+    text-align: center;
+}
+header>div>ul>li:nth-child(2){
+    margin-right:2rem;
+}
+header>div>ul>li:nth-child(2):before{
+    content:"";
+    position:absolute;
+    right:-1rem;
+    top:0.5rem;
+    width:0;
+    height:1rem;
+    border:1px solid rgb(133, 131, 131);
+}
+header>div>ul>li:nth-child(4){
+    margin-right:2rem;
+}
+header>div>ul>li:nth-child(4):before{
+    content:"";
+    position:absolute;
+    right:-1rem;
+    top:0.5rem;
+    width:0;
+    height:1rem;
+    border:1px solid rgb(133, 131, 131);
+}
+header>div>ul>li>a{
+    color: rgb(133, 131, 131);
+}
+
+header>div>div{
+    position:relative;
+    display:flex;
+    justify-content: space-between;
+    padding-top:5.3rem;
+    width:100%;
+}
+header>div>div>div{
+    margin-left:2rem;
+    margin-right:15rem;
+    width:4rem;
+    height:3rem;
+    cursor: pointer;
+    
+}
+header>div>div>div>p{
+    position:relative;
+    margin-top:1.5rem;
+    width:4rem;
+    height:0;
+    border:2px solid #000;
+    transition:all 0.5s ease;
+    
+}
+header>div>div>div>p.on{
+    border:2px solid rgba(0,0,0,0);
+}
+header>div>div>div>p:before{
+    content:"";
+    position:absolute;
+    left:-0.2rem;
+    top:-1rem;
+    width:4rem;
+    height:0;
+    border:2px solid #000;
+    transition:all 0.5s ease;
+}
+header>div>div>div>p.on:before{
+    top:-0.2rem;
+    transform:rotate(45deg);
+}
+header>div>div>div>p:after{
+    content:"";
+    position:absolute;
+    left:-0.2rem;
+    bottom:-1rem;
+    width:4rem;
+    height:0;
+    border:2px solid #000;
+    transition:all 0.5s ease;
+}
+header>div>div>div>p.on:after{
+    bottom:-0.2rem;
+    transform:rotate(-45deg);
+}
+header>div>div>h1{
+    margin-right:10.5rem;
+}
+header>div>div>h1>a{}
+header>div>div>h1>a>img{}
+
+/* 1depth */
+header>div>div>nav{
+    position:absolute;
+    left:-30rem;
+    top:10rem;
+    transition:all 0.5s ease;
+}
+header>div>div>nav.on{
+    position:absolute;
+    left:0rem;
+    top:10rem;
+}
+header>div>div>nav>ul{
+    width:25rem;
+    background:rgb(95, 94, 94);
+}
+header>div>div>nav>ul>li{
+    padding-left:1rem;
+    font-size:1.3rem;
+    line-height: 3rem;
+
+}
+
+header>div>div>nav>ul>li>a{
+    position:relative;
+    display:block;
+    line-height: 5rem;
+}
+header>div>div>nav>ul>li>a:before{
+    display:none;
+    content: "";
+    position:absolute;
+    right:1rem;
+    top:calc(50% - 5px);
+    width:0;
+    height:0;
+    border:6px solid rgba(0,0,0,0);
+    border-top:6px solid rgba(0,0,0,1);
+}
+
+
+/* 2depth*/
+header>div>div>nav>ul>li>ul{
+    background:rgb(179, 179, 179);
+}
+header>div>div>nav>ul>li>ul{
+    display:none;
+}
+
+header>div>div>nav>ul>li>ul>li{
+    padding:0 1rem;
+    line-height: 5rem;
+    
+}
+header>div>div>nav>ul>li>ul>li>a{
+    position:relative;
+    display:block;
+    line-height: 5rem;
+}
+header>div>div>nav>ul>li>ul>li>a:before{
+    display:none;
+    content: "";
+    position:absolute;
+    right:0;
+    top:calc(50% - 5px);
+    width:0;
+    height:0;
+    border:6px solid rgba(0,0,0,0);
+    border-top:6px solid rgba(0,0,0,1);
+}
+
+
+/* 3depth*/
+header>div>div>nav>ul>li>ul>li>ul{
+    display:none;
+    padding:1rem 0;
+    margin-bottom:1rem;
+    background:rgb(102, 100, 100);
+    
+}
+
+
+header>div>div>nav>ul>li>ul>li>ul>li{
+    padding:0 1rem;
+}
+header>div>div>nav>ul>li>ul>li>ul>li>a{
+    display:block;
+    line-height: 2.8rem;
+}
+
+
+header>div>div>form{
+    margin-left:9rem;
+}
+header>div>div>form>input{}
+header>div>div>form>input:nth-child(1){
+    display:none;
+}
+
+/* 이벤트 */
+
+header>div>div>nav>ul>li>a:hover:before{
+    display:block;
+}
+
+header>div>div>nav>ul>li>ul>li>a:hover:before{
+    display:block;
+}
+header>div>div>nav>ul>li>ul>li>ul>li>a:hover{
+    color:rgb(136, 137, 211);
+}
+

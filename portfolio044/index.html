@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="../css/reset.css">
     
     <link rel="stylesheet" media="only screen and (min-width:1381px)" href="css/header.css">
-    <link rel="stylesheet" media="only screen and (max-width:1380px) and (min-width:650px)" href="css/header_tablet.css">
-    <link rel="stylesheet" media="only screen and (max-width:649px)" href="css/header_mobile.css">
+    <link rel="stylesheet" media="only screen and (max-width:1380px) and (min-width:701px)" href="css/header_tablet.css">
+    <link rel="stylesheet" media="only screen and (max-width:700px)" href="css/header_mobile.css">
     
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -33,7 +33,114 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $(function(){
+            var widthW= $(window).width();
+            if(widthW > 1380){
+                doweb();
+            }else{
+                domobile();
+            }
+            function domobile(){
+                doflag = false;
+                var flag_nav = true;
+                var flag_depth2 = true;
+                var flag_depth3 = true;
+                $("nav").children("ul").children("li").off();
+                $("nav").children("ul").children("li")
+                .children("ul").children("li").off();
+                $("a").click(function(e){
+                    e.preventDefault()
+                });
+                $("div.tablet").click(function(){
+                                
+                    if(flag_nav){
+                        $(this).children().addClass("on");
+                        $("nav").addClass("on");
+                        flag_nav = false;
+                    }else{
+                        $(this).children().removeClass("on");
+                        $("nav").removeClass("on");
+                        $("nav").children("ul").children("li")
+                        .children("ul").slideUp();
+                        $("nav").children("ul").children("li")
+                        .children("ul").children("li").children("ul")
+                        .slideUp();
+                        flag_depth2 = true;
+                        flag_depth3 = true;
+                        flag_nav = true;
 
+                    }
+                                
+                });//nav.on
+
+                $("nav").children("ul").children("li").on("click",function(){
+                    if(flag_depth2){
+                        $(this).children("ul").slideDown(300);
+                                    
+                        flag_depth2 = false;
+                    }else{
+                        $(this).children("ul").slideUp(300);
+                        flag_depth2 = true;
+                                }
+                });
+
+                $("nav").children("ul").children("li")
+                .children("ul").children("li").click(function(){
+                    flag_depth2 = true;
+
+                    if(flag_depth3){
+
+                        $(this).children("ul").slideDown(300);
+                        flag_depth3 = false;
+                    }else{
+                        $(this).children("ul").slideUp(300);
+                        flag_depth3 = true;
+                    }
+                                
+                });
+            }
+            function doweb(){
+                $("nav").children("ul").children("li")
+                .children("ul").slideUp();
+                $("nav").children("ul").children("li")
+                .children("ul").children("li").children("ul")
+                .slideUp();
+                
+                $("nav").children("ul").children("li").off();
+                $("nav").children("ul").children("li")
+                .children("ul").children("li").off();
+                
+                $("nav").children("ul").children("li").mouseover(function(){
+                    $(this).children().css("display","flex");
+                })
+                $("nav").children("ul").children("li").mouseleave(function(){
+                    $(this).children("ul").css("display","none");
+                })
+                $("nav").children("ul").children("li").children("ul")
+                .children("li").mouseover(function(){
+                    $(this).children().css("display","block");
+                })
+                $("nav").children("ul").children("li").children("ul")
+                .children("li").mouseleave(function(){
+                    $(this).children().css("display","block");
+                })
+            };
+
+            $(window).resize(function(){
+                var width_size = window.outerWidth;
+                var doflag = true;
+                
+                
+                if(width_size <= 1380){
+                    domobile();
+                }
+                if(width_size >= 1380){
+                    doweb();
+                }
+
+
+            });//window.width
+            
+            
         })
     </script>
 </head>
@@ -51,6 +158,8 @@
                 <li><a href="#">가맹점</a></li>
             </ul>
             <div>
+                
+                <div class="tablet mobile"><p><span class="hidden">메뉴 아이콘</span></p></div>
                 <h1><a href="#"><img src="imgs/logo.png" alt="로고"></a>
                 </h1>
                 <nav>
