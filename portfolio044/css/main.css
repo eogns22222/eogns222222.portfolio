@@ -1,28 +1,178 @@
 main{
-    display:none;
+    display:;
 }
 /* main01 */
-main>section.main01{}
-main>section.main01>aside{}
-main>section.main01>aside>div{}
-main>section.main01>aside>div>ul{}
-main>section.main01>aside>div>ul>li{}
-main>section.main01>aside>div>ul>li>a{}
+main>section.main01{
+    position:relative;
+    height:57rem;
+}
+main>section.main01>div.banner{
+    
+    height:57rem;
+}
+main>section.main01>div.banner>aside{
+    opacity: 0;
+    position:absolute;
+    left:0;
+    top:0;
+    height:57rem;
+    transition:all 1s ease;
+}
+main>section.main01>div.banner>aside.on{
+    opacity: 1;
+    
+}
+main>section.main01>div.banner>aside.first{
+    background:url(../imgs/main01_background03.jpg) no-repeat center/cover;
+    width:100vw;
+    height:57rem;
+    
+}
+main>section.main01>div.banner>aside.second{
+    background:url(../imgs/main01_background01.jpg) no-repeat center/cover;
+    width:100vw;
+    height:57rem;
+    
+}
+main>section.main01>div.banner>aside.third{
+    background:url(../imgs/main01_background02.jpg) no-repeat center/cover;
+    width:100%;
+    height:57rem;
+    
+}
+main>section.main01>div.banner>aside>div{
+    position:relative;
+    margin:0 auto;
+    padding-top:21rem;
+    width:138.5rem;
+}
+main>section.main01>div.banner>aside>div>ul{
+    z-index: 200;
+    position:absolute;
+    left:0;
+    top:24rem;
+}
+main>section.main01>div.banner>aside>div>ul>li{
+    font-size:3rem;
+    transition:all 0.5s ease;
+    cursor: pointer;
+}
+main>section.main01>div.banner>aside>div>ul>li>a{
+    color:white;
+    line-height: 4.2rem;
+}
 
-main>section.main01>div{}
-main>section.main01>div>h2{}
-main>section.main01>div>h2>a{}
-main>section.main01>div>p{}
-main>section.main01>div>p>a{}
-main>section.main01>div>ul.hyundai_app{}
-main>section.main01>div>ul.hyundai_app>li{}
-main>section.main01>div>ul.hyundai_app>li>a{}
-main>section.main01>div>ul.idsearch{}
-main>section.main01>div>ul.idsearch>li{}
-main>section.main01>div>ul.idsearch>li>a{}
+main>section.main01>div.account{
+    position:absolute;
+    left:calc(50% - 165px);
+    bottom:1rem;
+    width:30.8rem;
+    height:11.8rem;
+}
+main>section.main01>div.account>h2{
+    
+    padding-top:0.5rem;
+    margin-bottom:1.5rem;
+    font-size:2rem;
+    float: left;
+}
 
-main>section.main01>ul{}
-main>section.main01>ul>li{}
+main>section.main01>div.account>h2>a{
+    position:relative;
+    color:#fff;
+    
+}
+main>section.main01>div.account>h2>a:before{
+    position:absolute;
+    right:-2rem;
+    top:0;
+    content:"";
+    width:1.1rem;
+    height:1.9rem;
+    background:url(../imgs/more_btn_white_big.png) no-repeat 0 0;
+}
+main>section.main01>div.account>p{
+    font-size:1.5rem;
+    float:right;
+    border:2px solid #fff;
+    width:8rem;
+    height:2.5rem;
+    border-radius:0.3rem;
+    text-align: center;
+}
+main>section.main01>div.account>p>a{
+    color:#fff;
+    line-height: 2.5rem;
+}
+main>section.main01>div.account>ul.hyundai_app{
+    clear: both;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:1.5rem;
+    width:100%;
+    height:4.1rem;
+    background:#fff;
+    border-radius: 0.5rem;
+    
+}
+main>section.main01>div.account>ul.hyundai_app>li{
+    position:relative;
+    font-size:1.8rem;
+    width:100%;
+    text-align: center;
+    
+}
+main>section.main01>div.account>ul.hyundai_app>li:not(:last-child):before{
+    position:absolute;
+    right:0;
+    top:-1.2rem;
+    content:"";
+    width:0;
+    height:4.1rem;
+    border-right:1px solid #88898b;
+}
+main>section.main01>div.account>ul.hyundai_app>li>a{
+    color:#88898b;
+}
+main>section.main01>div.account>ul.idsearch{
+    display:flex;
+
+}
+main>section.main01>div.account>ul.idsearch>li{
+    margin-right:3rem;
+    font-size:1.5rem;
+}
+main>section.main01>div.account>ul.idsearch>li:before{
+    
+
+}
+main>section.main01>div.account>ul.idsearch>li>a{
+    position:relative;
+    color:#fff;
+}
+main>section.main01>div.account>ul.idsearch>li>a:before{
+    position:absolute;
+    right:-2rem;
+    top:-0.1rem;
+    content:"";
+    width:1.1rem;
+    height:1.9rem;
+    background:url(../imgs/more_btn_white_small.png) no-repeat 0 0;
+}
+
+main>section.main01>ul{
+    z-index: 100;
+    display:flex;
+    justify-content: space-between;
+    position:absolute;
+    left:calc(50% - 730px);
+    top:calc(50%);
+    width:145rem;
+}
+main>section.main01>ul>li{
+    cursor: pointer;
+}
 main>section.main01>ul>li>img{}
 
 
@@ -105,10 +255,23 @@ main>section.main05>ul>li>p>a>img{}
 
 
 
-
-
-
-
+/* main01 이벤트 */
+main>section.main01>div.banner>aside.on>div>ul>li:hover{
+    margin-left:1rem;
+}
+main>section.main01>div.account>p:hover{
+    border:2px solid #0066cc;
+    
+}
+main>section.main01>div.account>p:hover>a{
+    color:#0066cc;
+}
+main>section.main01>div.account>h2>a:hover{
+    border-bottom:1px solid #fff;
+}
+main>section.main01>div.account>ul.idsearch>li>a:hover{
+    border-bottom:1px solid #fff;
+}
 
 
 

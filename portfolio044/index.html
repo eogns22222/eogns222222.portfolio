@@ -141,6 +141,27 @@
 
 
             });//window.width
+            //header end
+
+            $("section.main01").children("ul")
+            .children("li.prev").click(function(){
+                $("div.banner").children("aside").eq(2)
+                .prependTo($("div.banner"));
+
+                $("div.banner").children("aside").eq(1)
+                .addClass("on").siblings().removeClass("on");
+
+            });
+            
+            $("section.main01").children("ul")
+            .children("li.next").click(function(){
+                $("div.banner").children("aside").eq(0)
+                .appendTo($("div.banner"));
+                
+                $("div.banner").children("aside").eq(1)
+                .addClass("on").siblings().removeClass("on");
+
+            });
             
             
         })
@@ -483,37 +504,39 @@
     <main>
         <section class="main01">
             <h1 class="hidden">배너</h1>
-            <aside>
-                <h2 class="hidden">m카트 혜택</h2>
-                <div>
-                    <ul>
-                        <li><a href="#">M포인트로 만나는 프리미엄 ></a></li>
-                    </ul>
-                </div>
-            </aside>
-            <aside>
-                <h2 class="hidden">자동차 구매 혜택</h2>
-                <div>
-                    <ul>
-                        <li><a href="#">현대∙기아차 전용카드<br>
-                            신차 구매 혜택<br>
-                            최대 2.6% 포인트 적립 ></a></li>
-                    </ul>
-                </div>
-            </aside>
-            <aside>
-                <h2 class="hidden">카드 안내</h2>
-                <div>
-                    <ul>
-                        <li><a href="#">My First Luxury,<br>
-                            the Green <br>
-                            기다렸던 럭셔리 혜택을 합리적<br>
-                            연회비에 담다 >
-                            </a></li>
-                    </ul>
-                </div>
-            </aside>
-            <div>
+            <div class="banner">
+                <aside class="first">
+                    <h2 class="hidden">m카트 혜택</h2>
+                    <div>
+                        <ul>
+                            <li><a href="#">M포인트로 만나는 프리미엄 ></a></li>
+                        </ul>
+                    </div>
+                </aside>
+                <aside class="on second">
+                    <h2 class="hidden">자동차 구매 혜택</h2>
+                    <div>
+                        <ul>
+                            <li><a href="#">현대∙기아차 전용카드<br>
+                                신차 구매 혜택<br>
+                                최대 2.6% 포인트 적립 ></a></li>
+                        </ul>
+                    </div>
+                </aside>
+                <aside class="third">
+                    <h2 class="hidden">카드 안내</h2>
+                    <div>
+                        <ul>
+                            <li><a href="#">My First Luxury,<br>
+                                the Green <br>
+                                기다렸던 럭셔리 혜택을 합리적<br>
+                                연회비에 담다 >
+                                </a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+            <div class="account">
                 <h2><a href="#">My Account</a></h2>
                 <p><a href="#">회원가입</a></p>
                 <ul class="hyundai_app">
@@ -528,8 +551,8 @@
             </div>
             <ul>
                 <li class="hidden">페이징버튼</li>
-                <li><img src="imgs/left_btn.png" alt="왼쪽으로 이동"></li>
-                <li><img src="imgs/right_btn.png" alt="오른쪽으로 이동"></li>
+                <li class="prev"><img src="imgs/left_btn.png" alt="왼쪽으로 이동"></li>
+                <li class="next"><img src="imgs/right_btn.png" alt="오른쪽으로 이동"></li>
             </ul>
         </section>
         <section class="main02">
