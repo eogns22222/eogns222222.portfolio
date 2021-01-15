@@ -30,7 +30,7 @@ header>div>ul>li{
     
 }
 header>div>ul>li:nth-child(1){
-    border:1px solid   rgb(73, 72, 72);
+    border:1px solid   rgb(182, 181, 181);
     width:4.4rem;
     line-height: 2rem;
     text-align: center;
@@ -45,7 +45,7 @@ header>div>ul>li:nth-child(2):before{
     top:0.5rem;
     width:0;
     height:1rem;
-    border:1px solid rgb(73, 72, 72);
+    border:1px solid rgb(182, 181, 181);
 }
 header>div>ul>li:nth-child(4){
     margin-right:2rem;
@@ -57,10 +57,10 @@ header>div>ul>li:nth-child(4):before{
     top:0.5rem;
     width:0;
     height:1rem;
-    border:1px solid rgb(73, 72, 72);
+    border:1px solid rgb(182, 181, 181);
 }
 header>div>ul>li>a{
-    color:  rgb(73, 72, 72);
+    color: rgb(182, 181, 181);
 }
 
 header>div>div{
