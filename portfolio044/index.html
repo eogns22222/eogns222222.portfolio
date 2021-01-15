@@ -80,7 +80,7 @@
                     }else{
                         $(this).children("ul").slideUp(300);
                         flag_depth2 = true;
-                                }
+                    }
                 });
 
                 $("nav").children("ul").children("li")
@@ -99,6 +99,8 @@
                 });
             }
             function doweb(){
+                $("div.tablet").children().removeClass("on");
+                $("nav").removeClass("on");
                 $("nav").children("ul").children("li")
                 .children("ul").slideUp();
                 $("nav").children("ul").children("li")

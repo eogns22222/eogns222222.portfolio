@@ -166,10 +166,12 @@ header>div>div>nav>ul>li>ul{
 }
 header>div>div>nav>ul>li>ul{
     display:none;
+    padding-bottom:1rem;
 }
 
 header>div>div>nav>ul>li>ul>li{
     padding:0 1rem;
+    
     line-height: 5rem;
     
 }

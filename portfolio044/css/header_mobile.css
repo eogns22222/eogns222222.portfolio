@@ -67,7 +67,6 @@ header>div>div{
 }
 header>div>div>div{
     margin-left:2rem;
-    
     width:4rem;
     height:3rem;
     cursor: pointer;
@@ -114,7 +113,6 @@ header>div>div>div>p.on:after{
     transform:rotate(-45deg);
 }
 header>div>div>h1{
-
 }
 header>div>div>h1>a{}
 header>div>div>h1>a>img{}
@@ -163,14 +161,15 @@ header>div>div>nav>ul>li>a:before{
 /* 2depth*/
 header>div>div>nav>ul>li>ul{
     background:rgb(179, 179, 179);
-
 }
 header>div>div>nav>ul>li>ul{
     display:none;
+    padding-bottom:1rem;
 }
 
 header>div>div>nav>ul>li>ul>li{
     padding:0 1rem;
+    
     line-height: 5rem;
     
 }
@@ -212,7 +211,6 @@ header>div>div>nav>ul>li>ul>li>ul>li>a{
 
 
 header>div>div>form{
-
 }
 header>div>div>form>input{}
 header>div>div>form>input:nth-child(1){
@@ -231,3 +229,4 @@ header>div>div>nav>ul>li>ul>li>a:hover:before{
 header>div>div>nav>ul>li>ul>li>ul>li>a:hover{
     color:rgb(136, 137, 211);
 }
+
