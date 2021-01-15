@@ -180,33 +180,181 @@ main>section.main01>ul>li>img{}
 
 /* main02 */
 /* leftcont */
-main>section.main02{}
-main>section.main02>div.leftcont{}
-main>section.main02>div.leftcont>h2{}
-main>section.main02>div.leftcont>h2>a{}
+main>section.main02{
+    display:flex;
+    justify-content: space-between;
+    margin:0 auto;
+    width:138.5rem;
+    height:47.7rem;
+    
+}
+main>section.main02>div.leftcont{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width:47%;
+    
+}
+main>section.main02>div.leftcont>div{
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+}
+main>section.main02>div.leftcont>div>h2{
+    margin:4rem 0 2.3rem 2.5rem;
+    font-size:2.5rem;
+}
+main>section.main02>div.leftcont>div>h2>a{
+    display:block;
+    position:relative;
+}
+main>section.main02>div.leftcont>div>h2>a:before{
+    position:absolute;
+    right:-2rem;
+    top:0.5rem;
+    content:"";
+    width:1.1rem;
+    height:1.9rem;
+    background:url(../imgs/more_btn_black.png) no-repeat 0 0;
+}
 
-main>section.main02>div.leftcont>dl{}
-main>section.main02>div.leftcont>dl>dd{}
-main>section.main02>div.leftcont>dl>dd>a{}
+main>section.main02>div.leftcont>div>dl.util{
+    display:flex;
+    padding-top:5.5rem;
+    
+}
+main>section.main02>div.leftcont>div>dl.util>dd{
+    position:relative;
+    font-size:1.3rem;
+}
+main>section.main02>div.leftcont>div>dl.util>dd:not(:last-child):before{
+    content:"";
+    position:absolute;
+    right:-1rem;
+    top:0;
+    width:0;
+    height:1.1rem;
+    border:1px solid rgb(122, 121, 121);
+}
+main>section.main02>div.leftcont>div>dl.util>dd:not(:last-child){
+    margin-right:1.8rem;
+}
+main>section.main02>div.leftcont>div>dl.util>dd>a{}
 
-main>section.main02>div.leftcont>article{}
-main>section.main02>div.leftcont>article>ul{}
-main>section.main02>div.leftcont>article>ul>li{}
+main>section.main02>div.leftcont>article{
+    position:relative;
+    width:100%;
+}
+main>section.main02>div.leftcont>article>ul{
+    opacity: 0;
+    display:flex;
+    position:absolute;
+    left:0;
+    top:0;
+}
+main>section.main02>div.leftcont>article>ul.on{
+    opacity:1;
+    z-index: 100;
+}
+main>section.main02>div.leftcont>article>ul>li:not(:last-child){
+    margin-right:4.2rem;
+}
 main>section.main02>div.leftcont>article>ul>li>a{}
 main>section.main02>div.leftcont>article>ul>li>a>p{}
+main>section.main02>div.leftcont>article>ul>li>a>p:nth-child(2){
+    margin-top:1.4rem;
+    font-size:1.5rem;
+    font-weight:500;
+}
 main>section.main02>div.leftcont>article>ul>li>a>p>img{}
 
-main>section.main02>div.leftcont>dl{}
-main>section.main02>div.leftcont>dl>dd{}
+main>section.main02>div.leftcont>dl.boollet{
+    display:flex;
+    margin-top:35rem;
+}
+main>section.main02>div.leftcont>dl.boollet>dd{
+    margin:0 0.8rem;
+    width:1.8rem;
+    height:1.8rem;
+    border:2px solid #88898b;
+    border-radius:100%;
+}
+main>section.main02>div.leftcont>dl.boollet>dd.on{
+    background:#88898b;
+}
 
 /* rightcont */
-main>section.main02>div.rightcont{}
-main>section.main02>div.rightcont>div{}
-main>section.main02>div.rightcont>div>dl{}
-main>section.main02>div.rightcont>div>dl>dt{}
-main>section.main02>div.rightcont>div>dl>dt>a{}
-main>section.main02>div.rightcont>div>dl>dd{}
+main>section.main02>div.rightcont{
+    position:relative;
+    width:53%;
+}
+main>section.main02>div.rightcont>div{
+    opacity: 0;
+    display:flex;
+    position:absolute;
+    right:0;
+    top:8.8rem;
+}
+main>section.main02>div.rightcont>div.on{
+    opacity:1;
+    z-index: 200;
+    
+}
+main>section.main02>div.rightcont>div>dl{
+    text-align: center;
+}
+main>section.main02>div.rightcont>div:nth-child(1)>dl{
 
+}
+main>section.main02>div.rightcont>div:nth-child(2)>dl{
+    margin-right:8rem;
+}
+main>section.main02>div.rightcont>div:nth-child(3)>dl{
+    margin-right:4.5rem;
+}
+main>section.main02>div.rightcont>div:nth-child(4)>dl{
+
+}
+main>section.main02>div.rightcont>div:nth-child(5)>dl{
+
+}
+main>section.main02>div.rightcont>div>dl>dt{
+    font-size:2rem;
+}
+main>section.main02>div.rightcont>div:nth-child(1)>dl>dt{
+    
+}
+main>section.main02>div.rightcont>div:nth-child(2)>dl>dt{
+    margin:11.3rem 0 2.5rem 0;
+}
+main>section.main02>div.rightcont>div:nth-child(3)>dl>dt{
+    margin:11.3rem 0 2.5rem 0;
+}
+main>section.main02>div.rightcont>div:nth-child(4)>dl>dt{
+    
+}
+main>section.main02>div.rightcont>div:nth-child(5)>dl>dt{
+    
+}
+main>section.main02>div.rightcont>div>dl>dt>a{}
+main>section.main02>div.rightcont>div>dl>dd{
+    font-size:1.5rem;
+}
+main>section.main02>div.rightcont>div:nth-child(1)>dl>dd{
+
+}
+main>section.main02>div.rightcont>div:nth-child(2)>dl>dd{
+
+}
+main>section.main02>div.rightcont>div:nth-child(3)>dl>dd{
+
+}
+main>section.main02>div.rightcont>div:nth-child(4)>dl>dd{
+
+}
+main>section.main02>div.rightcont>div:nth-child(5)>dl>dd{
+
+}
 main>section.main02>div.rightcont>p{}
 main>section.main02>div.rightcont>p>img{}
 

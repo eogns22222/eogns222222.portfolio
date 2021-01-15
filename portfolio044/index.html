@@ -36,7 +36,7 @@
             var widthW= $(window).width();
             if(widthW > 1380){
                 doweb();
-            }else{
+            }else if(widthW <= 1380){
                 domobile();
             }
             function domobile(){
@@ -132,11 +132,11 @@
                 var doflag = true;
                 
                 
-                if(width_size <= 1380){
-                    domobile();
-                }
-                if(width_size >= 1380){
+                if(width_size > 1396){
                     doweb();
+                }
+                if(width_size <= 1396){
+                    domobile();
                 }
 
 
@@ -557,13 +557,15 @@
         </section>
         <section class="main02">
             <div class="leftcont">
-                <h2><a href="#">카드안내·신청</a></h2>
-                <dl>
-                    <dt class="hidden">카드신청 유틸메뉴</dt>
-                    <dd><a href="#">카드신청</a></dd>
-                    <dd><a href="#">카드발급조회</a></dd>
-                    <dd><a href="#">카드수령등록</a></dd>
-                </dl>
+                <div>
+                    <h2><a href="#">카드안내·신청</a></h2>
+                    <dl class="util">
+                        <dt class="hidden">카드신청 유틸메뉴</dt>
+                        <dd><a href="#">카드신청</a></dd>
+                        <dd><a href="#">카드발급조회</a></dd>
+                        <dd><a href="#">카드수령등록</a></dd>
+                    </dl>
+                </div>
                 <article>
                     <ul>
                         <li>
@@ -585,7 +587,7 @@
                             </a>
                         </li>
                     </ul>
-                    <ul>
+                    <ul class="on">
                         <li>
                             <a href="#">
                                 <p><img src="imgs/main02_mcard01.png" alt="M BOOST"></p>
@@ -667,9 +669,9 @@
                         </li>
                     </ul>
                 </article>
-                <dl>
+                <dl class="boollet">
                     <dt class="hidden">불릿</dt>
-                    <dd></dd>
+                    <dd class="on"></dd>
                     <dd></dd>
                     <dd></dd>
                     <dd></dd>
@@ -692,7 +694,7 @@
                     </dl>
                     <p><img src="imgs/main02_mcard_sub.png" alt="Mcard"></p>
                 </div>
-                <div>
+                <div class="on">
                     <dl>
                         <dt><a href="#">X혜택안내</a></dt>
                         <dd>5% / 10% 시즌 스페셜 할인</dd>
