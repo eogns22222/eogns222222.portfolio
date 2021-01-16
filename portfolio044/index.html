@@ -162,6 +162,37 @@
                 .addClass("on").siblings().removeClass("on");
 
             });
+            //main01 end
+
+            $("dl.boollet").children("dd").click(function(){
+                var len = $(this).index();
+                
+                if(len == 5){
+                    len = 0;
+                }
+                // console.log(len);
+                $(this).addClass("on").siblings().removeClass("on");
+
+                $("div.leftcont").children("article").children("ul")
+                .eq(len).addClass("on").siblings().removeClass("on");
+
+                $("div.rightcont").children("div").eq(len).addClass("on")
+                .siblings().removeClass("on");
+
+            });
+            //main02 end
+
+            $("section.main03").children("article").children("div")
+            .children("dl").children("dd").click(function(){
+                var len2 = $(this).index()-1;
+                // console.log(len2);
+
+                $(this).addClass("on").siblings().removeClass("on");
+
+                $("section.main03").children("article")
+                .children("div").children("div").children("ul")
+                .eq(len2).addClass("on").siblings().removeClass("on");
+            });
             
             
         })
@@ -558,7 +589,7 @@
         <section class="main02">
             <div class="leftcont">
                 <div>
-                    <h2><a href="#">카드안내·신청</a></h2>
+                    <h2><a href="#" class="tit">카드안내·신청</a></h2>
                     <dl class="util">
                         <dt class="hidden">카드신청 유틸메뉴</dt>
                         <dd><a href="#">카드신청</a></dd>
@@ -687,14 +718,14 @@
                     </dl>
                     <p><img src="imgs/main02_colorcard_sub.png" alt="Colorcard"></p>
                 </div>
-                <div>
+                <div class="on">
                     <dl>
                         <dt><a href="#">M혜택안내</a></dt>
                         <dd>M포인트 사용처</dd>
                     </dl>
                     <p><img src="imgs/main02_mcard_sub.png" alt="Mcard"></p>
                 </div>
-                <div class="on">
+                <div>
                     <dl>
                         <dt><a href="#">X혜택안내</a></dt>
                         <dd>5% / 10% 시즌 스페셜 할인</dd>
@@ -717,16 +748,16 @@
                         <dd>언제 어디서나 할인<br>
                             또는 적립되는 카드</dd>
                     </dl>
-                    <p><img src="imgs/main02_xcard_sub.png" alt="Zerocard"></p>
+                    <p><img src="imgs/main02_zerocard_sub.png" alt="Zerocard"></p>
                 </div>
             </div>
         </section>
         <section class="main03">
-            <h2><a href="#">개인사업자 대출 비교서비스</a></h2>
+            <h2><a href="#" class="tit">개인사업자 대출 비교서비스</a></h2>
             <article>
                 <div>
                     <div>
-                        <ul>
+                        <ul class="on">
                             <li><a href="#">신용도 영향 없이 간편하게 비교 · 신청하는 대출 ></a></li>
                             <li><a href="#">목돈이 필요할 때, 장기카드대출(카드론) ></a></li>
                             <li><a href="#">일상에서 현금이 필요할 때, 단기카드대출(현금서비스) ></a></li>
@@ -739,7 +770,7 @@
                     </div>
                     <dl>
                         <dt class="hidden">불릿</dt>
-                        <dd></dd>
+                        <dd class="on"></dd>
                         <dd></dd>
                     </dl>
                 </div>
@@ -747,7 +778,7 @@
             </article>
         </section>
         <section class="main04">
-            <h2><a href="#">컬처·라이프스타일</a></h2>
+            <h2><a href="#" class="tit">컬처·라이프스타일</a></h2>
             <ul>
                 <li>
                     <p><a href="#"><img src="imgs/main04_cont01.png" alt="현대카드 다빈치모텔"></a></p>
@@ -771,8 +802,8 @@
                 </li>
             </ul>
         </section>
-        <section class="main05">
-            <h2><a href="#">이벤트</a></h2>
+        <section class="main04 main05">
+            <h2><a href="#" class="tit">이벤트</a></h2>
             <ul>
                 <li>
                     <p><a href="#"><img src="imgs/main05_cont01.png" alt="부가세, 자동차세 등 모든 세금  납부 시 2~7개월 무이자할부"></a></p>
