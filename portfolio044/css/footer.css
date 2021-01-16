@@ -98,44 +98,74 @@ footer>div>div>dl>dd>a>img{}
 
 /* family,group */
 footer>div>div>select{
+    padding-left:1rem;
     width:11.8rem;
     height:3.7rem;
     font-size:1.8rem;
     border:1px solid #88898b;
+    box-sizing: border-box;
+    background:url(../imgs/more_btn_top.png) no-repeat 9.5rem 1rem;
+    background-color:#fff;
+    cursor: pointer;
+
+    appearance:none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -o-appearance:none;
+    -ms-appearance:none;
 }
+
 footer>div>div>select>option{
     font-size:1.5rem;
 }
 
 footer>div>div>div{
     position:relative;
+    
 }
 footer>div>div>div>h3{
-    
     padding-left:2rem;
     width:11.8rem;
     height:3.7rem;
     font-size:1.8rem;
     border:1px solid #88898b;
-    background:#fff;
+    background:url(../imgs/more_btn_top.png) no-repeat 9.5rem 1rem;
+    background-color:#fff;
     line-height: 3.7rem;
     text-align: start;
     box-sizing:border-box;
+    color:#000;
+    cursor: pointer;
 }
+
 footer>div>div>div>div{
     display:none;
     position:absolute;
-    left:0;
-    top:0;
+    right:0;
+    bottom:3.7rem;
     width:83rem;
     height:27rem;
     background:#fff;
     border:1px solid #88898b;
 
 }
-footer>div>div>div>div>dl{}
+footer>div>div>div>div.on{
+    display:flex;
+}
+footer>div>div>div>div>dl{
+    padding:2rem 0 0 2rem;
+    font-size:1.5rem;
+    text-align: start;
+    box-sizing: border-box;
+    line-height: 2.4rem;
+}
+footer>div>div>div>div>dl>dt{
+    color:#000000;
+    
+}
 footer>div>div>div>div>dl>dt>a{
-    color:#6a6a6a;
+    
+    
 }
 footer>div>div>div>div>dl>dd{}
 footer>div>div>div>div>dl>dd>a{
@@ -172,3 +202,14 @@ footer>div>p{
 }
 footer>div>p>a{}
 footer>div>p>a>img{}
+
+
+/* 이벤트 */
+
+footer>div>dl.firstline>dd>a:hover{
+    color:#0066cc;
+}
+
+footer>div>dl.thirdline>dd>a:hover{
+    color:#0066cc;
+}

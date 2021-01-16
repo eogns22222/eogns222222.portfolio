@@ -473,6 +473,7 @@ main>section.main04{
     width:138.5rem;
     height:40rem;
     border-top:3px solid #0f1d4a;
+    box-sizing: border-box;
 }
 main>section.main04>h2{
     padding:4.1rem 0 3.9rem 2.5rem;
@@ -496,9 +497,10 @@ main>section.main04>h2>a:before{
 main>section.main04>ul{
     display:flex;
     justify-content: space-between;
+    box-sizing: border-box;
 }
 main>section.main04>ul>li{
-
+    border:5px solid rgba(0,0,0,0);
 }
 main>section.main04>ul>li>p{
     font-size:1.8rem;
@@ -511,7 +513,9 @@ main>section.main04>ul>li>p>a>img{}
 
 
 /* main05 */
-main>section.main05{}
+main>section.main05{
+    margin-bottom:3rem;
+}
 main>section.main05>h2{}
 main>section.main05>h2>a{}
 
@@ -559,6 +563,11 @@ main>section.main02>div.rightcont>div>dl>dt>a:hover:before{
 
 main>section.main03>article>div>div>ul>li>a:hover{
     margin-left:1rem;
+}
+
+main>section.main04>ul>li:hover{
+    border:5px solid #0066cc;
+    
 }
 
 

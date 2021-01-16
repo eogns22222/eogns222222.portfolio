@@ -10,6 +10,10 @@
     <link rel="stylesheet" media="only screen and (max-width:1380px) and (min-width:701px)" href="css/header_tablet.css">
     <link rel="stylesheet" media="only screen and (max-width:700px)" href="css/header_mobile.css">
     
+    <link rel="stylesheet" media="only screen and (min-width:1381px)" href="css/main.css">
+    <link rel="stylesheet" media="only screen and (max-width:1380px) and (min-width:701px)" href="css/main_tablet.css">
+    <link rel="stylesheet" media="only screen and (max-width:700px)" href="css/main_mobile.css">
+
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/footer.css">
     <style>
@@ -192,6 +196,23 @@
                 $("section.main03").children("article")
                 .children("div").children("div").children("ul")
                 .eq(len2).addClass("on").siblings().removeClass("on");
+            });
+            //main03 end
+
+            var group_flag = true;
+
+            $("div.group").children("h3").click(function(){
+
+                if(group_flag){
+                    $(this).next().addClass("on");
+
+                    group_flag = false;
+                }else{
+                    $(this).next().removeClass("on");
+
+                    group_flag = true;
+                }
+                
             });
             
             
@@ -875,11 +896,11 @@
                     <option value="현대카드 M포인트몰">현대카드 M포인트몰</option>
                     <option value="현대카드 DIVE">현대카드 DIVE</option>
                 </select>
-                <div>
+                <div class="group">
                     <h3>그룹사</h3>
                     <div>
                         <dl>
-                            <dt><a href="#">현대자동차그룹</a></dt>
+                            <dt>현대자동차그룹</dt>
                             <dd><a href="#">현대자동차그룹</a></dd>
                             <dd><a href="#">현대차 정몽구 재단</a></dd>
                             <dd><a href="#">현대차 미소금융재단</a></dd>
@@ -889,18 +910,18 @@
                             <dd><a href="#">청년봉사단</a></dd>
                         </dl>
                         <dl>
-                            <dt><a href="#">완성차</a></dt>
+                            <dt>완성차</dt>
                             <dd><a href="#">현대자동차</a></dd>
                             <dd><a href="#">기아자동차</a></dd>
                         </dl>
                         <dl>
-                            <dt><a href="#">철강</a></dt>
+                            <dt>철강</dt>
                             <dd><a href="#">현대제철</a></dd>
                             <dd><a href="#">현대비앤지스틸</a></dd>
                             <dd><a href="#">현대종합특수강</a></dd>
                         </dl>
                         <dl>
-                            <dt><a href="#">건설</a></dt>
+                            <dt>건설</dt>
                             <dd><a href="#">현대건설</a></dd>
                             <dd><a href="#">현대엔지니어링</a></dd>
                             <dd><a href="#">현대스틸산업</a></dd>
@@ -908,7 +929,7 @@
                             <dd><a href="#">현대도시개발</a></dd>
                         </dl>
                         <dl>
-                            <dt><a href="#">부품</a></dt>
+                            <dt>부품</dt>
                             <dd><a href="#">현대모비스</a></dd>
                             <dd><a href="#">현대위아</a></dd>
                             <dd><a href="#">현대트랜시스</a></dd>
@@ -920,14 +941,14 @@
                             <dd><a href="#">현대파텍스</a></dd>
                         </dl>
                         <dl>
-                            <dt><a href="#">금융</a></dt>
+                            <dt>금융</dt>
                             <dd><a href="#">현대캐피탈</a></dd>
                             <dd><a href="#">현대카드</a></dd>
                             <dd><a href="#">현대커머셜</a></dd>
                             <dd><a href="#">현대차증권</a></dd>
                         </dl>
                         <dl>
-                            <dt><a href="#">기타</a></dt>
+                            <dt>기타</dt>
                             <dd><a href="#">현대글로비스</a></dd>
                             <dd><a href="#">현대로템</a></dd>
                             <dd><a href="#">이노션 월드와이드</a></dd>
