@@ -1,0 +1,585 @@
+main{
+    display:;
+}
+/* main01 */
+main>section.main01{
+    position:relative;
+    height:57rem;
+}
+main>section.main01>div.banner{
+    
+    height:57rem;
+}
+main>section.main01>div.banner>aside{
+    opacity: 0;
+    position:absolute;
+    left:0;
+    top:0;
+    height:57rem;
+    transition:all 1s ease;
+}
+main>section.main01>div.banner>aside.on{
+    opacity: 1;
+    
+}
+main>section.main01>div.banner>aside.first{
+    background:url(../imgs/main01_background03.jpg) no-repeat center/cover;
+    width:100vw;
+    height:57rem;
+    
+}
+main>section.main01>div.banner>aside.second{
+    background:url(../imgs/main01_background01.jpg) no-repeat center/cover;
+    width:100vw;
+    height:57rem;
+    
+}
+main>section.main01>div.banner>aside.third{
+    background:url(../imgs/main01_background02.jpg) no-repeat center/cover;
+    width:100%;
+    height:57rem;
+    
+}
+main>section.main01>div.banner>aside>div{
+    position:relative;
+    margin:0 auto;
+    padding-top:21rem;
+    width:138.5rem;
+}
+main>section.main01>div.banner>aside>div>ul{
+    z-index: 200;
+    position:absolute;
+    left:calc(5%);
+    top:24rem;
+}
+main>section.main01>div.banner>aside>div>ul>li{
+    font-size:3rem;
+    transition:all 0.5s ease;
+    cursor: pointer;
+}
+main>section.main01>div.banner>aside>div>ul>li>a{
+    color:white;
+    line-height: 4.2rem;
+}
+
+main>section.main01>div.account{
+    position:absolute;
+    left:calc(50% - 165px);
+    bottom:1rem;
+    width:30.8rem;
+    height:11.8rem;
+}
+main>section.main01>div.account>h2{
+    
+    padding-top:0.5rem;
+    margin-bottom:1.5rem;
+    font-size:2rem;
+    float: left;
+}
+
+main>section.main01>div.account>h2>a{
+    position:relative;
+    color:#fff;
+    
+}
+main>section.main01>div.account>h2>a:before{
+    position:absolute;
+    right:-2rem;
+    top:0;
+    content:"";
+    width:1.1rem;
+    height:1.9rem;
+    background:url(../imgs/more_btn_white_big.png) no-repeat 0 0;
+}
+main>section.main01>div.account>p{
+    font-size:1.5rem;
+    float:right;
+    border:2px solid #fff;
+    width:8rem;
+    height:2.5rem;
+    border-radius:0.3rem;
+    text-align: center;
+}
+main>section.main01>div.account>p>a{
+    color:#fff;
+    line-height: 2.5rem;
+}
+main>section.main01>div.account>ul.hyundai_app{
+    clear: both;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:1.5rem;
+    width:100%;
+    height:4.1rem;
+    background:#fff;
+    border-radius: 0.5rem;
+    
+}
+main>section.main01>div.account>ul.hyundai_app>li{
+    position:relative;
+    font-size:1.8rem;
+    width:100%;
+    text-align: center;
+    
+}
+main>section.main01>div.account>ul.hyundai_app>li:not(:last-child):before{
+    position:absolute;
+    right:0;
+    top:-1.2rem;
+    content:"";
+    width:0;
+    height:4.1rem;
+    border-right:1px solid #88898b;
+}
+main>section.main01>div.account>ul.hyundai_app>li>a{
+    color:#88898b;
+}
+main>section.main01>div.account>ul.idsearch{
+    display:flex;
+
+}
+main>section.main01>div.account>ul.idsearch>li{
+    margin-right:3rem;
+    font-size:1.5rem;
+}
+main>section.main01>div.account>ul.idsearch>li:before{
+    
+
+}
+main>section.main01>div.account>ul.idsearch>li>a{
+    position:relative;
+    color:#fff;
+}
+main>section.main01>div.account>ul.idsearch>li>a:before{
+    position:absolute;
+    right:-2rem;
+    top:-0.1rem;
+    content:"";
+    width:1.1rem;
+    height:1.9rem;
+    background:url(../imgs/more_btn_white_small.png) no-repeat 0 0;
+}
+
+main>section.main01>ul{
+    z-index: 100;
+    display:flex;
+    justify-content: space-between;
+    position:absolute;
+    left:calc(1%);
+    top:calc(50%);
+    width:97vw;
+}
+main>section.main01>ul>li{
+    cursor: pointer;
+}
+main>section.main01>ul>li>img{}
+
+
+
+
+/* main02 */
+/* leftcont */
+main>section.main02{
+    display:flex;
+    justify-content: space-between;
+    margin:0 auto;
+    width:138.5rem;
+    height:47.7rem;
+    
+}
+main>section.main02>div.leftcont{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width:47%;
+    
+}
+main>section.main02>div.leftcont>div{
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+}
+main>section.main02>div.leftcont>div>h2{
+    margin:4rem 0 2.3rem 2.5rem;
+    font-size:2.5rem;
+}
+main>section.main02>div.leftcont>div>h2>a{
+    position:relative;
+    
+}
+main>section.main02>div.leftcont>div>h2>a:before{
+    position:absolute;
+    right:-2rem;
+    top:0.5rem;
+    content:"";
+    width:1.1rem;
+    height:1.9rem;
+    background:url(../imgs/more_btn_black.png) no-repeat 0 0;
+    transition:all 0.7s ease;
+}
+
+main>section.main02>div.leftcont>div>dl.util{
+    display:flex;
+    padding-top:5.5rem;
+    
+}
+main>section.main02>div.leftcont>div>dl.util>dd{
+    position:relative;
+    font-size:1.3rem;
+}
+main>section.main02>div.leftcont>div>dl.util>dd:not(:last-child):before{
+    content:"";
+    position:absolute;
+    right:-1rem;
+    top:0;
+    width:0;
+    height:1.1rem;
+    border:1px solid rgb(122, 121, 121);
+}
+main>section.main02>div.leftcont>div>dl.util>dd:not(:last-child){
+    margin-right:1.8rem;
+}
+main>section.main02>div.leftcont>div>dl.util>dd>a{}
+
+main>section.main02>div.leftcont>article{
+    position:relative;
+    width:100%;
+}
+main>section.main02>div.leftcont>article>ul{
+    opacity: 0;
+    display:flex;
+    position:absolute;
+    left:0;
+    top:0;
+    transition:all 0.5s ease;
+}
+main>section.main02>div.leftcont>article>ul.on{
+    opacity:1;
+    z-index: 100;
+}
+main>section.main02>div.leftcont>article>ul>li:not(:last-child){
+    margin-right:4.2rem;
+}
+main>section.main02>div.leftcont>article>ul>li>a{}
+main>section.main02>div.leftcont>article>ul>li>a>p{}
+main>section.main02>div.leftcont>article>ul>li>a>p:nth-child(2){
+    margin-top:1.4rem;
+    font-size:1.5rem;
+    font-weight:500;
+}
+main>section.main02>div.leftcont>article>ul>li>a>p>img{}
+
+main>section.main02>div.leftcont>dl.boollet{
+    display:flex;
+    margin-top:35rem;
+}
+main>section.main02>div.leftcont>dl.boollet>dd{
+    margin:0 0.8rem;
+    width:1.8rem;
+    height:1.8rem;
+    border:2px solid #88898b;
+    border-radius:100%;
+    cursor: pointer;
+}
+main>section.main02>div.leftcont>dl.boollet>dd.on{
+    background:#88898b;
+}
+
+/* rightcont */
+main>section.main02>div.rightcont{
+    position:relative;
+    width:53%;
+}
+main>section.main02>div.rightcont>div{
+    opacity: 0;
+    position:absolute;
+    right:0;
+    top:8.8rem;
+    transition:all 0.5s ease;
+}
+main>section.main02>div.rightcont>div.on{
+    opacity:1;
+    z-index: 200;
+    
+}
+main>section.main02>div.rightcont>div>dl{
+    text-align: center;
+}
+main>section.main02>div.rightcont>div:nth-child(1)>dl{
+    margin-right:8rem;
+}
+main>section.main02>div.rightcont>div:nth-child(2)>dl{
+    margin-right:8rem;
+}
+main>section.main02>div.rightcont>div:nth-child(3)>dl{
+    margin-right:4.5rem;
+}
+main>section.main02>div.rightcont>div:nth-child(4)>dl{
+    margin-right:8.5rem;
+}
+main>section.main02>div.rightcont>div:nth-child(5)>dl{
+    margin-right:8rem;
+}
+main>section.main02>div.rightcont>div>dl>dt{
+    
+    font-size:2rem;
+}
+
+main>section.main02>div.rightcont>div:nth-child(1)>dl>dt{
+    margin:9.9rem 0 2rem 0;
+}
+main>section.main02>div.rightcont>div:nth-child(2)>dl>dt{
+    margin:11.3rem 0 2.5rem 0;
+}
+main>section.main02>div.rightcont>div:nth-child(3)>dl>dt{
+    margin:11.3rem 0 2.5rem 0;
+}
+main>section.main02>div.rightcont>div:nth-child(4)>dl>dt{
+    margin:7.9rem 0 2rem 0;
+}
+main>section.main02>div.rightcont>div:nth-child(5)>dl>dt{
+    margin:9.9rem 0 2.5rem 0;
+}
+main>section.main02>div.rightcont>div>dl>dt>a{
+    position:relative;
+}
+main>section.main02>div.rightcont>div>dl>dt>a:before{
+    position:absolute;
+    right:-1.8rem;
+    top:0.2rem;
+    content:"";
+    width:1.1rem;
+    height:1.9rem;
+    background:url(../imgs/more_btn_black.png) no-repeat 0 0;
+    transition:all 0.7s ease;
+}
+main>section.main02>div.rightcont>div>dl>dd{
+    font-size:1.5rem;
+}
+main>section.main02>div.rightcont>div:nth-child(1)>dl>dd{
+    margin:2.5rem 0;
+}
+main>section.main02>div.rightcont>div:nth-child(2)>dl>dd{
+
+}
+main>section.main02>div.rightcont>div:nth-child(3)>dl>dd{
+
+}
+main>section.main02>div.rightcont>div:nth-child(4)>dl>dd{
+    margin:2rem 0;
+}
+main>section.main02>div.rightcont>div:nth-child(5)>dl>dd{
+    line-height: 2.5rem;
+}
+main>section.main02>div.rightcont>div:nth-child(1)>dl>dd:nth-child(3)>span{
+    margin:0 2rem;
+}
+main>section.main02>div.rightcont>div>p{
+    display:none;
+}
+main>section.main02>div.rightcont>p>img{}
+
+
+
+/* main03 */
+main>section.main03{
+    margin:0 auto;
+    width:138.5rem;
+    border-top:3px solid #0f1d4a;
+    height:37.8rem;
+}
+main>section.main03>h2{
+    padding:3.2rem 0 3.2rem 2.5rem;
+    font-size:2.5rem;
+}
+main>section.main03>h2>a{
+    position:relative;
+}
+main>section.main03>h2>a:before{
+    position:absolute;
+    right:-2rem;
+    top:0.5rem;
+    content:"";
+    width:1.1rem;
+    height:1.9rem;
+    background:url(../imgs/more_btn_black.png) no-repeat 0 0;  
+    transition:all 0.7s ease; 
+}
+main>section.main03>article{
+    display:flex;
+    justify-content: space-between;
+    margin-left:2.4rem;
+    
+}
+main>section.main03>article>div{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width:62rem;
+    border-top:1px solid #656464;
+    
+}
+main>section.main03>article>div>div{
+    position:relative;
+    width:62rem;
+}
+main>section.main03>article>div>div>ul{
+    display:none;
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    
+}
+main>section.main03>article>div>div>ul.on{
+    display:block;
+}
+main>section.main03>article>div>div>ul>li{
+    font-size:2rem;
+    line-height: 7.4rem;
+    border-bottom:1px solid #656464;
+    
+}
+main>section.main03>article>div>div>ul>li>a{
+    transition:all 0.7s ease ;
+    color:#656464;
+}
+
+main>section.main03>article>div>dl{
+    display:flex;
+    margin-top:25rem;
+}
+main>section.main03>article>div>dl>dd{
+    margin:0 0.8rem;
+    width:1.8rem;
+    height:1.8rem;
+    border:2px solid #88898b;
+    border-radius:100%;
+    cursor: pointer;
+}
+main>section.main03>article>div>dl>dd.on{
+    background:#88898b;
+}
+
+main>section.main03>article>p{
+    margin-right:5rem;
+}
+main>section.main03>article>p>img{}
+
+
+/* main04 */
+main>section.main04{
+    margin:0 auto;
+    width:138.5rem;
+    height:40rem;
+    border-top:3px solid #0f1d4a;
+    box-sizing: border-box;
+}
+main>section.main04>h2{
+    padding:4.1rem 0 3.9rem 2.5rem;
+
+    font-size:2.5rem;
+}
+main>section.main04>h2>a{
+    position:relative;
+}
+main>section.main04>h2>a:before{
+    position:absolute;
+    right:-2rem;
+    top:0.5rem;
+    content:"";
+    width:1.1rem;
+    height:1.9rem;
+    background:url(../imgs/more_btn_black.png) no-repeat 0 0;
+    transition:all 0.7s ease;
+}
+
+main>section.main04>ul{
+    display:flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+main>section.main04>ul>li{
+    border:5px solid rgba(0,0,0,0);
+}
+main>section.main04>ul>li>p{
+    font-size:1.8rem;
+}
+main>section.main04>ul>li>p:nth-child(2){
+    margin-top:1.4rem;
+}
+main>section.main04>ul>li>p>a{}
+main>section.main04>ul>li>p>a>img{}
+
+
+/* main05 */
+main>section.main05{
+    margin-bottom:3rem;
+}
+main>section.main05>h2{}
+main>section.main05>h2>a{}
+
+main>section.main05>ul{}
+main>section.main05>ul>li{}
+main>section.main05>ul>li>p{}
+main>section.main05>ul>li>p>a{}
+main>section.main05>ul>li>p>a>img{}
+
+
+
+/* main01 이벤트 */
+.tit:hover:before{
+    right:-3rem;
+}
+
+main>section.main01>div.banner>aside.on>div>ul>li:hover{
+    margin-left:1rem;
+}
+main>section.main01>div.account>p:hover{
+    border:2px solid #0066cc;
+    
+}
+main>section.main01>div.account>p:hover>a{
+    color:#0066cc;
+}
+main>section.main01>div.account>h2>a:hover{
+    border-bottom:1px solid #fff;
+}
+main>section.main01>div.account>ul.idsearch>li>a:hover{
+    border-bottom:1px solid #fff;
+}
+
+main>section.main02>div.leftcont>div>h2>a:hover:before{
+    right:-3rem;
+}
+
+main>section.main02>div.leftcont>div>dl.util>dd:hover{
+    text-decoration: underline;
+}
+main>section.main02>div.rightcont>div>dl>dt>a:hover:before{
+    right:-3rem;
+}
+
+
+main>section.main03>article>div>div>ul>li>a:hover{
+    margin-left:1rem;
+}
+
+main>section.main04>ul>li:hover{
+    border:5px solid #0066cc;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
