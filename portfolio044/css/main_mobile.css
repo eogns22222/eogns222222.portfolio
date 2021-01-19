@@ -29,13 +29,13 @@ main>section.main01>div.banner>aside.first{
     
 }
 main>section.main01>div.banner>aside.second{
-    background:url(../imgs/main01_background01.jpg) no-repeat center/cover;
+    background:url(../imgs/main01_background01_mobile.jpg) no-repeat center/cover;
     width:100vw;
     height:57rem;
     
 }
 main>section.main01>div.banner>aside.third{
-    background:url(../imgs/main01_background02.jpg) no-repeat center/cover;
+    background:url(../imgs/main01_background02_mobile.jpg) no-repeat center/cover;
     width:100%;
     height:57rem;
     
