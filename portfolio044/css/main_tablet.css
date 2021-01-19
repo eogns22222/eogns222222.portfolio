@@ -410,6 +410,7 @@ main>section.main03{
 main>section.main03>h2{
     padding:3.2rem 0 3.2rem 2.5rem;
     font-size:2.5rem;
+    width:100%;
 }
 main>section.main03>h2>a{
     position:relative;
