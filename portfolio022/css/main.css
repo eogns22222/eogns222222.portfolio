@@ -481,11 +481,7 @@ main>section.main3>div.address>form>p>input:focus::-webkit-input-placeholder {
 main>section.main3>div.address>form>p>input:focus{
     outline: none;
 }
-main>section.main3>div.address>form>p:nth-child(1)>input{
-    
-    
-    
-}
+
 main>section.main3>div.address>form>p:nth-child(1)>input:nth-child(1){
     width:61.6rem;
 }
@@ -501,9 +497,7 @@ main>section.main3>div.address>form>p:nth-child(1)>input:nth-child(2){
     color:#fff;
     cursor: pointer;
 }
-main>section.main3>div.address>form>p:nth-child(2){
 
-}
 
 main>section.main3>div.address>form>p:nth-child(2)>input:nth-child(1){
     width:26rem;
@@ -516,9 +510,7 @@ main>section.main3>div.address>form>p:nth-child(2)>input:nth-child(2){
 main>section.main3>div.address>form>p:nth-child(2)>input:nth-child(3){
     width:15rem;
 }
-main>section.main3>div.address>form>p:nth-child(2)>input:not(:last-child){
-    
-}
+
 main>section.main3>div.address>form>p:nth-child(3)>input{
     width:17.6rem;
     background: #ff0965;
@@ -550,8 +542,6 @@ main>section.main3>div.homeservice>h2{
     text-align: center;
     box-sizing: border-box;
 }
-main>section.main3>div.homeservice>p{}
-main>section.main3>div.homeservice>p>img{}
 
 
 /*  */
@@ -604,11 +594,9 @@ main>section.main4>div.mentment>ul>li{
   
 }
 
-main>section.main4>div.mentment>ul>li:nth-child(2){
-    opacity: ;
-}
+
 main>section.main4>div.mentment>ul:nth-child(1)>li{
-    display:;
+    
     left:20rem;
 }
 
@@ -657,7 +645,7 @@ main>section.main4>div.mentment>ul:nth-child(3)>li:nth-child(2){
 main>section.main4>div.mentment>ul:nth-child(3)>li:nth-child(3){
     left:121rem;
 }
-main>section.main4>div.mentment>ul>li>img{}
+
 
 
 /*  */
@@ -704,9 +692,7 @@ main>section.main5>div>form>input:focus::-webkit-input-placeholder {
 main>section.main5>div>form>input:focus{
     outline: none;
 }
-main>section.main5>div>p{
-   
-}
+
 
 main>section.main5>div>p>img{
     margin-left:0rem;

@@ -36,7 +36,7 @@ footer>div>dl.firstline>dd>a{
 footer>div>dl.secondline{
     padding-top:3rem;
 }
-footer>div>dl.secondline>dd{}
+
 footer>div>dl.secondline>dd>span{
     color:#000;
 }
@@ -92,7 +92,7 @@ footer>div>div>dl>dd:last-child{
 footer>div>div>dl>dd>a{
     color:#6a6a6a;
 }
-footer>div>div>dl>dd>a>img{}
+
 
 
 /* family,group */
@@ -164,20 +164,15 @@ footer>div>div>div>div>dl>dt{
     color:#000000;
     
 }
-footer>div>div>div>div>dl>dt>a{
-    
-    
-}
-footer>div>div>div>div>dl>dd{}
+
+
 footer>div>div>div>div>dl>dd>a{
     color:#6a6a6a;
 }
 /*  */ 
 
 
-footer>div>address{
-    
-}
+
 footer>div>address>dl{
     display:flex;
     
@@ -197,13 +192,12 @@ footer>div>address>dl>dd:not(:last-child):before{
     height:1.5rem;
     background:#6a6a6a;
 }
-footer>div>address>p{}
+
 
 footer>div>p{
     margin-top:3rem;
 }
-footer>div>p>a{}
-footer>div>p>a>img{}
+
 
 
 /* 이벤트 */

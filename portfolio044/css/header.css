@@ -67,11 +67,10 @@ header>div>div{
 header>div>div>h1{
     margin-right:10.5rem;
 }
-header>div>div>h1>a{}
-header>div>div>h1>a>img{}
+
 
 /* 1depth */
-header>div>div>nav{}
+
 header>div>div>nav>ul{
     position:relative;
     display:flex;
@@ -171,7 +170,7 @@ header>div>div>nav>ul>li>ul>li>ul>li>a{
 header>div>div>form{
     margin-left:9rem;
 }
-header>div>div>form>input{}
+
 header>div>div>form>input:nth-child(1){
     display:none;
 }

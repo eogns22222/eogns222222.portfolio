@@ -24,7 +24,7 @@ header>div.curtain{
     position:absolute;
     left:0;
     top:13.4rem;
-    width:192rem;
+    width:100%;
     height:6rem;
     background:rgba(255,255,255,.9);
     border-top:2px solid black;
@@ -38,6 +38,7 @@ header>nav{
     height:13.4rem;
     background:rgba(255,255,255,0.9);
     transition:all 1s ease;
+
 }
 header>nav>ul{
     position:relative;
@@ -105,7 +106,7 @@ header>div.menu>p{
 header>div.menu>p:nth-of-type(2){
     top:1rem;
 }
-header>p>img{}
+
 header>div.menu.on>p:nth-of-type(1){
     transform: rotate(-45deg);
 }

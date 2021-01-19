@@ -29,7 +29,7 @@ body::-ms-scrollbar {
 display:none;
 
 }
-div{}
+
 div>div.official{
     position:relative;
 }

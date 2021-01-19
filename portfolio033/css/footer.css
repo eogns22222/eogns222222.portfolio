@@ -35,7 +35,7 @@ footer>div.bottom_cont>ul>li:not(:last-child):before{
     height:1.5rem;
     border:1px solid #777777;
 }
-footer>div.bottom_cont>ul>li>a{}
+
 footer>div.bottom_cont>address{
     margin-bottom:3.8rem;
 }
@@ -67,8 +67,7 @@ footer>div.bottom_cont>address>p{
 footer>div.bottom_cont>address>p>span{
     color:#07772f;
 }
-footer>div.bottom_cont>p{}
-footer>div.bottom_cont>p>img{}
+
 footer>div.icon{
     margin-top:10rem;
 }
@@ -79,4 +78,4 @@ footer>div.icon>ul>li{
     margin-right:2rem;
     cursor: pointer;
 }
-footer>div.icon>ul>li>img{}
+

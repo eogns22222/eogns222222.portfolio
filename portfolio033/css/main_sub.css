@@ -1,6 +1,4 @@
-main{
-    
-}
+
 
 /* headline */
 main>section.headline{
@@ -31,7 +29,7 @@ main>section.headline>div>div.ment{
     padding-left:7.6rem;
     box-sizing: border-box;
 }
-main>section.headline>div>div.ment>dl{}
+
 main>section.headline>div>div.ment>dl>dt{
     margin-bottom:5.5rem;
     font-size:3.5rem;
@@ -64,14 +62,12 @@ main>section.headline>div>div.ment>dl>dd:nth-child(3):before{
     border-left:10px solid #262626;
     transition:all .5s ease;
 }
-main>section.headline>div>div.ment>dl>dd>a{}
 
 
 main>section.headline>div>div.newImg{
     float: right;
 }
-main>section.headline>div>div.newImg>p{
-}
+
 main>section.headline>div>div.newImg>p>img{
     width:115rem;
     height:79rem;
@@ -121,17 +117,14 @@ main>section.tagbest>table{
 main>section.tagbest>table>thead{
     border-bottom:4px solid #4f4f4f;
 }
-main>section.tagbest>table>thead>tr{}
+
 main>section.tagbest>table>thead>tr>th{
     font-size:3.5rem;
     line-height: 6rem;
 }
 
 
-main>section.tagbest>table>tbody{}
-main>section.tagbest>table>tbody>tr{
 
-}
 main>section.tagbest>table>tbody>tr>td{
     text-align: center;
     vertical-align: middle;
@@ -263,7 +256,6 @@ main>section.newNews>div.contents>ul>li:nth-child(3):before{
 main>section.newNews>div.contents>ul>li>img{
     width:80%;
 }
-main>section.newNews>div.contents>ul>li>a{}
 
 
 main>section.newNews>ul{
@@ -278,7 +270,7 @@ main>section.newNews>ul{
 main>section.newNews>ul>li{
     cursor: pointer;
 }
-main>section.newNews>ul>li>img{}
+
 
 
 

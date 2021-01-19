@@ -76,8 +76,7 @@ main>div>article.main2>div.tit>img:nth-child(2){
     opacity: 0;
     transition:all 1.8s ease;
 }
-main>div>article.main2>div.tit>dl{
-}
+
 main>div>article.main2>div.tit>dl>dt{
     font-size:6rem;
     margin-left:85rem;
@@ -201,9 +200,7 @@ main>div>article.main2>div.txt>ul.right_cont>li:nth-child(5)>strong{
 main>div>article.main2>div.txt>ul.right_cont>li:nth-child(6){
     margin-left:53rem;
 }
-main>div>article.main2>div.txt>ul.right_cont>li{
-    
-}
+
 
 /* main2 이벤트*/
 
@@ -268,15 +265,11 @@ main>div>article.main3>ul>li:nth-child(3)>p:nth-child(1){
     opacity: 0;
     transition:all 0.7s ease;
 }
-main>div>article.main3>ul>li:nth-child(1){
-    
-}
+
 main>div>article.main3>ul>li:nth-child(2){
     margin-left:3rem;
 }
-main>div>article.main3>ul>li>p>img{
-    
-}
+
 main>div>article.main3>ul>li>p:nth-child(2){
     font-size:3rem;
     text-align: center;
@@ -302,9 +295,7 @@ main>div>article.main4{
     height:90.3rem;
     box-sizing: border-box;
 }
-main>div>article.main4>div{
-    
-}
+
 main>div>article.main4>div>ul:nth-child(1){
     position:relative;
     width:20rem;
@@ -324,9 +315,7 @@ main>div>article.main4>div:nth-child(2)>ul:nth-child(1)>li{
 main>div>article.main4>div:nth-child(3)>ul:nth-child(1)>li{
     left:1rem;
 }
-main>div>article.main4>div>ul:nth-child(1)>li>img{
-    
-}
+
 main>div>article.main4>div>ul:nth-child(2){
     display:flex;
     margin-left:1rem;
@@ -341,9 +330,7 @@ main>div>article.main4>div>ul:nth-child(2)>li{
     box-sizing: border-box;
     
 }
-main>div>article.main4>div>ul:nth-child(3){
-    
-}
+
 main>div>article.main4>div>ul:nth-child(3)>li{
     font-size:2.5rem;
     
@@ -450,14 +437,14 @@ main>div>article.main4>div.content4>ul.colors4>li:nth-child(3){
 main>div>article.main4>div.content4>ul.colors4>li:nth-child(4){
     background:#252525;
 }
-main>div>article.main4>div.content4>ul.names4{}
+
 main>div>article.main4>div.content4>ul.names4>li{
     margin-left:1rem;
 }
 main>div>article.main4>div.content4>ul.names4>li:nth-child(3){
     margin-left:2.5rem;
 }
-main>div>article.main4>div.content4>ul.names4>li>a{}
+
 
 /*content5*/
 
@@ -543,7 +530,7 @@ main>div>aside>p{
     opacity: 0;
     transition:all 1.4s ease;
 }
-main>div>aside>p>img{}
+
 
 
 

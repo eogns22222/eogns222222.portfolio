@@ -1,5 +1,4 @@
 main{
-    display:;
     padding-top:8rem;
 }
 main>aside.banner_top{
@@ -32,9 +31,7 @@ main>aside.banner_top>section.textt>article>div.on{
 }
 
 
-main>aside.banner_top>section.textt>article>div.off{
-    display:;
-}
+
 main>aside.banner_top>section.textt>article>div>p{
     font-size:2.4rem;
 }
@@ -64,8 +61,7 @@ main>aside.banner_top>div.back{
     left:0; top:0;
     z-index: 1000;
 }
-main>aside.banner_top>div.back>p{
-}
+
 main>aside.banner_top>div.back>p>img{
     font-size:0;
     line-height: 0;
@@ -85,22 +81,7 @@ main>aside.banner_top>ul.contents>li.on{
     z-index:100 ;
     opacity:1;
 }
-main>aside.banner_top>ul.contents>li:nth-of-type(1){
-    
-}
-main>aside.banner_top>ul.contents>li:nth-of-type(2){
-    
-}
-main>aside.banner_top>ul.contents>li:nth-of-type(3){
-    
- }
- main>aside.banner_top>ul.contents>li:nth-of-type(4){
-    
- }
 
-main>aside.banner_top>ul.contents>li.content_off{
-    
-}
 main>aside.banner_top>ul.contents>li>img{
     font-size:0;
     line-height: 0;
@@ -149,7 +130,7 @@ main>div.cont{
 main>div.cont>div:nth-child(1){
     margin-left:3.5rem;
 }
-main>div.cont>div>img{}
+
 main>div.cont>div>p{
     font-weight: 800;
 }
@@ -201,8 +182,7 @@ main>aside.banner_bottom>div>p:nth-of-type(2){
     font-size:2rem;
     line-height:3rem ;
 }
-main>aside.banner_bottom>div>p:nth-of-type(3){
-}
+
 main>aside.banner_bottom>div>p>a{
     display:flex;
     align-items: center;
@@ -225,7 +205,7 @@ main>div.video>article{
     width:144rem;
     height:82rem;
 }
-main>div.video>iframe{}
+
 
 
 

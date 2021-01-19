@@ -1,4 +1,4 @@
-main{}
+
 main>div{
     
     background:url(../imgs2/map_top2.jpg) no-repeat 0 8rem;
@@ -32,16 +32,14 @@ main>section>div>div>form{
     left:0; top:0;
     
 }
-main>section>div>form{
-    
-}
+
 main>section>div>form>select{
     width:41rem;
     height:3.8rem;
     font-size: 1.8rem;
 }
 
-main>section>div>form>select>option{}
+
 main>section>div>div>form>select{
     width:41rem;
     height:3.8rem;
@@ -90,7 +88,5 @@ main>section>table>tbody>tr>th{
 main>section>table>tbody>tr>th>span{
     font-weight: bold;
 }
-main>section>table>tbody>tr>td{
-    
-}
+
 

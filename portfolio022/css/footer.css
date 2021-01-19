@@ -55,7 +55,7 @@ footer>div.right_cont>form>select{
 footer>div.right_cont>form>select:focus{
     outline: none;
 }
-footer>div.right_cont>form>select>option{}
+
 footer>div.right_cont>div{
     margin-top:12rem;
     margin-left:6rem;

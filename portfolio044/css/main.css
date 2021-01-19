@@ -1,6 +1,4 @@
-main{
-    display:;
-}
+
 /* main01 */
 main>section.main01{
     position:relative;
@@ -143,10 +141,7 @@ main>section.main01>div.account>ul.idsearch>li{
     margin-right:3rem;
     font-size:1.5rem;
 }
-main>section.main01>div.account>ul.idsearch>li:before{
-    
 
-}
 main>section.main01>div.account>ul.idsearch>li>a{
     position:relative;
     color:#fff;
@@ -173,8 +168,6 @@ main>section.main01>ul{
 main>section.main01>ul>li{
     cursor: pointer;
 }
-main>section.main01>ul>li>img{}
-
 
 
 
@@ -240,7 +233,7 @@ main>section.main02>div.leftcont>div>dl.util>dd:not(:last-child):before{
 main>section.main02>div.leftcont>div>dl.util>dd:not(:last-child){
     margin-right:1.8rem;
 }
-main>section.main02>div.leftcont>div>dl.util>dd>a{}
+
 
 main>section.main02>div.leftcont>article{
     position:relative;
@@ -261,14 +254,13 @@ main>section.main02>div.leftcont>article>ul.on{
 main>section.main02>div.leftcont>article>ul>li:not(:last-child){
     margin-right:4.2rem;
 }
-main>section.main02>div.leftcont>article>ul>li>a{}
-main>section.main02>div.leftcont>article>ul>li>a>p{}
+
 main>section.main02>div.leftcont>article>ul>li>a>p:nth-child(2){
     margin-top:1.4rem;
     font-size:1.5rem;
     font-weight:500;
 }
-main>section.main02>div.leftcont>article>ul>li>a>p>img{}
+
 
 main>section.main02>div.leftcont>dl.boollet{
     display:flex;
@@ -361,12 +353,7 @@ main>section.main02>div.rightcont>div>dl>dd{
 main>section.main02>div.rightcont>div:nth-child(1)>dl>dd{
     margin:2.5rem 0;
 }
-main>section.main02>div.rightcont>div:nth-child(2)>dl>dd{
 
-}
-main>section.main02>div.rightcont>div:nth-child(3)>dl>dd{
-
-}
 main>section.main02>div.rightcont>div:nth-child(4)>dl>dd{
     margin:2rem 0;
 }
@@ -376,8 +363,7 @@ main>section.main02>div.rightcont>div:nth-child(5)>dl>dd{
 main>section.main02>div.rightcont>div:nth-child(1)>dl>dd:nth-child(3)>span{
     margin:0 2rem;
 }
-main>section.main02>div.rightcont>p{}
-main>section.main02>div.rightcont>p>img{}
+
 
 
 
@@ -464,7 +450,6 @@ main>section.main03>article>div>dl>dd.on{
 main>section.main03>article>p{
     margin-right:5rem;
 }
-main>section.main03>article>p>img{}
 
 
 /* main04 */
@@ -508,22 +493,14 @@ main>section.main04>ul>li>p{
 main>section.main04>ul>li>p:nth-child(2){
     margin-top:1.4rem;
 }
-main>section.main04>ul>li>p>a{}
-main>section.main04>ul>li>p>a>img{}
+
 
 
 /* main05 */
 main>section.main05{
     margin-bottom:3rem;
 }
-main>section.main05>h2{}
-main>section.main05>h2>a{}
 
-main>section.main05>ul{}
-main>section.main05>ul>li{}
-main>section.main05>ul>li>p{}
-main>section.main05>ul>li>p>a{}
-main>section.main05>ul>li>p>a>img{}
 
 
 

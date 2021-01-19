@@ -1,9 +1,7 @@
 .tablet{
     display:block;
 }
-.web{
-    display:;
-}
+
 
 header{
     position:relative;
@@ -117,10 +115,7 @@ header>div>div>div>p.on:after{
     bottom:-0.2rem;
     transform:rotate(-45deg);
 }
-header>div>div>h1{
-}
-header>div>div>h1>a{}
-header>div>div>h1>a>img{}
+
 
 /* 1depth */
 header>div>div>nav{
@@ -217,9 +212,7 @@ header>div>div>nav>ul>li>ul>li>ul>li>a{
 }
 
 
-header>div>div>form{
-}
-header>div>div>form>input{}
+
 header>div>div>form>input:nth-child(1){
     display:none;
 }

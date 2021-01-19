@@ -1,17 +1,15 @@
-main{
-    display:;
-}
 
 /* main01 */
 main>section.main01{
     position:relative;
+    width:100%;
 }
-main>section.main01>video{}
+
 main>section.main01>p{
     position:absolute;
     left:calc(50% - 500px); top:calc(50% - 300px);
 }
-main>section.main01>p>img{}
+
 main>section.main01>div{
     position:absolute;
     left:calc(50% - 70px);
@@ -48,6 +46,7 @@ main>section.main01>div>p{
 /* main02 */
 main>section.main02{
     position:relative;
+    width:100%;
     height:100rem;
     text-align: center;
     background:rgb(0, 0, 0);
@@ -88,7 +87,7 @@ main>section.main02>div>div>p{
     float: left;
     margin-right:3rem;
 }
-main>section.main02>div>div>p>img{}
+
 
 main>section.main02>div>div>dl{
     float: left;
@@ -203,7 +202,7 @@ main>section.main03>ul>li{
 main>section.main03>ul>li:not(:nth-child(1)){
     display:none;
 }
-main>section.main03>ul>li>img{}
+
 
 main>section.main03>div.ment{
     display: none;
@@ -298,7 +297,7 @@ main>section.main04>div>div>div>ul:not(:nth-child(4)):after{
     background:#000;
 
 }
-main>section.main04>div>div>div>ul>li{}
+
 main>section.main04>div>div>div>ul>li:nth-child(1){
     margin-bottom:3rem;
     font-size:1.5rem;
@@ -315,7 +314,7 @@ main>section.main04>div>div>div>ul>li:nth-child(3){
     line-height: 3.6rem;
     color:#e7e7e7;
 }
-main>section.main04>div>div>div>ul>li>a{}
+
 
 main>section.main04>div>p{
     float: right;
@@ -354,7 +353,7 @@ main>section.main05{
     text-align: center;
     opacity: 0;
     transition:all 1.3s ease;
-    
+    width:100%;
 }
 main>section.main05>h1{
     padding-top:15rem;
@@ -366,24 +365,25 @@ main>section.main05>div{
     position:absolute;
     left:0;
     top:0;
+    width:185rem;
 }
 main>section.main05>div.on{
     display:block;
 }
 main>section.main05>div>div{
     display:flex;
-    justify-content: space-between;
+    justify-content:;
     position:absolute;
     left:5.5rem;
     top:34.6rem;
-    width:192rem;
+    width:100%;
     opacity: 0;
     transition: all 1s ease;
 }
 main>section.main05>div>div.on{
     opacity: 1;
 }
-main>section.main05>div>div>p{}
+
 main>section.main05>div>div>p.num{
     flex:1 1 1rem;
     font-size:2rem;
@@ -394,14 +394,14 @@ main>section.main05>div>div>p:nth-child(2){
     flex:1 1 10rem;
 }
 
-main>section.main05>div>div>p>img{}
+
 main>section.main05>div>div>ul{
     margin-left:7rem;
     flex:1 1 50.6rem;
     text-align: start;
     
 }
-main>section.main05>div>div>ul>li{}
+
 main>section.main05>div>div>ul>li:nth-child(1){
     margin-bottom:5.5rem;
     font-size:2.3rem;
@@ -411,7 +411,7 @@ main>section.main05>div>div>ul>li:nth-child(2){
     line-height:3.6rem;
 }
 main>section.main05>div>div>p:nth-child(4){
-     
+    margin-right:5rem;
 }
 main>section.main05>ul.bollet{
     position:absolute;

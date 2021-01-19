@@ -117,7 +117,7 @@ header>div.menu>p{
 header>div.menu>p:nth-of-type(2){
     top:1rem;
 }
-header>p>img{}
+
 header>div.menu.on>p:nth-of-type(1){
     transform: rotate(-45deg);
 }

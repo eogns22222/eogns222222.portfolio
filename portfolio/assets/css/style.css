@@ -373,7 +373,7 @@ html, body {
     margin-bottom: 0;
 }
 
-.portfolio-item:before {
+.portfolio-item.on:before {
     content: '';
     height: 100%;
     width: 100%;
