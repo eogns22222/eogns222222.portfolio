@@ -356,6 +356,7 @@ html, body {
 .service p {
     color: #000;
     margin-bottom: 0;
+    line-height: 1.7rem;
 }
 
 /* Section: Portfolio */
