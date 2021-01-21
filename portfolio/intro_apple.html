@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애플 intro</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="shortcut icon" type="image/x-con" href="../portfolio011/imgs/icon_logo.png">
+    <style>
+        html,body{
+            font-size:62.5%;
+            height:100%;
+        }
+        a{
+            color:#fff;
+        }
+        section{
+            height:100%;
+        }
+        section>div{
+            display:flex;
+            height:100%;
+        }
+        section>div>div{
+            padding-top:19.5rem;
+            padding-left:26.6rem;
+            width:50%;
+            height:100%;
+            background:#000;
+            box-sizing: border-box;
+        }
+        section>div>div>div{
+            width:65rem;
+            height:30rem;
+        }
+        section>div>div>div>h1{
+            margin-bottom:4rem;
+            font-size:5rem;
+            color:#fff;
+            line-height: 5.5rem;
+        }
+        section>div>div>div>p{
+            font-size:5rem;
+            color:#fff;
+        }
+        section>div>div>ul{}
+        section>div>div>ul>li{
+            font-size:2.5rem;
+        }
+        section>div>div>ul>li:nth-child(1){
+            margin-bottom:2rem;
+        }
+        section>div>div>ul>li:not(:nth-child(1)){
+            float: left;
+            margin-right:2rem;
+        }
+        section>div>div>ul>li>a{
+            display:block;
+            width:18rem;
+            height:6.7rem;
+            line-height: 6.7rem;
+            border:0.2rem solid #fff;
+            text-align: center;
+            border-radius:2rem;
+        }
+        section>div>p{}
+        section>div>p>img{
+            height:100vh;
+        }
+        section>ul{
+            position:absolute;
+            right:1rem;
+            top:calc(50% - 30px);
+        }
+        section>ul>li{
+            
+        }
+
+        /* 이벤트 */
+
+        section>div>div>ul>li>a:hover{
+            border:0.2rem solid #0066cc;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <section>
+        <div>
+            <div>
+                <div>
+                    <h1>Apple 애플</h1>
+                    <p>PC WEB</p>
+                </div>
+                <ul>
+                    <li><a href="#">view index</a></li>
+                    <li><a href="#">view sub01</a></li>
+                    <li><a href="#">view sub02</a></li>
+                    <li><a href="#">view sub03</a></li>
+                </ul>
+            </div>
+            <p><img src="imgs/apple.jpg" alt="애플 배경"></p>
+        </div>
+        <ul>
+            <li class="hidden">페이지 버튼</li>
+            <li title="krispy 크리스피크림도넛"><a href=""><img src="imgs/next_btn.png" alt="다음"></a></li>
+        </ul>
+    </section>
+</body>
+</html>
