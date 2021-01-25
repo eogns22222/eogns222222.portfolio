@@ -149,6 +149,23 @@
 
 
             });//window.width
+
+            var flag_srch = true;
+            $("#srch2").click(function(e){
+                e.preventDefault()
+                
+                if(flag_srch){
+                    $(this).attr("src","imgs/close.png");
+                    $(this).siblings().css("display","block");
+                    flag_srch = false;
+                }else{
+                    $(this).attr("src","imgs/search.png");
+                    $(this).siblings().css("display","none");
+                    flag_srch = true;
+                }
+                
+            });
+
             //header end
 
             $("section.main01").children("ul")
@@ -553,6 +570,7 @@
                 <form action="test.kdh">
                     <input type="search" name="srch" id="srch">
                     <input type="image" src="imgs/search.png">
+                    <input type="image" src="imgs/search.png" id="srch2">
                 </form>
             </div>
         </div>
