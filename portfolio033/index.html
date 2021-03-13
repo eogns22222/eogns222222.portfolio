@@ -204,8 +204,8 @@
                     var len2 = $(this).index();
                     $(this).addClass("on").siblings().removeClass("on");
 
-                    $("ul.businessImg").children().eq(len2).fadeIn()
-                    .siblings().fadeOut();
+                    $("ul.businessImg").children().eq(len2).fadeIn(500)
+                    .siblings().fadeOut(100);
 
                     $("div.ment").eq(len2).addClass("on")
                     .siblings("div.ment").removeClass("on");

@@ -83,8 +83,10 @@
                     }
 
                     var scT = $(window).scrollTop();
+                    // console.log(scT);
                     var h = $("main").children().eq(scrollEvent.stopPoint).offset().top;
-                    var expand = $("main").children().eq(0).height()*scrollEvent.expandH/120;
+                    // console.log(h);
+                    var expand = $("main").children().eq(0).height();
                     h+expand;
 
                     scrollEvent.waitScroll =setTimeout(function(){

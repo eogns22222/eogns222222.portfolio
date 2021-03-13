@@ -37,7 +37,7 @@
 
             $(function () {
                 var banner = {idx:0,len:$("section.main1").children("div").length,
-                auto:setInterval(middle,5000)}
+                auto:setInterval(middle,5000),sTop:true}
 
                 function middle(){
                     banner.idx++
@@ -61,11 +61,15 @@
 
                     make();
                     ;
-                    banner.auto = setInterval(middle, 5000);
+                    if(banner.sTop){
+                        banner.auto = setInterval(middle, 5000);
+                    };
+                    
                 });
 
                 $("ul.btn_play").children("li").eq(0)
                 .click(function(){
+                    banner.sTop = true;
                     clearInterval(banner.auto);
                     $(this).addClass("on").siblings("li")
                     .removeClass("on");
@@ -75,6 +79,7 @@
 
                 $("ul.btn_play").children("li").eq(1)
                 .click(function(){
+                    banner.sTop = false;
                     clearInterval(banner.auto);
                     $(this).addClass("on").siblings("li")
                     .removeClass("on");
@@ -459,7 +464,7 @@
                     <p id="tree"><img src="imgs/banner04_tree.png" alt="크리스피 크리스마스"></p>
                 </div>
                 <article>
-                    <h1 class="hidden">페이징</h1>
+                    <h1 class="hidden"> 페이징</h1>
                     <ul class="btn_paging">
                         <li class="on"><img src="imgs/paging_off.png" alt="현제페이지"></li>
                         <li id="btn2"><img src="imgs/paging_off.png" alt="다음페이지"></li>
@@ -878,7 +883,7 @@
         menu4.firstChild.style.color = "rgb(39, 39, 39,0)";
     });
 
-</script>//header
+</script>
 
 <script>
 
@@ -943,7 +948,7 @@
         coffeeI.src = "imgs/main2_coffeeicon.png"
     });
 
-</script>//main2
+</script>
 
 <script>
 
@@ -952,4 +957,4 @@
         e.preventDefault();
     });
 
-</script>//main3
+</script>
